@@ -27,8 +27,15 @@
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.4",
     "axios": "^1.2.2",
+    "cloudinary": "^1.33.0",
+    "firebase": "^9.15.0",
     "next": "^13.1.2",
+    "pg": "^8.8.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "eslint": "8.31.0",
+    "eslint-config-next": "13.1.2"
   }
 }
