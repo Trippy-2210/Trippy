@@ -3,13 +3,15 @@ import { NextResponse } from 'next/server'
 // This function can be marked `async` if using `await` inside
 export function middleware(request, res) {
   const requestHeaders = new Headers(request.headers);
-  const authed = true;
+  const authed = false;
   const url = request.nextUrl.clone();
   const pathname = url.pathname;
 
   if (!authed && !pathname.startsWith('/login') && !pathname.startsWith('/_next')) {
     url.pathname = '/login';
-    return NextResponse.redirect(url)
+    let response = NextResponse.redirect(url);
+    response.cookies.set('logged', 'no');
+    return response;
   } else {
     requestHeaders.set('userId', '1337');
     return NextResponse.next({
