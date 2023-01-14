@@ -1,3 +1,5 @@
+import mongoose from 'mongoose';
+
 const tripSchema = new mongoose.Schema({
   _id:            Number,
   ownerId:        Number,
@@ -10,12 +12,14 @@ const tripSchema = new mongoose.Schema({
   photo:          String,
   activities:    [String],
 
-  request:       [{
+  requests:       [{
     userId: Number,
     status: Boolean
   }],
   users:         [Number], // userId
   messages:      [Number]  // messageId
+}, {
+    versionKey: false // You should be aware of the outcome after set to false
 });
 
 export default tripSchema;
