@@ -33,7 +33,8 @@
     "next": "^13.1.2",
     "pg": "^8.8.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-google-places-autocomplete": "^3.4.0"
   },
   "devDependencies": {
     "eslint": "8.31.0",
