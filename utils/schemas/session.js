@@ -2,6 +2,7 @@ import mongoose from 'mongoose';
 
 const sessionSchema = new mongoose.Schema({
   _id:          Number,
+  sessionId:    String,
   userId:       Number,
   expTimestamp: Number
 }, {
