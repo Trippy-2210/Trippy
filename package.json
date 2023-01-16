@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -26,6 +25,7 @@
     "@fontsource/roboto": "^4.5.8",
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.4",
+    "autosuggest-highlight": "^3.3.4",
     "axios": "^1.2.2",
     "cloudinary": "^1.33.0",
     "firebase": "^9.15.0",
@@ -33,8 +33,7 @@
     "next": "^13.1.2",
     "pg": "^8.8.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-google-places-autocomplete": "^3.4.0"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "eslint": "8.31.0",
