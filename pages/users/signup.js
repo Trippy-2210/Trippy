@@ -2,17 +2,22 @@ import { TextField, Box, Button } from '@mui/material';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function Login() {
+function Signup() {
   const blankForm = {
     email: '',
-    pw: ''
+    pw: '',
+    cpw: ''
   }
 
   const [form, setForm] = useState(blankForm);
 
   const submitForm = () => {
-    axios.post('../api/auth/login', form)
-      .then (() => {window.location.replace('/')})
+    if (form.pw !== form.cpw) {
+      alert('Passwords do not match!');
+    } else {
+      axios.post('../api/auth/signup', form)
+        .then(() => {window.location.replace('/')});
+    }
   }
 
   return (
@@ -37,21 +42,25 @@ function Login() {
         setForm(formCopy);
       }}
       /><br /> <br />
+    <TextField
+      label="Confirm Password"
+      value={form.cpw}
+      onChange={(e) => {
+        e.preventDefault();
+        let formCopy = {...form};
+        formCopy.cpw = e.target.value;
+        setForm(formCopy);
+      }}
+      /><br /> <br />
       <Button
         variant="contained"
         onClick={(e) => {
           e.preventDefault();
           submitForm();
         }}
-        >Login</Button>&nbsp;
-        <Button
-        variant="contained"
-        onClick={(e) => {
-          window.location.replace('./signup')
-        }}
         >Signup</Button>
     </Box>
   );
 }
 
-export default Login;
+export default Signup;

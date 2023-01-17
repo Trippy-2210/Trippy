@@ -29,16 +29,16 @@ var schemas = [
   Notification
 ];
 
-schemas.map(function(schema) {
-  schema.createCollection();
+// schemas.map(function(schema) {
+//   schema.createCollection();
 
-  schema.options.toObject = {};
-  schema.options.toObject.transform = function(doc, ret) {
-    delete ret.__v;
+//   schema.options.toObject = {};
+//   schema.options.toObject.transform = function(doc, ret) {
+//     delete ret.__v;
 
-    return ret;
-  }
-});
+//     return ret;
+//   }
+// });
 
 export default schemas;
 
