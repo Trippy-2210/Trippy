@@ -4,8 +4,7 @@ import profileSchema      from './schemas/profile.js';
 import tripSchema         from './schemas/trip.js';
 import messageSchema      from './schemas/message.js';
 import notificationSchema from './schemas/notification.js';
-
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const url = 'mongodb://localhost:27017/trippy';
 const options = {useNewUrlParser: true, useUnifiedTopology: true};
@@ -41,6 +40,6 @@ schemas.map(function(schema) {
   }
 });
 
-module.exports = schemas;
+export default schemas;
 
 // import {User, Trip, Message} from '../db.js';
