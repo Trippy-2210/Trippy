@@ -1,5 +1,5 @@
-import { useState } from "react";
-import PlaceAutocomplete from "../../components/trips/PlaceAutocomplete";
+import { useState } from 'react';
+import PlaceAutocomplete from '../../components/trips/PlaceAutocomplete';
 
 export default function Addtrip() {
   const [value, setValue] = useState(null);
