@@ -19,6 +19,7 @@ export default function Addtrip() {
   const [startDate, setStartDate] = useState(dayjs(new Date()));
   const [endDate, setEndDate] = useState(dayjs(new Date()));
   const [tripDescription, setTripDescription] = useState('');
+  const [photoUrl, setPhotoUrl] = useState('');
 
   return (
     <>
@@ -61,7 +62,11 @@ export default function Addtrip() {
             />
           </div>
           <div className={styles.upload_image_button}>
-            <CloudinaryUpload />
+            <CloudinaryUpload
+              url={photoUrl}
+              setUrl={setPhotoUrl}
+              label='Add Trip Picture'
+            />
           </div>
 
           {uid}

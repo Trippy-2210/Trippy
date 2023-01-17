@@ -5,8 +5,7 @@ import IconButton from '@mui/material/IconButton';
 import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import UploadWidget from './UploadWidget';
 
-export default function CloudinaryWidget({ setImageUrls }) {
-  const [url, updateUrl] = useState();
+export default function CloudinaryWidget({ url, setUrl, label }) {
   const [error, updateError] = useState();
 
   function handleOnUpload(error, result, widget) {
@@ -17,7 +16,7 @@ export default function CloudinaryWidget({ setImageUrls }) {
       });
       return;
     }
-    updateUrl(result?.info?.secure_url);
+    setUrl(result?.info?.secure_url);
   }
 
   return (
@@ -40,7 +39,7 @@ export default function CloudinaryWidget({ setImageUrls }) {
               onClick={handleOnClick}
               startIcon={<PhotoCamera />}
             >
-              Upload Profile Image
+              {label}
             </Button>
           );
         }}
