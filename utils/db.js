@@ -21,26 +21,27 @@ const Trip         = new mongoose.model('Trip', tripSchema);
 const Message      = new mongoose.model('Message', messageSchema);
 const Notification = new mongoose.model('Notification', notificationSchema);
 
-var schemas = [
+var schemas = {
   UserData,
   Session,
   Profile,
   Trip,
   Message,
   Notification
-];
+};
 
-schemas.map(function(schema) {
-  schema.createCollection();
+// schemas.map(function(schema) {
+//   schema.createCollection();
 
-  schema.options.toObject = {};
-  schema.options.toObject.transform = function(doc, ret) {
-    delete ret.__v;
+//   schema.options.toObject = {};
+//   schema.options.toObject.transform = function(doc, ret) {
+//     delete ret.__v;
 
-    return ret;
-  }
-});
+//     return ret;
+//   }
+// });
 
-module.exports = schemas;
+// module.exports = schemas;
+export default schemas;
 
 // import {User, Trip, Message} from '../db.js';
