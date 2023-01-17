@@ -12,6 +12,7 @@ const TripDetails = (props) => {
   let router = useRouter();
   let { tripId } = router.query;
 
+  // need to update this
   const useSWR('trip data', fetcher);
 
   return (
