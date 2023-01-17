@@ -29,7 +29,7 @@ function loadScript(src, position, id) {
 
 const autocompleteService = { current: null };
 
-export default function GoogleMaps({ value, setValue }) {
+export default function GoogleMaps({ label, value, setValue }) {
   const [inputValue, setInputValue] = React.useState('');
   const [options, setOptions] = React.useState([]);
   const loaded = React.useRef(false);
@@ -113,7 +113,7 @@ export default function GoogleMaps({ value, setValue }) {
         setInputValue(newInputValue);
       }}
       renderInput={(params) => (
-        <TextField {...params} label='Add a location' fullWidth />
+        <TextField {...params} label={label} fullWidth />
       )}
       renderOption={(props, option) => {
         const matches =
