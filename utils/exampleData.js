@@ -13,10 +13,19 @@ const url = 'mongodb://localhost:27017/trippy';
 const options = {useNewUrlParser: true, useUnifiedTopology: true};
 
 mongoose.set('strictQuery', true);
-mongoose.connect(url, options);
 
-const UserData     = new mongoose.model('UserData', userDataSchema);
-const Session      = new mongoose.model('Session', sessionSchema);
+async function connectDB() {
+  await mongoose.connect(url, options);
+}
+
+connectDB();
+
+// const UserData     = new mongoose.model('UserData', userDataSchema);
+// const Session      = new mongoose.model('Session', sessionSchema);
+
+module.exports = mongoose.models.UserData || mongoose.model('UserData', userDataSchema);
+
+module.exports = mongoose.models.Session || mongoose.model('Session', sessionSchema);
 
 const Profile      = new mongoose.model('Profile', profileSchema);
 const Trip         = new mongoose.model('Trip', tripSchema);
@@ -280,3 +289,5 @@ Notification.insertMany(dummyNotifications)
 .then(response => {
   console.log('Inserted notifications')
 })
+
+export { connectDB, Profile };
