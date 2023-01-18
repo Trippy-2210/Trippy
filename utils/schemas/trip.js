@@ -14,7 +14,7 @@ const tripSchema = new mongoose.Schema({
 
   requests:       [{
     userId: Number,
-    status: Boolean
+    status: String,
   }],
   users:         [Number], // userId
   messages:      [Number]  // messageId

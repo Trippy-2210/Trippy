@@ -7,7 +7,7 @@ const profileSchema = new mongoose.Schema({
   bio:            String,
   photo:          String,
   trips:         [Number], // tripId
-  notifications: [Number]  // notificationId
+  notifications: [String]  // notificationId
 }, {
   versionKey: false // You should be aware of the outcome after set to false
 });
