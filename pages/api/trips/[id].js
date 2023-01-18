@@ -1,7 +1,7 @@
 import schemas from '../../../utils/db.js';
 
 export default async function handler(req, res) {
-  const trip = await schemas.Trip.findById(req.query.id);
+  const trip = await schemas.Trip.find({ownerId: req.query.id});
   console.log(`***** trip: ${trip} *****`)
   if (trip !== null) {
     res.status(200).json(trip);
