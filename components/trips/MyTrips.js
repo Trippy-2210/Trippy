@@ -9,8 +9,8 @@ let trips = [
     ownerId: 1,
     tripTitle: 'Vacation in Smallville',
     destination: 'Smallville',
-    startDate: 'dateformat?',
-    endDate: 'dateformat?',
+    startDate: 'June 21, 2023',
+    endDate: 'June 30, 2023',
     description: 'helping with the farm',
     activities:['fun stuff', 'other stuff'],
     budget: 1,
@@ -42,7 +42,7 @@ const MyTrips = ({}) => {
 
 
   return(
-    <div className='myTrips' style={{width: '300px', height: '80vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-evenly', backgroundColor: '#1d53a48c', zIndex: '-4', borderRadius: '25px'}}>
+    <div className='myTrips' style={{width: '300px', height: '80vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-around', backgroundColor: '#1d53a48c', zIndex: '-4', borderRadius: '25px'}}>
       <h1>My Trips</h1>
       {trips && trips.map(trip => {
        return <TripCard trip={trip} />

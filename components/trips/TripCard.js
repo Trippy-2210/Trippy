@@ -6,7 +6,7 @@ const TripCard = ({trip}) => {
   let cardStyle = {
 
     width: '240px',
-    height: '320px',
+    height: '280px',
     position:' relative',
     display: 'flex',
     flexDirection: 'column',
@@ -19,7 +19,7 @@ const TripCard = ({trip}) => {
   }
   let imgStyle = {
     objectFit: 'cover',
-    width: '90%',
+    width: '80%',
     aspectRatio: '1',
     borderRadius: '25px',
     transform: 'translate(0px, -10px)'
@@ -33,10 +33,10 @@ const TripCard = ({trip}) => {
 
       <img src={trip.photo} style={imgStyle}></img>
       <div className='cardTitle'>
-        <div style={{fontSize: '1.2rem'}}>{trip.tripTitle}</div>
+        <div style={{fontSize: '1rem'}}>{trip.tripTitle}</div>
         <div>{trip.destination}</div>
-        <div>{trip.startDate}</div>
-        <div>{trip.endDate}</div>
+        <div style={{fontSize: '.8rem'}}>{trip.startDate} - {trip.endDate}</div>
+        <div></div>
       </div>
 
 
