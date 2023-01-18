@@ -1,6 +1,7 @@
 import React from 'react';
 import TripCard from './../../components/trips/TripCard.js'
 import MyTrips from './../../components/trips/MyTrips.js';
+import Header from './../../components/header/Header.js';
 
 let data = [
   {
@@ -139,9 +140,25 @@ const Main = ({}) => {
 
 
   return(
-    <div className='main'>
+    <>
+
+<div className='main' style={{
+      display: 'flex',
+      justifyContent: 'space-around',
+      width: '100vw',
+      height: '80vh',
+      zIndex: '-10',
+    }}>
       {/* <Card1 data={data}/> */}
-      <div className='mainGrid'>
+      <div className='mainGrid' style={{
+      display: 'grid',
+      width: '60vw',
+      gridTemplateColumns: 'repeat(3, 1fr)',
+      gridTemplateRows: 'auto',
+      gridRowGap: '20px',
+      justifyContent: 'space-between',
+      height: '70vh',
+    }}>
         {data && data.map(trip => {
           return <TripCard trip={trip} key={trip._id}/>
         })}
@@ -149,6 +166,8 @@ const Main = ({}) => {
 
       <MyTrips />
     </div>
+    </>
+
 
     )
 
