@@ -1,14 +1,161 @@
-.tripInfoTitle {
-  color: red;
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Quicksand';
+}
+
+a {
+  text-decoration: none;
+}
+
+#tripDetailsMainContainer {
+  position: relative;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+#tripInfoHeader {
+  margin: 20px 3.33% 0 3.33%;
+  padding: 10px 20px;
+  height: 100px;
+  background-color: #ee6c4e;
+  color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#tripInfoHeader h1 {
+  line-height: 40px;
+  font-size: 40px;
+  margin: 0;
+}
+
+#tripInfoHeader p {
+  margin: 0;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+#tripDetailsContentContainer {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#tripInfoContainer {
+  width: 65%;
 }
 
 .tripInfoImageContainer {
-  height: 300px;
+  border-radius: 10px;
+  height: 600px;
   width: 100%;
+  overflow: hidden;
 }
 
 .tripInfoImage {
   height: 100%;
   width:100%;
-  object-fit: contain;
+  object-fit: cover;
+}
+
+.tripDescriptionContainer {
+  background-color: #293142;
+  padding: 20px;
+  color: white;
+  margin-top: 20px;
+  border-radius: 10px;
+  display: flex;
+}
+
+.tripDescriptionContainer div {
+  padding: 0 20px;
+  width: 50%;
+  height: 100%
+}
+
+.tripDescriptionContainer div h2 {
+  margin-top: 0;
+}
+
+.tripAttendeesContainer {
+  width: 25%;
+}
+
+#requestsHeader {
+  margin-bottom: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #293142;
+}
+
+.tripRequestButtonContainer {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #293142;
+  margin-bottom: 10px;
+}
+
+.tripAttendeesContainer h2 {
+  margin: 0;
+}
+
+.tripAttendeesContainer h3 {
+  margin: 10px 0;
+}
+
+.userContainer {
+  margin: 10px 0;
+  height: 50px;
+  width: 100%;
+  border-radius: 5px;
+  background-color: #293142;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.userContainer p:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.userContainer p {
+  margin: 0;
+  color: white;
+  font-size: 20px;
+}
+
+.userRequestContainer {
+  margin: 10px 0;
+  height: 125px;
+  width: 100%;
+  border-radius: 5px;
+  background-color: #293142;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.userRequestContainer p {
+  margin: 0;
+  color: white;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.userRequestContainer p:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.userRequestButtonContainer {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
 }

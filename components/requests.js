@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import Button from '@mui/material/Button';
 import axios from 'axios';
 
@@ -10,16 +11,15 @@ function Requests(props) {
   useEffect(() => {
     Promise.all(props.requests.map((request) => {
       let users = JSON.stringify([request.userId]);
-      return axios.get('/api/trips/usernames', { params: { users } }).then((user) => {
-        let userData = user.data[0];
+      return axios.get('/api/trips/usernames', { params: { users } }).then((response) => {
+        let userData = response.data[0];
         return ({
           status: request.status,
           userId: request.userId,
-          userName: `${userData.firstName} ${userData.lastName}`
+          userName: `${userData.firstName} ${userData.lastName[0]}.`,
         })
       })
     })).then((userRequests) => {
-      console.log(userRequests);
       setRequests(userRequests);
     })
   }, [props.requests])
@@ -37,31 +37,39 @@ function Requests(props) {
   }
 
   return (
-    <div>
-      <h2>Requests:</h2>
+    <div className='tripAttendeesContainer'>
+      <h2 id='requestsHeader'>Requests</h2>
       <h3>Pending:</h3>
       {requests && <div>
         {requests.map((request) => {
           if (request.status === 'pending') {
             return (
-              <div key={request.userId}>
-                {request.userName}
-                <Button
-                  variant='contained'
-                  onClick={() => {
-                    handleUpdateRequest(request.userId, 'accepted')
-                  }}
-                >
-                  Accept
-                </Button>
-                <Button
-                  variant='contained'
-                  onClick={() => {
-                    handleUpdateRequest(request.userId, 'denied')
-                  }}
-                >
-                  Deny
-                </Button>
+              <div className='userRequestContainer' key={request.userId}>
+                <Link href={`/users/profiles/${request.userId}`}>
+                  <p>{request.userName}</p>
+                </Link>
+                <div className='userRequestButtonContainer'>
+                  <Button
+                    color='success'
+                    variant='contained'
+                    sx={{ width: '45%', height: 35 }}
+                    onClick={() => {
+                      handleUpdateRequest(request.userId, 'accepted')
+                    }}
+                  >
+                    Accept
+                  </Button>
+                  <Button
+                    color='error'
+                    variant='contained'
+                    sx={{ width: '45%', height: 35 }}
+                    onClick={() => {
+                      handleUpdateRequest(request.userId, 'denied')
+                    }}
+                  >
+                    Deny
+                  </Button>
+                </div>
               </div>
             )
           }
@@ -72,16 +80,22 @@ function Requests(props) {
         {requests.map((request) => {
           if (request.status === 'accepted') {
             return (
-              <div key={request.userId}>
-                {request.userName}
-                <Button
-                  variant='contained'
-                  onClick={() => {
-                    handleUpdateRequest(request.userId, 'denied', true)
-                  }}
-                >
-                  Remove from trip
-                </Button>
+              <div className='userRequestContainer' key={request.userId}>
+                <Link href={`/users/profiles/${request.userId}`}>
+                  <p>{request.userName}</p>
+                </Link>
+                <div className='userRequestButtonContainer'>
+                  <Button
+                    color='error'
+                    variant='contained'
+                    sx={{ width: '100%', height: 35, padding: 0 }}
+                    onClick={() => {
+                      handleUpdateRequest(request.userId, 'denied', true)
+                    }}
+                  >
+                    Remove from trip
+                  </Button>
+                </div>
               </div>
             )
           }
@@ -92,16 +106,22 @@ function Requests(props) {
         {requests.map((request) => {
           if (request.status === 'denied') {
             return (
-              <div key={request.userId}>
-                {request.userName}
-                <Button
-                  variant='contained'
-                  onClick={() => {
-                    handleUpdateRequest(request.userId, 'accepted')
-                  }}
-                >
-                  Add to trip
-                </Button>
+              <div className='userRequestContainer' key={request.userId}>
+                <Link href={`/users/profiles/${request.userId}`}>
+                  <p>{request.userName}</p>
+                </Link>
+                <div className='userRequestButtonContainer'>
+                  <Button
+                    color='success'
+                    variant='contained'
+                    sx={{ width: '100%', height: 35, padding: 0 }}
+                    onClick={() => {
+                      handleUpdateRequest(request.userId, 'accepted')
+                    }}
+                  >
+                    Add to trip
+                  </Button>
+                </div>
               </div>
             )
           }

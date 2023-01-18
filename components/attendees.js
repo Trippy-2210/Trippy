@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Button from '@mui/material/Button';
 import axios from 'axios';
 import useSWR from 'swr';
+import Link from 'next/link';
 
 const fetcher = async (token) => {
   let [url, users] = token;
@@ -36,22 +37,60 @@ function Attendees(props) {
 
   if (error) return <div>failed to load</div>
   if (!data) return <div>loading...</div>
-  return (
-    <div>
-      {requestStatus === 'accepted'
-      ? <div>You&apos;re going on this trip!</div>
-      : <Button
-          variant='contained'
-          disabled={requestStatus === 'denied' || requestStatus === 'pending'}
-          onClick={handleRequestToJoin}
-        >
-          {requestStatus === 'pending' ? 'Request pending' : 'Request to join trip'}
-        </Button>}
 
+  return (
+    <div className='tripAttendeesContainer'>
+      <div className='tripRequestButtonContainer'>
+        {requestStatus === 'accepted' &&
+          <Button
+            variant='contained'
+            color='success'
+            disableRipple={true}
+            sx={{ width: '100%', height: 50 }}
+          >
+            You&apos;re going on this trip!
+          </Button>
+        }
+        {requestStatus === 'pending' &&
+          <Button
+            variant='contained'
+            color='primary'
+            sx={{ width: '100%', height: 50 }}
+            disableRipple='true'
+          >
+            Request pending
+          </Button>
+        }
+        {requestStatus === 'denied' &&
+          <Button
+            variant='contained'
+            color='primary'
+            disabled
+            sx={{ width: '100%', height: 50 }}
+          >
+            Request to join trip
+          </Button>
+        }
+        {requestStatus === '' &&
+          <Button
+            variant='contained'
+            color='success'
+            disableRipple={true}
+            sx={{ width: '100%', height: 50 }}
+            onClick={handleRequestToJoin}
+          >
+            Request to join trip
+          </Button>
+        }
+      </div>
       <h2>Attendees:</h2>
       <div>
         {data.map((attendee, index) => (
-          <p key={index}>{attendee.firstName} {attendee.lastName}</p>
+          <div className='userContainer' key={index}>
+            <Link href={`/users/profiles/${attendee._id}`}>
+              <p>{attendee.firstName} {attendee.lastName[0]}.</p>
+            </Link>
+          </div>
         ))}
       </div>
     </div>
@@ -59,3 +98,5 @@ function Attendees(props) {
 };
 
 export default Attendees;
+
+// /users/profile/userID
