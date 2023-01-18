@@ -28,10 +28,10 @@ const TripCard = ({trip}) => {
 
 
 
-  return(
+  return (
     <div className='tripCard' style={cardStyle}>
 
-      <img src={trip.photo} style={imgStyle}></img>
+      <img src={trip.photo} style={imgStyle} alt={'trip image'}></img>
       <div className='cardTitle'>
         <div style={{fontSize: '1rem'}}>{trip.tripTitle}</div>
         <div>{trip.destination}</div>

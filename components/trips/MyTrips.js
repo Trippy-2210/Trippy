@@ -45,7 +45,7 @@ const MyTrips = ({}) => {
     <div className='myTrips' style={{width: '300px', height: '80vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-around', backgroundColor: '#1d53a48c', zIndex: '-4', borderRadius: '25px'}}>
       <h1>My Trips</h1>
       {trips && trips.map(trip => {
-       return <TripCard trip={trip} />
+       return <TripCard trip={trip} key={trip._id}/>
       })}
 
 
