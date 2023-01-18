@@ -3,6 +3,8 @@ import NotificationsDropdown from './NotificationsDropdown.js'
 
 import styles from './header.module.css'
 
+
+
 const Sandwich = ({data}) => {
 
   const [show, setShow] = useState(false)
@@ -25,11 +27,12 @@ const Sandwich = ({data}) => {
         <div></div>
         <div></div>
       </div>
+      <div className={styles.numberOfNotifications}>{data.notifications.length}</div>
       <img
       className={styles.sandwichPhoto}
       src='https://m.media-amazon.com/images/I/41hjCc+ZlDL._AC_SX425_.jpg'
       ></img>
-      {show ? <NotificationsDropdown /> : null}
+      {show ? <NotificationsDropdown data={data}/> : null}
     </div>
 
     )

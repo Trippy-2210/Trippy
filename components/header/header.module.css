@@ -35,6 +35,20 @@
   cursor: pointer;
 }
 
+.numberOfNotifications {
+  position: absolute;
+  font-size: .8rem;
+  text-align: center;
+  top: 3px;
+  right: 8px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid white;
+  background-color: red;
+  color: rgb(255, 255, 255)
+}
+
 .notificationsDropdown {
   position: absolute;
   width: 200%;
