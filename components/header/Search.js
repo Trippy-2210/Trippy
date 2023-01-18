@@ -1,11 +1,12 @@
 import React from 'react';
 import Autocomplete from '@mui/material/Autocomplete';
+import styles from './header.module.css'
 
 const options = ['Option 1', 'Option 2'];
 
 const Search = ({cityFilter, onSubmitHandler}) => {
   return (
-    <form className='search' onSubmit={onSubmitHandler}>
+    <form className={styles.search} onSubmit={onSubmitHandler}>
       <label>
 
         <input type='text'></input>

@@ -310,8 +310,11 @@ const Main = ({}) => {
                 return <TripCard trip={trip} key={trip._id}/>
               })}
       </div>
+      <div style={{display: 'flex', flexDirection: 'column'}}>
+        <div style={{fontSize: '2rem', textAlign: 'center', color: 'red'}}>Create a Trip</div>
+        <MyTrips />
+      </div>
 
-      <MyTrips />
     </div>
     </>
 
