@@ -1,10 +1,10 @@
 import UserTripListItem from './UserTripListItem.js'
 
-const UserTrips = () => {
+const UserTrips = ({ trips }) => {
   return (
     <>
       <div className="user-trips">
-        <UserTripListItem />
+        {trips.map((trip, i) => <UserTripListItem key={i} trip={trip}/>)}
       </div>
     </>
   )
