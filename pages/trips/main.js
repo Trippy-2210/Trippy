@@ -146,10 +146,9 @@ const Main = ({}) => {
             display: 'flex',
             justifyContent: 'space-around',
             width: '100vw',
-            height: '80vh',
-            zIndex: '-10',
+            height: '100vh',
           }}>
-            {/* <Card1 data={data}/> */}
+
             <div className='mainGrid' style={{
             display: 'grid',
             width: '60vw',
@@ -158,6 +157,7 @@ const Main = ({}) => {
             gridRowGap: '20px',
             justifyContent: 'space-between',
             height: '70vh',
+            zIndex: '-10'
           }}>
               {data && data.map(trip => {
                 return <TripCard trip={trip} key={trip._id}/>
