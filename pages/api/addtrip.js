@@ -1,8 +1,9 @@
 import schemas from '../../utils/db';
 export default function handler(req, res) {
   const catcher = (error) => res.status(400).json({ error });
+  let userid = req.headers.userid;
   let data = {
-    ownerId: req.headers.userid,
+    ownerId: userid,
     ...req.body,
   };
   console.log(data);
@@ -10,12 +11,13 @@ export default function handler(req, res) {
     // Process a POST request
     schemas.Trip.create(data)
       .then((result) => {
-        console.log(result._id.toString());
-        console.log('success!');
-        return result._id.toString();
+        schemas.Profile.findOneAndUpdate(
+          { userId: userid },
+          { $push: { trips: result } }
+        );
       })
-      .then((tripId) => {
-        schemas.Profile.findOneAndUpdate({});
+      .then(() => {
+        res.status(201).json('Trip created!');
       })
       .catch(catcher);
   } else {
