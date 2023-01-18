@@ -16,12 +16,26 @@ function Signup() {
       alert('Passwords do not match!');
     } else {
       axios.post('../api/auth/signup', form)
-        .then(() => {window.location.replace('/')});
+        .then((response) => {
+          if (response.data === 'wrong') {
+            alert('That email address is already in use.');
+          } else {
+            window.location.replace('/')
+          }
+        });
     }
   }
 
   return (
-    <Box>
+    <Box
+      sx={{
+        width: "100%",
+        height: "100vh",
+        display: "flex",
+        "flex-direction": "column",
+        "align-items": "center",
+        "justify-content": "center"
+      }}>
     <TextField
       label="Email"
       value={form.email}
@@ -31,9 +45,10 @@ function Signup() {
         formCopy.email = e.target.value;
         setForm(formCopy);
       }}
-      /><br /><br />
+      /><br />
     <TextField
       label="Password"
+      type="password"
       value={form.pw}
       onChange={(e) => {
         e.preventDefault();
@@ -41,9 +56,10 @@ function Signup() {
         formCopy.pw = e.target.value;
         setForm(formCopy);
       }}
-      /><br /> <br />
+      /><br />
     <TextField
       label="Confirm Password"
+      type="password"
       value={form.cpw}
       onChange={(e) => {
         e.preventDefault();
@@ -51,7 +67,7 @@ function Signup() {
         formCopy.cpw = e.target.value;
         setForm(formCopy);
       }}
-      /><br /> <br />
+      /><br />
       <Button
         variant="contained"
         onClick={(e) => {
