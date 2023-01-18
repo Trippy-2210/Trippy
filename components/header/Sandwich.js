@@ -27,7 +27,7 @@ const Sandwich = ({data}) => {
         <div></div>
         <div></div>
       </div>
-      <div className={styles.numberOfNotifications}>{data.notifications.length}</div>
+      {data.notifications.length > 0 ? <div className={styles.numberOfNotifications}>{data.notifications.length}</div> : null}
       <img
       className={styles.sandwichPhoto}
       src='https://m.media-amazon.com/images/I/41hjCc+ZlDL._AC_SX425_.jpg'

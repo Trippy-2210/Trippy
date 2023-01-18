@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import TripCard from './../../components/trips/TripCard.js'
 import MyTrips from './../../components/trips/MyTrips.js';
 import Header from './../../components/header/Header.js';
@@ -131,6 +131,134 @@ let data = [
     requests: [{userId: 5, status: true}],
     users: [1,2],
     messages: [5, 6 ,7]
+  },
+  {
+    _id: 9,
+    tripId: 1,
+    ownerId: 1,
+    tripTitle: 'Vacation in Smallville',
+    destination: 'Smallville',
+    startDate: 'dateformat?',
+    endDate: 'dateformat?',
+    description: 'helping with the farm',
+    activities:['fun stuff', 'other stuff'],
+    budget: 1,
+    photo: 'https://flxt.tmsimg.com/assets/p7893454_b_v13_aa.jpg',
+    requests:[{userId: 4, status: true}],
+    users:[1,2],
+    messages: [1, 2, 3, 4]
+  },
+  {
+    _id: 10,
+    tripId: 2,
+    ownerId: 2,
+    tripTitle: 'Vacation in Gotham City',
+    destination: 'Gotham City',
+    startDate: 'dateformat?',
+    endDate: 'dateformat?',
+    description: 'Help me solve a riddle',
+    activities: ['fun stuff', 'other stuff'],
+    budget: 1,
+    photo: 'https://cdn.mos.cms.futurecdn.net/ujfM8sgekzFenoGfxLphhS-970-80.jpg.webp',
+    requests: [{userId: 5, status: true}],
+    users: [1,2],
+    messages: [5, 6 ,7]
+  },
+  {
+    _id: 11,
+    tripId: 1,
+    ownerId: 1,
+    tripTitle: 'Vacation in Smallville',
+    destination: 'Smallville',
+    startDate: 'dateformat?',
+    endDate: 'dateformat?',
+    description: 'helping with the farm',
+    activities:['fun stuff', 'other stuff'],
+    budget: 1,
+    photo: 'https://flxt.tmsimg.com/assets/p7893454_b_v13_aa.jpg',
+    requests:[{userId: 4, status: true}],
+    users:[1,2],
+    messages: [1, 2, 3, 4]
+  },
+  {
+    _id: 12,
+    tripId: 2,
+    ownerId: 2,
+    tripTitle: 'Vacation in Gotham City',
+    destination: 'Gotham City',
+    startDate: 'dateformat?',
+    endDate: 'dateformat?',
+    description: 'Help me solve a riddle',
+    activities: ['fun stuff', 'other stuff'],
+    budget: 1,
+    photo: 'https://cdn.mos.cms.futurecdn.net/ujfM8sgekzFenoGfxLphhS-970-80.jpg.webp',
+    requests: [{userId: 5, status: true}],
+    users: [1,2],
+    messages: [5, 6 ,7]
+  },
+  {
+    _id: 13,
+    tripId: 1,
+    ownerId: 1,
+    tripTitle: 'Vacation in Smallville',
+    destination: 'Smallville',
+    startDate: 'dateformat?',
+    endDate: 'dateformat?',
+    description: 'helping with the farm',
+    activities:['fun stuff', 'other stuff'],
+    budget: 1,
+    photo: 'https://flxt.tmsimg.com/assets/p7893454_b_v13_aa.jpg',
+    requests:[{userId: 4, status: true}],
+    users:[1,2],
+    messages: [1, 2, 3, 4]
+  },
+  {
+    _id: 14,
+    tripId: 2,
+    ownerId: 2,
+    tripTitle: 'Vacation in Gotham City',
+    destination: 'Gotham City',
+    startDate: 'dateformat?',
+    endDate: 'dateformat?',
+    description: 'Help me solve a riddle',
+    activities: ['fun stuff', 'other stuff'],
+    budget: 1,
+    photo: 'https://cdn.mos.cms.futurecdn.net/ujfM8sgekzFenoGfxLphhS-970-80.jpg.webp',
+    requests: [{userId: 5, status: true}],
+    users: [1,2],
+    messages: [5, 6 ,7]
+  },
+  {
+    _id: 15,
+    tripId: 1,
+    ownerId: 1,
+    tripTitle: 'Vacation in Smallville',
+    destination: 'Smallville',
+    startDate: 'dateformat?',
+    endDate: 'dateformat?',
+    description: 'helping with the farm',
+    activities:['fun stuff', 'other stuff'],
+    budget: 1,
+    photo: 'https://flxt.tmsimg.com/assets/p7893454_b_v13_aa.jpg',
+    requests:[{userId: 4, status: true}],
+    users:[1,2],
+    messages: [1, 2, 3, 4]
+  },
+  {
+    _id: 16,
+    tripId: 2,
+    ownerId: 2,
+    tripTitle: 'Vacation in Gotham City',
+    destination: 'Gotham City',
+    startDate: 'dateformat?',
+    endDate: 'dateformat?',
+    description: 'Help me solve a riddle',
+    activities: ['fun stuff', 'other stuff'],
+    budget: 1,
+    photo: 'https://cdn.mos.cms.futurecdn.net/ujfM8sgekzFenoGfxLphhS-970-80.jpg.webp',
+    requests: [{userId: 5, status: true}],
+    users: [1,2],
+    messages: [5, 6 ,7]
   }
 ]
 
@@ -138,6 +266,7 @@ let data = [
 
 const Main = ({}) => {
 
+  const [ list, setList ] = useState(data)
 
   return(
     <>
@@ -159,7 +288,7 @@ const Main = ({}) => {
             height: '70vh',
             zIndex: '-10'
           }}>
-              {data && data.map(trip => {
+              {list && list.map(trip => {
                 return <TripCard trip={trip} key={trip._id}/>
               })}
       </div>
