@@ -1,0 +1,11 @@
+.fieldAndbutton {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 400px;
+  width: 400px;
+  align-items: flex-end;
+  margin: 15px 0px;
+}
+.activity_text_field {
+  margin-right: 10px;
+}
