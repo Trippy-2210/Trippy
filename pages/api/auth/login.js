@@ -6,12 +6,6 @@ export default async function handler(req, res) {
   let pw = req.body.pw;
   let email = req.body.email;
   let result = await sql`SELECT * FROM users WHERE email = ${email};`
-
-  if (!result[0]) {
-    res.send('wrong');
-    return;
-  }
-
   let salt = result[0].salt;
   let dbPass = result[0].password;
   let hash = crypto.createHash('sha256').update(pw + salt).digest('hex');
@@ -19,8 +13,7 @@ export default async function handler(req, res) {
 
   if (dbPass === hash) {
     await sql`UPDATE sessions SET user_id = ${result[0].id} WHERE session_id = ${session_id};`;
-    res.status(200).send();
-  } else {
-    res.send('wrong');
   }
+
+  res.status(200).send();
 }

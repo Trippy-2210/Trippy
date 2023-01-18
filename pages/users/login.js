@@ -1,6 +1,4 @@
-import { TextField, Box, Button} from '@mui/material';
-import Visibility from '@mui/icons-material/Visibility';
-import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import { TextField, Box, Button } from '@mui/material';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -14,25 +12,11 @@ function Login() {
 
   const submitForm = () => {
     axios.post('../api/auth/login', form)
-      .then (response => {
-        if (response.data === 'wrong') {
-          alert('Wrong username or password');
-        } else {
-          window.location.replace('/');
-        }
-      })
+      .then (() => {window.location.replace('/')})
   }
 
   return (
-    <Box
-      sx={{
-        width: "100%",
-        height: "100vh",
-        display: "flex",
-        "flex-direction": "column",
-        "align-items": "center",
-        "justify-content": "center"
-      }}>
+    <Box>
     <TextField
       label="Email"
       value={form.email}
@@ -42,10 +26,9 @@ function Login() {
         formCopy.email = e.target.value;
         setForm(formCopy);
       }}
-      /><br />
+      /><br /><br />
     <TextField
       label="Password"
-      type="password"
       value={form.pw}
       onChange={(e) => {
         e.preventDefault();
@@ -53,8 +36,7 @@ function Login() {
         formCopy.pw = e.target.value;
         setForm(formCopy);
       }}
-      /><br />
-      <div>
+      /><br /> <br />
       <Button
         variant="contained"
         onClick={(e) => {
@@ -68,7 +50,6 @@ function Login() {
           window.location.replace('./signup')
         }}
         >Signup</Button>
-        </div>
     </Box>
   );
 }
