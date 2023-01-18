@@ -25,7 +25,8 @@ function Attendees(props) {
   async function handleRequestToJoin() {
     return axios.post('/api/trips/tripRequest', {
       tripId: props.tripId,
-      userId: props.userId
+      userId: props.userId,
+      ownerId: props.ownerId,
     }).then(res => {
       props.mutate();
     })
@@ -37,14 +38,15 @@ function Attendees(props) {
   if (!data) return <div>loading...</div>
   return (
     <div>
-      {requestStatus !== 'accepted' &&
-      <Button
-        variant='contained'
-        disabled={requestStatus === 'denied' || requestStatus === 'pending'}
-        onClick={handleRequestToJoin}
-      >
-        {requestStatus === 'pending' ? 'Request pending' : 'Request to join trip'}
-      </Button>}
+      {requestStatus === 'accepted'
+      ? <div>You&apos;re going on this trip!</div>
+      : <Button
+          variant='contained'
+          disabled={requestStatus === 'denied' || requestStatus === 'pending'}
+          onClick={handleRequestToJoin}
+        >
+          {requestStatus === 'pending' ? 'Request pending' : 'Request to join trip'}
+        </Button>}
 
       <h2>Attendees:</h2>
       <div>

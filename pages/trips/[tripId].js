@@ -41,6 +41,7 @@ const TripDetails = (props) => {
       : <Attendees
           userId={userId}
           tripId={tripId}
+          ownerId={data.ownerId}
           mutate={mutate}
           requests={data.requests}
           attendees={data.users}

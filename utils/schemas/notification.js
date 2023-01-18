@@ -1,7 +1,6 @@
 import mongoose from 'mongoose';
 
 const notificationSchema = new mongoose.Schema({
-  _id:       Number,
   userId:    Number,
   tripId:    Number,
   type:      String, // 'message' || 'joinTrip' || 'joinRequest'

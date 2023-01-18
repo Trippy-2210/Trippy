@@ -30,6 +30,7 @@ function Requests(props) {
       userId,
       status,
       remove,
+      sender: props.userId,
     }).then(res => {
       props.mutate();
     })

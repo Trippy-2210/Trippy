@@ -111,7 +111,7 @@ let dummyTrips = [
     activities: ['fun stuff', 'other stuff'],
     budget: 3,
     photo: 'https://cdn.mos.cms.futurecdn.net/ujfM8sgekzFenoGfxLphhS-970-80.jpg.webp',
-    requests: [{userId: 5, status: 'accepted'}, {userId: 5, status: 'accepted'}, {userId: 5, status: 'pending'}, {userId: 5, status: 'pending'}, {userId: 5, status: 'denied'}],
+    requests: [{userId: 1, status: 'accepted'}, {userId: 2, status: 'accepted'}, {userId: 3, status: 'pending'}, {userId: 4, status: 'pending'}, {userId: 5, status: 'denied'}],
     users: [1,2],
     messages: [5, 6 ,7]
   }
@@ -224,28 +224,24 @@ let dummyUserData = [
 
 let dummyNotifications = [
   {
-    _id: 1,
     userId: 1,
     tripId: 1,
     type: 'joinRequest',
     sender: 5
   },
   {
-    _id: 2,
     userId: 2,
     tripId: 2,
     type: 'joinRequest',
     sender: 4
   },
   {
-    _id: 3,
     userId: 2,
     tripId: 1,
     type: 'message',
     sender: 1
   },
   {
-    _id: 4,
     userId: 2,
     tripId: 2,
     type: 'message',
