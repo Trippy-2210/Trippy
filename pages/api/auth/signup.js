@@ -5,6 +5,13 @@ import { NextResponse } from 'next/server';
 export default async function handler(req, res) {
   let pw = req.body.pw;
   let email = req.body.email;
+  let checkEmail = await sql`SELECT * FROM users WHERE email = ${email};`;
+
+  if (checkEmail[0]) {
+    res.send('wrong');
+    return;
+  }
+
   let token = crypto.randomBytes(20).toString('hex');
   const salt = crypto.createHash('sha256').update(token).digest('hex');
   let hash = crypto.createHash('sha256').update(pw + salt).digest('hex');

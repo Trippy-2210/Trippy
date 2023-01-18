@@ -13,7 +13,8 @@ export default async function handler(req, res) {
 
   if (dbPass === hash) {
     await sql`UPDATE sessions SET user_id = ${result[0].id} WHERE session_id = ${session_id};`;
+    res.status(200).send();
+  } else {
+    res.send('wrong');
   }
-
-  res.status(200).send();
 }

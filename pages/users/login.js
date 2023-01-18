@@ -12,11 +12,25 @@ function Login() {
 
   const submitForm = () => {
     axios.post('../api/auth/login', form)
-      .then (() => {window.location.replace('/')})
+      .then ((response) => {
+        if (response.data === 'wrong') {
+          alert('Wrong username or password');
+        } else {
+          window.location.replace('/')
+        }
+      })
   }
 
   return (
-    <Box>
+    <Box
+      sx={{
+        width: "100%",
+        height: "100vh",
+        display: "flex",
+        "flex-direction": "column",
+        "align-items": "center",
+        "justify-content": "center"
+      }}>
     <TextField
       label="Email"
       value={form.email}
@@ -26,9 +40,10 @@ function Login() {
         formCopy.email = e.target.value;
         setForm(formCopy);
       }}
-      /><br /><br />
+      /><br />
     <TextField
       label="Password"
+      type="password"
       value={form.pw}
       onChange={(e) => {
         e.preventDefault();
@@ -36,7 +51,8 @@ function Login() {
         formCopy.pw = e.target.value;
         setForm(formCopy);
       }}
-      /><br /> <br />
+      /><br />
+      <div>
       <Button
         variant="contained"
         onClick={(e) => {
@@ -50,6 +66,7 @@ function Login() {
           window.location.replace('./signup')
         }}
         >Signup</Button>
+        </div>
     </Box>
   );
 }
