@@ -24,6 +24,12 @@ export async function middleware(req, res) {
     authed = true;
   }
 
+  if (authed && (pathname.startsWith('/users/login') || pathname.startsWith('/users/signup'))) {
+    url.pathname = '/';
+    let response = NextResponse.redirect(url);
+    return response;
+  }
+
   if (!authed && !pathname.startsWith('/users/login') && !pathname.startsWith('/users/signup') && !pathname.startsWith('/_next') && !pathname.startsWith('/api/auth')) {
     url.pathname = '/users/login';
     let response = NextResponse.redirect(url);

@@ -36,6 +36,7 @@ function Signup() {
         "align-items": "center",
         "justify-content": "center"
       }}>
+    Sign up <br /><br />
     <TextField
       label="Email"
       value={form.email}
