@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import NotificationsDropdown from './NotificationsDropdown.js'
 
+import styles from './header.module.css'
+
 const Sandwich = ({data}) => {
 
   const [show, setShow] = useState(false)
@@ -8,7 +10,7 @@ const Sandwich = ({data}) => {
 
   return(
     <div
-    className='sandwich'
+    className={styles.sandwich}
     onClick={() => {
       setShow(!show)
       !show ? setStyle({
@@ -18,13 +20,13 @@ const Sandwich = ({data}) => {
 
     style={style}
     >
-      <div className='sandwich-lines'>
+      <div className={styles.sandwichLines}>
         <div></div>
         <div></div>
         <div></div>
       </div>
       <img
-      className='sandwich-photo'
+      className={styles.sandwichPhoto}
       src='https://m.media-amazon.com/images/I/41hjCc+ZlDL._AC_SX425_.jpg'
       ></img>
       {show ? <NotificationsDropdown /> : null}

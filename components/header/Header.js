@@ -15,7 +15,13 @@ const Header = ({data}) => {
       position: 'fixed',
       top: '0',
       left: '0',}}>
-      <div className='headerContainer'>
+      <div
+      className='headerContainer'
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}    >
         <Logo />
         <Search />
         <Sandwich />

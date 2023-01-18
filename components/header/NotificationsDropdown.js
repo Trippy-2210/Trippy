@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-
+import styles from './header.module.css'
 
 
 const NotificationsDropdown = ({}) => {
@@ -14,9 +14,9 @@ const NotificationsDropdown = ({}) => {
 
 
   return(
-    <div className='notificationsDropdown'>
+    <div className={styles.notificationsDropdown}>
 
-      <div className='notificationsContainer'>
+      <div className={styles.notificationsContainer}>
 
         <div>Profile</div>
         {notes.messages ? <div>Messages <span style={{color: 'red'}}>&#40;{notes.messages}&#41;</span></div> : <div>Messages</div>}
