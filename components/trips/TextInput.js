@@ -10,7 +10,7 @@ export default function TextInput({ label, value, setValue }) {
       value={value}
       label={label}
       onChange={handleChange}
-      variant='standard'
+      variant='outlined'
     />
   );
 }
