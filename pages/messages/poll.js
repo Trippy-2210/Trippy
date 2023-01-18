@@ -1,13 +1,34 @@
 import {useState} from 'react';
+import Stack from '@mui/material/Stack';
+import Container from '@mui/material/Container';
+import Button from '@mui/material/Button';
+import { styled } from '@mui/material/styles';
+import Divider from '@mui/material/Divider';
+import Paper from '@mui/material/Paper';
+
+
 
 function Poll() {
-  const [title, setTitle] = useState("Do you like this poll?");
+  const [title, setTitle] = useState("Ask a question?");
   const [options, setOptions] = useState(["Yes", "No"]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  }));
+
   const submit = () => {
     setError("");
+  }
+
+  const onChange = (e) => {
+    let query = e.target.value;
+    console.log(query)
   }
 
 
@@ -23,28 +44,28 @@ function Poll() {
 
   return <div>
     <h1>Create a Poll</h1>
-    <container className="pollContainer">
-    <form>
-      <label for="first">First Option:</label>
-      <input
-      type="text"
-      id="first"
-      name="first"
-      minlength="1"
-      maxlength="60"
-      />
-      <label for="second">Second Option:</label>
-      <input
-      type="text"
-      id="second"
-      name="second"
-      minlength="1"
-      maxlength="60"
-      />
-    </form>
 
-    </container>
-    <button>Create Poll</button>
+    <input value={title} onChange={onChange}/>
+    <Container>
+    <Stack spacing={2}>
+      {options.map((option, i) => {
+        <Item key={i}>
+          <input value={option[0]}/>
+        </Item>
+      })}
+
+    </Stack>
+{/* Items in option array */}
+<Item>
+      {options[0]}
+    </Item>
+    <Item>
+      {options[1]}
+    </Item>
+      <Button variant="text">Submit</Button>
+      <Button variant="text">Submit</Button>
+    </Container>
+
     </div>
 }
 

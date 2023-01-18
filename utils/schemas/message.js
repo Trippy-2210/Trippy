@@ -1,9 +1,8 @@
 import mongoose from 'mongoose';
 
 const messageSchema = new mongoose.Schema({
-  _id:       Number,
-  tripId:    Number,
-  userId:    Number,
+  tripId:    String,
+  userId:    String,
   content:   String,
   createdAt: String
 }, {

@@ -1,13 +1,13 @@
 import mongoose from 'mongoose';
 
 const profileSchema = new mongoose.Schema({
-  _id:            Number,
+  userId:         String,
   firstName:      String,
   lastName:       String,
   bio:            String,
   photo:          String,
-  trips:         [Number], // tripId
-  notifications: [Number]  // notificationId
+  trips:         [String], // tripId
+  notifications: [String]  // notificationId
 }, {
   versionKey: false // You should be aware of the outcome after set to false
 });

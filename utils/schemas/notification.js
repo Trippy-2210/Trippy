@@ -1,11 +1,10 @@
 import mongoose from 'mongoose';
 
 const notificationSchema = new mongoose.Schema({
-  _id:       Number,
-  userId:    Number,
-  tripId:    Number,
+  userId:    String,
+  tripId:    String,
   type:      String, // 'message' || 'joinTrip' || 'joinRequest'
-  sender:    Number  // userId
+  sender:    String  // userId
 }, {
   versionKey: false // You should be aware of the outcome after set to false
 });

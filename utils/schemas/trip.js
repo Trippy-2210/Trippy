@@ -1,8 +1,7 @@
 import mongoose from 'mongoose';
 
 const tripSchema = new mongoose.Schema({
-  _id:            Number,
-  ownerId:        Number,
+  ownerId:        String,
   tripTitle:      String,
   destination:    String,
   startDate:      String,
@@ -13,11 +12,11 @@ const tripSchema = new mongoose.Schema({
   activities:    [String],
 
   requests:       [{
-    userId: Number,
+    userId: String,
     status: Boolean
   }],
-  users:         [Number], // userId
-  messages:      [Number]  // messageId
+  users:         [String], // userId
+  messages:      [String]  // messageId
 }, {
     versionKey: false // You should be aware of the outcome after set to false
 });
