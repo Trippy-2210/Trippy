@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import axios from 'axios'
 import TripCard from './../../components/trips/TripCard.js'
 import MyTrips from './../../components/trips/MyTrips.js';
 import Header from './../../components/header/Header.js';
@@ -274,12 +275,13 @@ const Main = ({}) => {
   const onSubmitHandler = (event) => {
     event.preventDefault()
     let query = event.nativeEvent.target[0].value;
-    console.log(query)
-    // axios.post('/search', {title: query})
-    // .then(response => {
-    //   setSearchList(response.data)
-    //   // if searchlist is empty then display some notice of no match found
-    // })
+
+    axios.get('/api/trips/allTrips', {tripTitle: query})
+    .then(response => {
+      setSearchlist(response.data)
+      console.log(response)
+
+    })
   }
 
 

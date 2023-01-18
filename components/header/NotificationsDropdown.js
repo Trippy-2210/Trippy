@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styles from './header.module.css'
-
+import Link from 'next/link'
 
 const NotificationsDropdown = ({data}) => {
 
@@ -13,15 +13,17 @@ const NotificationsDropdown = ({data}) => {
     })
   }
 
+  <Link href="/blog/hello-world">Blog Post</Link>
 
   return(
     <div className={styles.notificationsDropdown}>
 
       <div className={styles.notificationsContainer}>
 
-        <div>Profile</div>
-        {notes.messages ? <div>Messages <span style={{color: 'red'}}>&#40;{notes.messages}&#41;</span></div> : <div>Messages</div>}
-        {notes.trips ? <div>Trips <span style={{color: 'red'}}>&#40;{notes.trips}&#41;</span></div> : <div>Trips</div>}
+        <Link href="/">Profile</Link>
+        {notes.messages ?
+        <Link href="/messages" className={styles.navLink}>Messages &#40;<span>{notes.messages}</span>&#41;</Link> : <Link href="/messages" className={styles.navLink}>Messages</Link>}
+        {notes.trips ? <Link href="/trips" className={styles.navLink}>Trips &#40;<span >{notes.trips}</span>&#41;</Link> : <Link href="/trips" className={styles.navLink}>Trips</Link>}
 
       </div>
 
