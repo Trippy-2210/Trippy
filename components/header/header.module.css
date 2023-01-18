@@ -1,3 +1,24 @@
+.header {
+  width: 100vw;
+  height: 90px;
+  background-color: rgb(201, 86, 71);
+  top: 0;
+  left: 0;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  margin: 9px auto 9px 9px;
+  width: 200px;
+  height: 80%;
+  font-size: 2rem;
+}
+
 .sandwich {
   position: relative;
   display: flex;

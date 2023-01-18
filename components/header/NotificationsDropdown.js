@@ -4,7 +4,7 @@ import styles from './header.module.css'
 
 const NotificationsDropdown = ({}) => {
   let notes = {messages: 0, trips:0}
-  let data = {notifications: ['message', 'added', 'message', 'message', 'request', 'added']}
+  let data = {notifications: ['message', 'accepted', 'message', 'message', 'joinRequest', 'accepted']}
   if (data.notifications.length) {
     data.notifications.forEach(item => {
       if (item === 'message') notes.messages++
