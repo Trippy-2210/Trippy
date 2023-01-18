@@ -1,7 +1,6 @@
 import styles from './addtrip.module.css';
 import { useState } from 'react';
-import { useRouter } from 'next/router';
-import Script from 'next/script';
+
 import dayjs from 'dayjs';
 import Box from '@mui/material/Box';
 
@@ -13,8 +12,6 @@ import CloudinaryUpload from '../../../components/trips/CloudinaryUpload';
 import ActivityList from '../../../components/trips/ActivityList';
 
 export default function Addtrip() {
-  const router = useRouter();
-  const { uid } = router.query;
   const [tripName, setTripName] = useState('');
   const [location, setLocation] = useState(null);
   const [startDate, setStartDate] = useState(dayjs(new Date()));
@@ -24,7 +21,6 @@ export default function Addtrip() {
 
   return (
     <>
-      <Script src='https://upload-widget.cloudinary.com/global/all.js' />
       <div>
         <Box component='form' m={2} p={2}>
           <div className={styles.tripname_input}>
@@ -72,8 +68,6 @@ export default function Addtrip() {
           <div className={styles.activity_list}>
             <ActivityList />
           </div>
-
-          {uid}
         </Box>
       </div>
     </>
