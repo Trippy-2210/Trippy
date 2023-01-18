@@ -10,6 +10,7 @@ import TextInput from '../../../components/trips/TextInput';
 import TextArea from '../../../components/trips/TextArea';
 import DatePicker from '../../../components/trips/DatePicker';
 import CloudinaryUpload from '../../../components/trips/CloudinaryUpload';
+import ActivityList from '../../../components/trips/ActivityList';
 
 export default function Addtrip() {
   const router = useRouter();
@@ -67,6 +68,9 @@ export default function Addtrip() {
               setUrl={setPhotoUrl}
               label='Add Trip Picture'
             />
+          </div>
+          <div className={styles.activity_list}>
+            <ActivityList />
           </div>
 
           {uid}

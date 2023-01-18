@@ -6,8 +6,7 @@ export default function TextInput({ label, value, setValue }) {
   }
   return (
     <TextField
-      required
-      id='standard-required'
+      id='standard'
       value={value}
       label={label}
       onChange={handleChange}

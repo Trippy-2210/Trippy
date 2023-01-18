@@ -24,3 +24,7 @@
 .upload_image_button {
   margin: 15px 0;
 }
+
+.activity_list {
+  max-width: 400px;
+}

@@ -6,8 +6,7 @@ export default function TextArea({ label, value, setValue, placeholder }) {
   }
   return (
     <TextField
-      required
-      id='standard-required'
+      id='standard'
       value={value}
       label={label}
       onChange={handleChange}
