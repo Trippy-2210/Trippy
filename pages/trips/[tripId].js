@@ -1,23 +1,51 @@
 import { useRouter } from 'next/router';
+import TripInfo from '../../components/tripInfo.js';
+import Requests from '../../components/requests.js';
+import Attendees from '../../components/attendees.js';
 import axios from 'axios';
 import useSWR from 'swr';
 
-const fetcher = async(tripId) => {
-  const response = await axios.get(`http://localhost:3000/api/trips/${tripId}`)
-  return response;
+const fetcher = async (url) => {
+  const response = await axios.get(url);
+  return response.data;
 };
 
 const TripDetails = (props) => {
 
+  // need to figure out how to get userId
+  let userId = 2;
+
+  // extract tripId from url
   let router = useRouter();
   let { tripId } = router.query;
 
-  // need to update this
-  const useSWR('trip data', fetcher);
+  // fetch data for trip
+  const { data, error, mutate } = useSWR(tripId ? `/api/trips/${tripId}` : null, fetcher);
+
+
+  if (error) return <div>failed to load</div>
+  if (!data) return <div>loading...</div>
 
   return (
     <div>
-      Trip details for trip {tripId}
+      <TripInfo
+        data={data}
+      />
+      {userId === data.ownerId
+      ? <Requests
+          mutate={mutate}
+          userId={userId}
+          tripId={tripId}
+          requests={data.requests}
+        />
+      : <Attendees
+          userId={userId}
+          tripId={tripId}
+          mutate={mutate}
+          requests={data.requests}
+          attendees={data.users}
+        />
+      }
     </div>
   )
 }

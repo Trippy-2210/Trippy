@@ -95,8 +95,8 @@ let dummyTrips = [
     activities:['fun stuff', 'other stuff'],
     budget: 1,
     photo: 'https://flxt.tmsimg.com/assets/p7893454_b_v13_aa.jpg',
-    requests:[{userId: 4, status: true}],
-    users:[1,2],
+    requests:[{userId: 1, status: 'accepted'}, {userId: 2, status: 'accepted'}, {userId: 3, status: 'pending'}, {userId: 4, status: 'denied'}, {userId: 5, status: 'accepted'}],
+    users:[1,2,5],
     messages: [1, 2, 3, 4]
   },
   {
@@ -109,9 +109,9 @@ let dummyTrips = [
     endDate: 'dateformat?',
     description: 'Help me solve a riddle',
     activities: ['fun stuff', 'other stuff'],
-    budget: 1,
+    budget: 3,
     photo: 'https://cdn.mos.cms.futurecdn.net/ujfM8sgekzFenoGfxLphhS-970-80.jpg.webp',
-    requests: [{userId: 5, status: true}],
+    requests: [{userId: 5, status: 'accepted'}, {userId: 5, status: 'accepted'}, {userId: 5, status: 'pending'}, {userId: 5, status: 'pending'}, {userId: 5, status: 'denied'}],
     users: [1,2],
     messages: [5, 6 ,7]
   }
