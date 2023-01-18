@@ -1,5 +1,5 @@
 import React from 'react';
-import Card2 from './Card2.jsx'
+import TripCard from '../../../components/trips/TripCard.jsx'
 import MyTrips from './MyTrips.jsx'
 import MyTrips from '../../../components/trips/MyTrips';
 
