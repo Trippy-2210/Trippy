@@ -14,7 +14,7 @@ const TripCard = ({trip}) => {
     justifyContent: 'center',
     backgroundColor: 'antiquewhite',
     borderRadius: '25px',
-    zIndex: '-10',
+
 
   }
   let imgStyle = {
