@@ -3,12 +3,13 @@ import Autocomplete from '@mui/material/Autocomplete';
 
 const options = ['Option 1', 'Option 2'];
 
-const Search = () => {
+const Search = ({cityFilter, onSubmitHandler}) => {
   return (
-    <form className='search'>
+    <form className='search' onSubmit={onSubmitHandler}>
       <label>
 
-        <Autocomplete
+        <input type='text'></input>
+        {/* <Autocomplete
           sx={{
             display: 'inline-block',
             '& input': {
@@ -29,7 +30,9 @@ const Search = () => {
               <input type="text" {...params.inputProps} />
             </div>
           )}
-        />
+        /> */}
+
+
       </label>
 
     </form>

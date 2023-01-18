@@ -267,10 +267,26 @@ let data = [
 const Main = ({}) => {
 
   const [ list, setList ] = useState(data)
+  const [ searchlist, setSearchlist] = useState([])
+  const [ cityFilter, setCityFilter] = useState('')
+
+
+  const onSubmitHandler = (event) => {
+    event.preventDefault()
+    let query = event.nativeEvent.target[0].value;
+    console.log(query)
+    // axios.post('/search', {title: query})
+    // .then(response => {
+    //   setSearchList(response.data)
+    //   // if searchlist is empty then display some notice of no match found
+    // })
+  }
+
+
 
   return(
     <>
-      <Header />
+      <Header cityFilter={cityFilter} onSubmitHandler={onSubmitHandler}/>
       <div className='main' style={{
             display: 'flex',
             justifyContent: 'space-around',
