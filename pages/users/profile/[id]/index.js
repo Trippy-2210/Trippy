@@ -16,12 +16,12 @@ const Profile = () => {
   const { data, error, isLoading } = useSWR(`/api/profiles/${id}`, fetcher)
 
   if (isLoading) return <h2>Loading...</h2>
-  if (error) return <h2>Failed to load</h2>
+  if (error) return <h2>Failed to load profile</h2>
 
   return (
     <div>
-      <UserInfo firstName={data.firstName} lastName={data.lastName} bio={data.bio} photo={data.photo} />
-      {/* <UserTripList /> */}
+      <UserInfo firstName={data.firstName} lastName={data.lastName} bio={data.bio} photo={data.photo} id={data._id}/>
+      {/* <UserTripList ownerId={id}/> */}
     </div>
   )
 }
