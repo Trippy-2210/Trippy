@@ -1,10 +1,12 @@
-const UserInfo = () => {
+import Image from 'next/image'
+
+const UserInfo = ({ firstName, lastName, bio, photo }) => {
   return (
     <>
       <div className="user-info">
-        <h2>First name</h2>
-        <h2>[Profile photo]</h2>
-        <h2>Bio</h2>
+        <Image src={photo} alt="User profile photo"></Image>
+        <h2>{firstName} {lastName}</h2>
+        <p>{bio}</p>
       </div>
     </>
   )
