@@ -5,8 +5,6 @@ import tripSchema         from './schemas/trip.js';
 import messageSchema      from './schemas/message.js';
 import notificationSchema from './schemas/notification.js';
 
-
-
 import mongoose from 'mongoose';
 
 const url = 'mongodb://localhost:27017/trippy';
@@ -22,11 +20,6 @@ const Profile      = new mongoose.model('Profile', profileSchema);
 const Trip         = new mongoose.model('Trip', tripSchema);
 const Message      = new mongoose.model('Message', messageSchema);
 const Notification = new mongoose.model('Notification', notificationSchema);
-
-
-
-
-
 
 let dummyMessages = [
   {
@@ -81,7 +74,6 @@ let dummyMessages = [
 
 ]
 
-
 let dummyTrips = [
   {
     _id: 1,
@@ -116,9 +108,6 @@ let dummyTrips = [
     messages: [5, 6 ,7]
   }
 ]
-
-
-
 
 let dummyProfiles = [
   {
@@ -172,16 +161,6 @@ let dummyProfiles = [
   notifications: [6, 7, 8]
   }
 ]
-
-
-
-
-
-
-
-
-
-
 
 let dummyUserData = [
   {

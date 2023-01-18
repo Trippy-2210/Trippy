@@ -1,0 +1,16 @@
+.messagesContainer {
+  width: 100%;
+  height: 100%;
+}
+
+.messagesMain {
+  flex: 2.5 1 auto;
+}
+
+.messagesTrips {
+  flex: 1 1 auto;
+}
+
+.messagesAttendees {
+  flex: 1 1 auto;
+}
