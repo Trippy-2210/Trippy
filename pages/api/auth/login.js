@@ -6,6 +6,12 @@ export default async function handler(req, res) {
   let pw = req.body.pw;
   let email = req.body.email;
   let result = await sql`SELECT * FROM users WHERE email = ${email};`
+
+  if (!result[0]) {
+    res.send('wrong');
+    return;
+  }
+
   let salt = result[0].salt;
   let dbPass = result[0].password;
   let hash = crypto.createHash('sha256').update(pw + salt).digest('hex');
