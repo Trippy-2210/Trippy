@@ -35,7 +35,7 @@ export default function ActivityList({ activityList, setActivityList }) {
       <div className={styles.fieldAndbutton}>
         <div className={styles.activity_text_field}>
           <TextField
-            variant='standard'
+            variant='outlined'
             label='Activities'
             value={activityInput}
             onChange={(e) => setActivityInput(e.target.value)}

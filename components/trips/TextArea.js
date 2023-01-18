@@ -10,7 +10,7 @@ export default function TextArea({ label, value, setValue, placeholder }) {
       value={value}
       label={label}
       onChange={handleChange}
-      variant='standard'
+      variant='outlined'
       multiline
       placeholder={placeholder}
       fullWidth
