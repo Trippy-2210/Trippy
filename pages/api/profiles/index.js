@@ -1,10 +1,6 @@
-import { connectDB, Profile } from '../../../utils/exampleData'
-
-connectDB();
+import schemas from '../../../utils/db.js';
 
 export default async function handler(req, res) {
-  Profile.find({})
-  .then((profiles) => {
-    res.json(profiles);
-  })
+  const profiles = await schemas.Profile.find();
+  res.status(200).json(profiles);
 }
