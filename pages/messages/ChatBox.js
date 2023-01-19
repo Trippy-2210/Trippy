@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 
-const ChatBox = function({trip}) {
+const ChatBox = function({user, trip}) {
   const [messageData, setMessages] = useState([]);
 
   var renderMessages = function() {
@@ -25,6 +25,26 @@ const ChatBox = function({trip}) {
     return messages;
   };
 
+  var sendMessage = function(e) {
+    e.preventDefault();
+
+    var message = {
+      tripId: trip._id,
+      userId: user,
+      content: e.target.chatInput.value,
+      createdAt: new Date().toISOString()
+    };
+
+    axios.put('/api/messages/addMessage', message)
+      .then(function(response) {
+        console.log(response);
+
+        getMessages();
+      })
+
+    e.target.reset();
+  };
+
   var getMessages = function() {
     if (!trip) {return;}
 
@@ -32,7 +52,6 @@ const ChatBox = function({trip}) {
       .then(function(response) {
         setMessages(response.data);
       })
-
   };
 
   useEffect(getMessages, [trip]);
@@ -42,7 +61,7 @@ const ChatBox = function({trip}) {
       <div className='chat v'>
         {renderMessages()}
       </div>
-      <form>
+      <form onSubmit={sendMessage}>
         <input className='chatInput' name='chatInput' type='text' placeholder='Send a message!'/>
         <input type='submit' style={{display: "none"}}/>
       </form>

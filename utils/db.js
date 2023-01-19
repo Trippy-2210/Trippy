@@ -20,7 +20,7 @@ var schemas = {
   Profile,
   Trip,
   Message,
-  Notification,
+  Notification
 };
 
 export default schemas;
