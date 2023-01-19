@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;600&display=swap');
+
+
+
+body {
+  margin: 0;
+  font-family: 'Quicksand';
+}
+
+.tripInfoTitle {
+  color: red;
+}
+
+.tripInfoImageContainer {
+  height: 300px;
+  width: 100%;
+}
+
+.tripInfoImage {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}

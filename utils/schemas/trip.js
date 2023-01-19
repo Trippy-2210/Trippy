@@ -1,25 +1,29 @@
 import mongoose from 'mongoose';
 
-const tripSchema = new mongoose.Schema({
-  _id:            Number,
-  ownerId:        Number,
-  tripTitle:      String,
-  destination:    String,
-  startDate:      String,
-  endDate:        String,
-  description:    String,
-  budget:         Number,
-  photo:          String,
-  activities:    [String],
+const tripSchema = new mongoose.Schema(
+  {
+    ownerId: String,
+    tripTitle: String,
+    destination: String,
+    startDate: String,
+    endDate: String,
+    description: String,
+    budget: Number,
+    photo: String,
+    activities: [String],
 
-  requests:       [{
-    userId: Number,
-    status: Boolean
-  }],
-  users:         [Number], // userId
-  messages:      [Number]  // messageId
-}, {
-    versionKey: false // You should be aware of the outcome after set to false
-});
+    requests: [
+      {
+        userId: String,
+        status: String, // type string from notifications schema 'pending', 'accepted', or 'denied'
+      },
+    ],
+    users: [String], // userId
+    messages: [String], // message objectId
+  },
+  {
+    versionKey: false, // You should be aware of the outcome after set to false
+  }
+);
 
 export default tripSchema;

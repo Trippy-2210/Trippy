@@ -3,9 +3,24 @@
   flex-wrap: wrap;
   max-width: 400px;
   width: 400px;
-  align-items: flex-end;
-  margin: 15px 0px;
+  align-items: center;
+  margin-top: 15px;
 }
 .activity_text_field {
   margin-right: 10px;
+}
+
+.imagePlaceholder {
+  width: 200px;
+  height: 200px;
+  border: 3px dashed #aaa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1em;
+  margin: 10px 0px;
+  background-color: #ddd;
+}
+.datePicker {
+  width: 150px;
 }
