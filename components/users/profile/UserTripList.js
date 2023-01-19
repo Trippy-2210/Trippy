@@ -2,14 +2,14 @@ import useSWR from 'swr'
 // import { useRouter } from 'next/router'
 import UserTripListItem from './UserTripListItem.js'
 
-const fetcher = async (url) => {
-  const res = await axios.get(url);
-  return res.data;
-}
-
 const UserTrips = ({ ownerId }) => {
   // let router = useRouter();
   // let {id} = router.query;
+
+  const fetcher = async (url) => {
+    const res = await axios.get(url);
+    return res.data;
+  }
 
   const { data, error, isLoading } = useSWR(`/api/profiles/userTrips/${ownerId}`, fetcher)
 
