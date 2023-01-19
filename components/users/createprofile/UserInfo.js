@@ -50,7 +50,7 @@ const UserInfo = () => {
 
         <p>Last name will only be shown in direct messages, not on your public profile</p>
 
-        <textarea required name="bio" minLength="20" maxLength="140" placeholder="About me..." onChange={handleBioChange} value={bio}></textarea>
+        <textarea required name="bio" maxLength="140" placeholder="About me..." onChange={handleBioChange} value={bio}></textarea>
 
         <button type="submit">Continue</button>
       </form>
