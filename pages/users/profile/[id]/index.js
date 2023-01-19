@@ -5,32 +5,29 @@ import useSWR from 'swr'
 import UserInfo from '../../../../components/users/profile/UserInfo.js'
 import UserTripList from '../../../../components/users/profile/UserTripList.js'
 
-// const fetcher = async (url) => {
-//   const res = await axios.get(url, {userId});
-//   return res.data;
-// }
-
-// const { data, error, isLoading } = useSWR(`/api/profiles/${id}`, fetcher)
-
-// if (isLoading) return <h2>Loading...</h2>
-// if (error) return <h2>Failed to load profile</h2>
-
 const Profile = () => {
   const [profileData, setProfileData] = useState({})
   let router = useRouter();
   let {id} = router.query;
 
-  // console.log('OOGA BOOGA undefined id??:', id);
+  const fetcher = async (url) => {
+    const res = await axios.get(url);
+    return res.data;
+  }
 
-  useEffect(() => {
-    axios.get(`/api/profiles/${id}`)
-    .then((res) => setProfileData(res.data))
-    .catch((err) => `Error `)
-  })
+  const { data, error, isLoading } = useSWR(`/api/profiles/${id}`, fetcher)
+
+  if (isLoading) return <h2>Loading...</h2>
+  if (error) {
+    console.log(error)
+    return <h2>Failed to load profile</h2>
+  }
+
+  let user = data[0];
 
   return (
     <div>
-      <UserInfo firstName={profileData.firstName} lastName={profileData.lastName} bio={profileData.bio} photo={profileData.photo} id={profileData._id}/>
+      <UserInfo firstName={user.firstName} lastName={user.lastName} bio={user.bio} photo={user.photo} id={user.userId}/>
       {/* <UserTripList ownerId={id}/> */}
     </div>
   )
