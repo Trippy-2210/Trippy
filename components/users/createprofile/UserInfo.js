@@ -25,7 +25,7 @@ const UserInfo = () => {
 
   const handleProfileCreation = (event) => {
     event.preventDefault()
-    axios.post('/api/profile/form', {
+    axios.post('/api/profiles/form', {
       userId: '',
       firstName: firstName,
       lastName: lastName,
