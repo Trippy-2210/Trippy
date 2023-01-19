@@ -6,10 +6,11 @@ export default function TextInput({ label, value, setValue }) {
   }
   return (
     <TextField
-      id='standard'
+      id={label}
       value={value}
       label={label}
       onChange={handleChange}
+      sx={{ width: 300 }}
       variant='outlined'
     />
   );

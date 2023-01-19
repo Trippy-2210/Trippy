@@ -2,6 +2,7 @@ import styles from './addtrip.module.css';
 import { useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 import dayjs from 'dayjs';
 import Container from '@mui/material/Container';
@@ -62,6 +63,15 @@ export default function Addtrip() {
 
   return (
     <>
+      <Head>
+        <title>Trippy | add your trip</title>
+        <meta
+          name='description'
+          content='Add a trip for others to connect with'
+        />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        {/* <link rel="icon" href="/favicon.ico" /> */}
+      </Head>
       <Header />
       <Container m={2} p={2}>
         <div className={styles.wholePage}>
@@ -99,6 +109,7 @@ export default function Addtrip() {
               </div>
               <div className={styles.description_input}>
                 <TextArea
+                  id='description-input'
                   label='Trip Description'
                   value={tripDescription}
                   setValue={setTripDescription}
@@ -125,6 +136,7 @@ export default function Addtrip() {
           <div>
             <Button
               variant='contained'
+              color='secondary'
               onClick={handleSubmit}
               sx={{ width: 300 }}
             >
