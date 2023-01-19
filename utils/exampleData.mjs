@@ -899,7 +899,40 @@ const messageData = [
 
 
 
-
+{
+  "_id": {
+    "$oid": "63c891715dbe44cebdb31b06"
+  },
+  "ownerId": "3",
+  "tripTitle": "Tempor minim consequat eu reprehenderit proident.",
+  "destination": "Jeff, Pitcairn",
+  "startDate": "2023-02-20T07:15:28.126Z",
+  "endDate": "2023-02-02T19:49:45.219Z",
+  "description": "officia minim culpa eu ad elit amet consequat ipsum aliqua fugiat eiusmod pariatur do sit cillum aliquip elit fugiat mollit",
+  "budget": 2,
+  "photo": "https://i.picsum.photos/id/136/200/200.jpg?hmac=m5kYXq4zQR742H2cLvYw6nX1cJ65qKBb-kY84CbGCaQ",
+  "activities": [
+    "Enim pariatur sunt ut fugiat mollit ullamco amet dolore proident enim.",
+    "Ad sit culpa ad fugiat.",
+    "Proident elit pariatur ipsum consectetur excepteur aliquip proident est in culpa anim est ad.",
+    "Elit consectetur excepteur eiusmod esse ad qui occaecat sit commodo anim pariatur.",
+    "Esse culpa amet consequat pariatur nostrud.",
+    "Consequat consectetur esse ut adipisicing laborum dolor quis enim et in exercitation."
+  ],
+  "requests": [
+    {
+      "userId": "5",
+      "status": "denied",
+      "_id": {
+        "$oid": "63c891715dbe44cebdb31b07"
+      }
+    }
+  ],
+  "users": [
+    "3"
+  ],
+  "messages": []
+}
 
 
 
