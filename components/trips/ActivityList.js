@@ -34,8 +34,10 @@ export default function ActivityList({ activities, setActivities }) {
       <div className={styles.fieldAndbutton}>
         <div className={styles.activity_text_field}>
           <TextField
+            id='activity-input'
             variant='outlined'
             label='Activities'
+            sx={{ width: 300 }}
             value={activityInput}
             onChange={(e) => setActivityInput(e.target.value)}
             onKeyDown={handleAddActivityEnter}
@@ -52,6 +54,11 @@ export default function ActivityList({ activities, setActivities }) {
           {activities.length > 0 &&
             activities.map((activity, index) => (
               <ListItem
+                key={activity}
+                divider={true}
+                sx={{
+                  borderRadius: 2,
+                }}
                 secondaryAction={
                   <IconButton
                     edge='end'
@@ -63,10 +70,9 @@ export default function ActivityList({ activities, setActivities }) {
                       setActivities(newList);
                     }}
                   >
-                    <DeleteIcon />
+                    <DeleteIcon color='error' />
                   </IconButton>
                 }
-                key={activity}
               >
                 <ListItemText primary={activity} />
               </ListItem>

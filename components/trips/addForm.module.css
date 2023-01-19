@@ -4,7 +4,7 @@
   max-width: 400px;
   width: 400px;
   align-items: center;
-  margin: 15px 0px;
+  margin-top: 15px;
 }
 .activity_text_field {
   margin-right: 10px;
@@ -20,4 +20,7 @@
   border-radius: 1em;
   margin: 10px 0px;
   background-color: #ddd;
+}
+.datePicker {
+  width: 150px;
 }

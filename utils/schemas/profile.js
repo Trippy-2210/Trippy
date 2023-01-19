@@ -7,7 +7,7 @@ const profileSchema = new mongoose.Schema(
     lastName: String,
     bio: String,
     photo: String,
-    trips: [String], // tripId
+    trips: [], // tripId
     notifications: [String], // notificationId
   },
   {

@@ -17,6 +17,7 @@
   width: 200px;
   height: 80%;
   font-size: 2rem;
+  font-family: 'Pacifico';
 }
 
 .search input{
@@ -47,7 +48,7 @@
 
 .numberOfNotifications {
   position: absolute;
-  font-size: .8rem;
+  font-size: .7rem;
   text-align: center;
   top: 3px;
   right: 8px;
@@ -56,8 +57,10 @@
   border-radius: 50%;
   border: 1px solid white;
   background-color: red;
-  color: rgb(255, 255, 255)
+  color: rgb(255, 255, 255);
+
 }
+
 
 .notificationsDropdown {
   position: absolute;
