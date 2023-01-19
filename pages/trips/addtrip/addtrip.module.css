@@ -28,3 +28,31 @@
 .activity_list {
   max-width: 400px;
 }
+
+.budgetContainer {
+  margin: 15px 0px;
+}
+.wholePage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+.formItems {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.leftSide {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 30px;
+}
+.rightSide {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 30px;
+  align-items: center;
+}

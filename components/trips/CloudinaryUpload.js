@@ -4,6 +4,9 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import UploadWidget from './UploadWidget';
+import ImageIcon from '@mui/icons-material/Image';
+
+import styles from './addForm.module.css';
 
 export default function CloudinaryWidget({ url, setUrl, label }) {
   const [error, updateError] = useState();
@@ -21,9 +24,19 @@ export default function CloudinaryWidget({ url, setUrl, label }) {
 
   return (
     <div>
-      {url && (
+      {url ? (
         <div>
-          <Image src={url} alt='Uploaded image' width={200} height={200} />
+          <Image
+            src={url}
+            alt='Uploaded image'
+            width={200}
+            height={200}
+            style={{ borderRadius: '1em' }}
+          />
+        </div>
+      ) : (
+        <div className={styles.imagePlaceholder}>
+          <ImageIcon sx={{ color: '#999', fontSize: 50 }} />
         </div>
       )}
       <UploadWidget onUpload={handleOnUpload}>

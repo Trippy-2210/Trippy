@@ -1,4 +1,5 @@
 import TextField from '@mui/material/TextField';
+import styles from './addForm.module.css';
 
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
@@ -17,6 +18,7 @@ export default function DatePicker({ label, value, setValue }) {
         inputFormat='MM/DD/YYYY'
         value={value}
         onChange={handleChange}
+        className={styles.datePicker}
         renderInput={(params) => <TextField {...params} />}
       />
     </LocalizationProvider>

@@ -9,9 +9,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 import styles from './addForm.module.css';
 
-export default function ActivityList({ activityList, setActivityList }) {
+export default function ActivityList({ activities, setActivities }) {
   const [activityInput, setActivityInput] = useState('');
-  const [activities, setActivities] = useState([]);
 
   function handleAddActivity(e) {
     if (activityInput) {
@@ -35,8 +34,10 @@ export default function ActivityList({ activityList, setActivityList }) {
       <div className={styles.fieldAndbutton}>
         <div className={styles.activity_text_field}>
           <TextField
-            variant='standard'
+            id='activity-input'
+            variant='outlined'
             label='Activities'
+            sx={{ width: 300 }}
             value={activityInput}
             onChange={(e) => setActivityInput(e.target.value)}
             onKeyDown={handleAddActivityEnter}
@@ -53,6 +54,11 @@ export default function ActivityList({ activityList, setActivityList }) {
           {activities.length > 0 &&
             activities.map((activity, index) => (
               <ListItem
+                key={activity}
+                divider={true}
+                sx={{
+                  borderRadius: 2,
+                }}
                 secondaryAction={
                   <IconButton
                     edge='end'
@@ -64,10 +70,9 @@ export default function ActivityList({ activityList, setActivityList }) {
                       setActivities(newList);
                     }}
                   >
-                    <DeleteIcon />
+                    <DeleteIcon color='error' />
                   </IconButton>
                 }
-                key={activity}
               >
                 <ListItemText primary={activity} />
               </ListItem>

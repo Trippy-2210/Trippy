@@ -1,4 +1,6 @@
-// import styles from './cards.module.css';
+import styles from './cards.module.css';
+
+import Image from 'next/image'
 
 // const TripCard = ({trip}) => {
 
@@ -28,16 +30,16 @@
 
 
 
-//   return(
-//     <div className='tripCard' style={cardStyle}>
+  return (
+    <div className='tripCard' style={cardStyle}>
 
-//       <img src={trip.photo} style={imgStyle}></img>
-//       <div className='cardTitle'>
-//         <div style={{fontSize: '1rem'}}>{trip.tripTitle}</div>
-//         <div>{trip.destination}</div>
-//         <div style={{fontSize: '.8rem'}}>{trip.startDate} - {trip.endDate}</div>
-//         <div></div>
-//       </div>
+      <img src={trip.photo} style={imgStyle} alt={'trip image'}></img>
+      <div className='cardTitle'>
+        <div style={{fontSize: '1rem'}}>{trip.tripTitle}</div>
+        <div>{trip.destination}</div>
+        <div style={{fontSize: '.8rem'}}>{trip.startDate} - {trip.endDate}</div>
+        <div></div>
+      </div>
 
 
 //     </div>

@@ -39,8 +39,8 @@ export async function middleware(req, res) {
     requestHeaders.set('session_id', result.session_id);
     return NextResponse.next({
       request: {
-        headers: requestHeaders
-      }
+        headers: requestHeaders,
+      },
     });
   }
 }
