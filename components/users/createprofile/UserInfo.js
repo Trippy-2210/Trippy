@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import axios from 'axios'
+import { useRouter } from 'next/router'
 
 const UserInfo = () => {
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [bio, setBio] = useState('')
+  const router = useRouter()
 
   const handleFirstNameChange = (event) => {
     setFirstName(event.target.value)
@@ -20,15 +22,19 @@ const UserInfo = () => {
 
   const handleProfileCreation = (event) => {
     event.preventDefault()
-    // axios.post()
-    console.log('FORM SUBMITTED')
+    axios.post('/api/profile/form', {
+      userId: '',
+      firstName: firstName,
+      lastName: lastName,
+      bio: bio,
+      photo: ''
+    })
+    .then(() => router.push('/'))
   }
-
-
 
   return (
   <div className="user-info">
-    <form action="/api/profile/form" method="post">
+    <form onSubmit={handleProfileCreation}>
       <label htmlFor="first">First name:</label>
       <input required type="text" name="firstName" minLength="1" maxLength="20" placeholder="First name" onChange={handleFirstNameChange} value={firstName}></input>
 
