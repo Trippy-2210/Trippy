@@ -1,5 +1,3 @@
-// import userDataSchema from './schemas/userData.js';
-// import sessionSchema from './schemas/session.js';
 import profileSchema from './schemas/profile.js';
 import tripSchema from './schemas/trip.js';
 import messageSchema from './schemas/message.js';
