@@ -1,20 +1,20 @@
-import userDataSchema from './schemas/userData.js';
-import sessionSchema from './schemas/session.js';
+// import userDataSchema from './schemas/userData.js';
+// import sessionSchema from './schemas/session.js';
 import profileSchema from './schemas/profile.js';
 import tripSchema from './schemas/trip.js';
 import messageSchema from './schemas/message.js';
 import notificationSchema from './schemas/notification.js';
 
-// import mongoose from 'mongoose';
+import mongoose from 'mongoose';
 
 const url = 'mongodb://localhost:27017/trippy';
 const options = { useNewUrlParser: true, useUnifiedTopology: true };
 
-// mongoose.set('strictQuery', true);
-// mongoose.connect(url, options);
+mongoose.set('strictQuery', true);
+mongoose.connect(url, options);
 
-const UserData = new mongoose.model('UserData', userDataSchema);
-const Session = new mongoose.model('Session', sessionSchema);
+// const UserData = new mongoose.model('UserData', userDataSchema);
+// const Session = new mongoose.model('Session', sessionSchema);
 
 const Profile = new mongoose.model('Profile', profileSchema);
 const Trip = new mongoose.model('Trip', tripSchema);
@@ -254,9 +254,9 @@ Trip.insertMany(dummyTrips).then((response) => {
   console.log('Inserted trips');
 });
 
-UserData.insertMany(dummyUserData).then((response) => {
-  console.log('Inserted user data');
-});
+// UserData.insertMany(dummyUserData).then((response) => {
+//   console.log('Inserted user data');
+// });
 
 Notification.insertMany(dummyNotifications).then((response) => {
   console.log('Inserted notifications');
