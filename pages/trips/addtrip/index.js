@@ -118,7 +118,7 @@ export default function Addtrip() {
               </div>
             </div>
             <div className={styles.rightSide}>
-              <div className={styles.upload_image_button}>
+              <div className={styles.uploadImageContainer}>
                 <CloudinaryUpload
                   url={photoUrl}
                   setUrl={setPhotoUrl}
