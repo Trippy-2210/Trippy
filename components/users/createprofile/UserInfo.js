@@ -3,7 +3,6 @@ import axios from 'axios'
 import { useRouter } from 'next/router'
 import CloudinaryUpload from '../../../components/trips/CloudinaryUpload';
 import { TextField, Button, Box } from '@mui/material';
-import styles from './createProfileForm.module.css'
 
 const UserInfo = () => {
   const [firstName, setFirstName] = useState('')
