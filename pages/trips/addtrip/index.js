@@ -1,11 +1,13 @@
 import styles from './addtrip.module.css';
 import { useState } from 'react';
 import axios from 'axios';
+import { useRouter } from 'next/router';
 
 import dayjs from 'dayjs';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 
+import Header from '../../../components/header/Header';
 import PlaceAutocomplete from '../../../components/trips/PlaceAutocomplete';
 import TextInput from '../../../components/trips/TextInput';
 import TextArea from '../../../components/trips/TextArea';
@@ -28,6 +30,7 @@ export default function Addtrip() {
   const [budget, setBudget] = useState(null);
   const [open, setOpen] = useState(false);
   const [alertString, setAlertString] = useState('');
+  const router = useRouter();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -47,12 +50,19 @@ export default function Addtrip() {
       setAlertString(newAlertString);
       setOpen(true);
     } else {
-      axios.post('/api/addtrip', data).catch((err) => console.log(err));
+      axios
+        .post('/api/trips/addtrip', data)
+        .then((response) => {
+          console.log(response);
+          router.push(response.data);
+        })
+        .catch((err) => console.log(err));
     }
   }
 
   return (
     <>
+      <Header />
       <Container m={2} p={2}>
         <div className={styles.wholePage}>
           <div className={styles.formItems}>

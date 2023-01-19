@@ -1,23 +1,24 @@
-import schemas from '../../utils/db';
+import schemas from '../../../utils/db';
 export default function handler(req, res) {
   const catcher = (error) => res.status(400).json({ error });
   let userid = req.headers.userid;
+  let endpoint = '/trips/';
   let data = {
     ownerId: userid,
     ...req.body,
   };
-  console.log(data);
   if (req.method === 'POST') {
-    // Process a POST request
     schemas.Trip.create(data)
       .then((result) => {
-        schemas.Profile.findOneAndUpdate(
+        endpoint += result._id.toString();
+        return schemas.Profile.findOneAndUpdate(
           { userId: userid },
           { $push: { trips: result } }
         );
       })
       .then(() => {
-        res.status(201).json('Trip created!');
+        console.log(endpoint);
+        res.status(201).json(endpoint);
       })
       .catch(catcher);
   } else {

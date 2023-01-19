@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server'
+import { NextResponse } from 'next/server';
 
 // This function can be marked `async` if using `await` inside
 export function middleware(request, res) {
@@ -7,17 +7,21 @@ export function middleware(request, res) {
   const url = request.nextUrl.clone();
   const pathname = url.pathname;
 
-  if (!authed && !pathname.startsWith('/login') && !pathname.startsWith('/_next')) {
+  if (
+    !authed &&
+    !pathname.startsWith('/login') &&
+    !pathname.startsWith('/_next')
+  ) {
     url.pathname = '/login';
     let response = NextResponse.redirect(url);
     response.cookies.set('logged', 'no');
     return response;
   } else {
-    requestHeaders.set('userid', '1337');
+    requestHeaders.set('userid', '1');
     return NextResponse.next({
       request: {
-        headers: requestHeaders
-      }
+        headers: requestHeaders,
+      },
     });
   }
 }
