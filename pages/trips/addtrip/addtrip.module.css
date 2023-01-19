@@ -1,16 +1,16 @@
 .tripform_autocomplete {
-  margin: 15px 0px;
+  margin: 20px 0px;
 }
 
 .tripname_input {
-  margin: 15px 0px;
+  margin: 20px 0px;
 }
 
 .choosedates {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin: 15px 0px;
+  margin: 20px 0px;
 }
 
 .datesTO {
@@ -19,6 +19,7 @@
 
 .description_input {
   max-width: 400px;
+  margin: 20px 0px;
 }
 
 .uploadImageContainer {
@@ -30,7 +31,7 @@
 }
 
 .budgetContainer {
-  margin: 15px 0px;
+  margin: 20px 0px;
 }
 .wholePage {
   display: flex;

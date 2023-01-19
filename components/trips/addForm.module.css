@@ -24,3 +24,8 @@
 .datePicker {
   width: 150px;
 }
+
+.budgetLabel {
+  font-size: 19px;
+  margin-bottom: 10px;
+}
