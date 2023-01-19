@@ -30,7 +30,7 @@ const UserInfo = () => {
       firstName: firstName,
       lastName: lastName,
       bio: bio,
-      photo: ''
+      photo: photoUrl
     })
     .then(() => router.push('/'))
   }
