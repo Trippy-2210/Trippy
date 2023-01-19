@@ -26,7 +26,13 @@ export default function CloudinaryWidget({ url, setUrl, label }) {
     <div>
       {url ? (
         <div>
-          <Image src={url} alt='Uploaded image' width={200} height={200} />
+          <Image
+            src={url}
+            alt='Uploaded image'
+            width={200}
+            height={200}
+            style={{ borderRadius: '1em' }}
+          />
         </div>
       ) : (
         <div className={styles.imagePlaceholder}>

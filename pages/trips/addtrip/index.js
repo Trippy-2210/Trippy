@@ -3,7 +3,7 @@ import { useState } from 'react';
 import axios from 'axios';
 
 import dayjs from 'dayjs';
-import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 
 import PlaceAutocomplete from '../../../components/trips/PlaceAutocomplete';
@@ -53,67 +53,76 @@ export default function Addtrip() {
 
   return (
     <>
-      <div>
-        <Box component='form' m={2} p={2}>
-          <div className={styles.tripname_input}>
-            <TextInput
-              label='Trip Name'
-              value={tripName}
-              setValue={setTripName}
-            />
+      <Container m={2} p={2}>
+        <div className={styles.wholePage}>
+          <div className={styles.formItems}>
+            <div className={styles.leftSide}>
+              <div className={styles.tripname_input}>
+                <TextInput
+                  label='Trip Name'
+                  value={tripName}
+                  setValue={setTripName}
+                />
+              </div>
+              <div className={styles.tripform_autocomplete}>
+                <PlaceAutocomplete
+                  label='Where to?'
+                  value={location}
+                  setValue={setLocation}
+                />
+              </div>
+              <div className={styles.choosedates}>
+                <DatePicker
+                  label='Start Date'
+                  value={startDate}
+                  setValue={setStartDate}
+                />
+                <div className={styles.datesTO}>to</div>
+                <DatePicker
+                  label='End Date'
+                  value={endDate}
+                  setValue={setEndDate}
+                />
+              </div>
+              <div className={styles.budgetContainer}>
+                <SelectBudget value={budget} setValue={setBudget} />
+              </div>
+              <div className={styles.description_input}>
+                <TextArea
+                  label='Trip Description'
+                  value={tripDescription}
+                  setValue={setTripDescription}
+                  placeholder='Tell us about your trip!'
+                />
+              </div>
+            </div>
+            <div className={styles.rightSide}>
+              <div className={styles.upload_image_button}>
+                <CloudinaryUpload
+                  url={photoUrl}
+                  setUrl={setPhotoUrl}
+                  label='Add Trip Picture'
+                />
+              </div>
+              <div className={styles.activity_list}>
+                <ActivityList
+                  activities={activities}
+                  setActivities={setActivities}
+                />
+              </div>
+            </div>
           </div>
-          <div className={styles.tripform_autocomplete}>
-            <PlaceAutocomplete
-              label='Where to?'
-              value={location}
-              setValue={setLocation}
-            />
-          </div>
-          <div className={styles.choosedates}>
-            <DatePicker
-              label='Start Date'
-              value={startDate}
-              setValue={setStartDate}
-            />
-            <div className={styles.datesTO}>to</div>
-            <DatePicker
-              label='End Date'
-              value={endDate}
-              setValue={setEndDate}
-            />
-          </div>
-          <div className={styles.budgetContainer}>
-            <SelectBudget value={budget} setValue={setBudget} />
-          </div>
-          <div className={styles.description_input}>
-            <TextArea
-              label='Trip Description'
-              value={tripDescription}
-              setValue={setTripDescription}
-              placeholder='Tell us about your trip!'
-            />
-          </div>
-          <div className={styles.upload_image_button}>
-            <CloudinaryUpload
-              url={photoUrl}
-              setUrl={setPhotoUrl}
-              label='Add Trip Picture'
-            />
-          </div>
-          <div className={styles.activity_list}>
-            <ActivityList
-              activities={activities}
-              setActivities={setActivities}
-            />
-          </div>
-
           <div>
-            <Button variant='contained' onClick={handleSubmit}>
+            <Button
+              variant='contained'
+              onClick={handleSubmit}
+              sx={{ width: 300 }}
+            >
               Add Trip
             </Button>
           </div>
-        </Box>
-      </div>
+        </div>
+      </Container>
       <ErrorSnackbar open={open} setOpen={setOpen} message={alertString} />
     </>
   );

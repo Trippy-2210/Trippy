@@ -52,6 +52,11 @@ export default function ActivityList({ activities, setActivities }) {
           {activities.length > 0 &&
             activities.map((activity, index) => (
               <ListItem
+                key={activity}
+                divider={true}
+                sx={{
+                  borderRadius: 2,
+                }}
                 secondaryAction={
                   <IconButton
                     edge='end'
@@ -66,7 +71,6 @@ export default function ActivityList({ activities, setActivities }) {
                     <DeleteIcon />
                   </IconButton>
                 }
-                key={activity}
               >
                 <ListItemText primary={activity} />
               </ListItem>
