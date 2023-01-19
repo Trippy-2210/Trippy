@@ -1,8 +1,7 @@
 import schemas from '../../../utils/db.js';
 
 export default async function handler(req, res) {
-  const profile = await schemas.Profile.findById(req.query.id);
-  console.log(`***** profile: ${profile} *****`)
+  const profile = await schemas.Profile.find({userId: req.query.id});
   if (profile !== null) {
     res.status(200).json(profile);
   } else {

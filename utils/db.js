@@ -10,8 +10,8 @@ const options = { useNewUrlParser: true, useUnifiedTopology: true };
 mongoose.set('strictQuery', true);
 mongoose.connect(url, options);
 
-const UserData = mongoose.models.UserData || new mongoose.model('UserData', userDataSchema);
-const Session = mongoose.models.Session || new mongoose.model('Session', sessionSchema);
+// const UserData = mongoose.models.UserData || new mongoose.model('UserData', userDataSchema);
+// const Session = mongoose.models.Session || new mongoose.model('Session', sessionSchema);
 
 const Profile = mongoose.models.Profile || new mongoose.model('Profile', profileSchema);
 const Trip = mongoose.models.Trip || new mongoose.model('Trip', tripSchema);
@@ -19,6 +19,8 @@ const Message = mongoose.models.Message || new mongoose.model('Message', message
 const Notification = mongoose.models.Notification || new mongoose.model('Notification', notificationSchema);
 
 var schemas = {
+  // UserData,
+  // Session,
   Profile,
   Trip,
   Message,

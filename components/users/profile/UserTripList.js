@@ -1,32 +1,26 @@
 import useSWR from 'swr'
-// import { useRouter } from 'next/router'
 import UserTripListItem from './UserTripListItem.js'
-
-const fetcher = async (url) => {
-  const res = await axios.get(url);
-  return res.data;
-}
+import axios from 'axios'
+import MyTrips from '../../../components/trips/MyTrips.js'
 
 const UserTrips = ({ ownerId }) => {
-  // let router = useRouter();
-  // let {id} = router.query;
 
-  const { data, error, isLoading } = useSWR(`/api/trips`, fetcher)
+  const fetcher = async (url) => {
+    const res = await axios.get(url);
+    return res.data;
+  }
+
+  const { data, error, isLoading } = useSWR(`/api/profiles/userTrips/${ownerId}`, fetcher)
 
   if (isLoading) return <h2>Loading...</h2>
-  if (error) return <h2>Failed to load trips</h2>
+  if (error) {
+    console.log(error)
+    return <h2>Failed to load trips</h2>
+  }
+  let trips = data;
 
   return (
-    <>
-      <div className="user-trips">
-        {data.map((trip, i) => {
-          if (trip.ownerId === ownerId) {
-            console.log('trip owner id:', trip.ownerId);
-            return <UserTripListItem key={i} trip={trip}/>
-          }
-        })}
-      </div>
-    </>
+    <MyTrips trips={trips}/>
   )
 }
 
