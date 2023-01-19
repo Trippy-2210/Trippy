@@ -1,5 +1,7 @@
 import styles from './cards.module.css';
 
+import Image from 'next/image'
+
 const TripCard = ({trip}) => {
 
 
