@@ -1,3 +1,3 @@
 export default async function handler(req, res) {
-  res.status(200).json(req.headers.userid);
+  console.log(req.headers.userid)
 }
