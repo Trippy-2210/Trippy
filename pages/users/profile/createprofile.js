@@ -2,7 +2,7 @@ import ProfilePhoto from '../../../components/users/createprofile/ProfilePhoto.j
 import UserInfo from '../../../components/users/createprofile/UserInfo.js'
 
 
-function CreateProfile() {
+const CreateProfile = () => {
   return (
     <>
       <h1>Create Profile</h1>
