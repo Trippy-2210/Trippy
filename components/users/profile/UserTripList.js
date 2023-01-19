@@ -1,6 +1,7 @@
 import useSWR from 'swr'
 import UserTripListItem from './UserTripListItem.js'
 import axios from 'axios'
+import MyTrips from '../../../components/trips/MyTrips.js'
 
 const UserTrips = ({ ownerId }) => {
 
@@ -19,11 +20,7 @@ const UserTrips = ({ ownerId }) => {
   let trips = data;
 
   return (
-    <>
-      <div className="user-trips">
-        {trips.map((trip, i) =>  <UserTripListItem key={i} trip={trip}/>)}
-      </div>
-    </>
+    <MyTrips trips={trips}/>
   )
 }
 
