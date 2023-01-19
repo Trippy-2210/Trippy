@@ -8,7 +8,7 @@ import ImageIcon from '@mui/icons-material/Image';
 
 import styles from './addForm.module.css';
 
-export default function CloudinaryWidget({ url, setUrl, label }) {
+export default function CloudinaryWidget({ url, setUrl, label, centered}) {
   const [error, updateError] = useState();
 
   function handleOnUpload(error, result, widget) {
@@ -22,8 +22,14 @@ export default function CloudinaryWidget({ url, setUrl, label }) {
     setUrl(result?.info?.secure_url);
   }
 
+  const centeredStyle = {
+    display: "flex",
+    "flexDirection": "column",
+    "alignItems": "center"
+  }
+
   return (
-    <div>
+    <div style={centered ? centeredStyle : {}}>
       {url ? (
         <div>
           <Image src={url} alt='Uploaded image' width={200} height={200} />
