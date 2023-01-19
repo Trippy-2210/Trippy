@@ -35,7 +35,10 @@ function Attendees(props) {
 
   const { data, error } = useSWR(props.attendees ? [`/api/trips/usernames`, JSON.stringify(props.attendees)] : null, fetcher);
 
-  if (error) return <div>failed to load</div>
+  if (error) {
+    console.log(error);
+    return <div>failed to load</div>
+  }
   if (!data) return <div>loading...</div>
 
   return (

@@ -21,7 +21,7 @@ a {
 #tripInfoHeader {
   margin: 20px 3.33% 0 3.33%;
   padding: 10px 20px;
-  height: 100px;
+  min-height: 100px;
   background-color: #ee6c4e;
   color: white;
   border-radius: 10px;
@@ -33,7 +33,7 @@ a {
 #tripInfoHeader h1 {
   line-height: 40px;
   font-size: 40px;
-  margin: 0;
+  margin: 0 0 10px 0;
 }
 
 #tripInfoHeader p {

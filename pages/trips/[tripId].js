@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
-import TripInfo from '../../components/tripInfo.js';
-import Requests from '../../components/requests.js';
-import Attendees from '../../components/attendees.js';
+import TripInfo from '../../components/trips/tripInfo.js';
+import Requests from '../../components/trips/requests.js';
+import Attendees from '../../components/trips/attendees.js';
 import axios from 'axios';
 import useSWR from 'swr';
 
@@ -28,14 +28,14 @@ const TripDetails = (props) => {
     <div id="tripDetailsMainContainer">
       <div id='tripInfoHeader'>
         <h1 className='tripInfoTitle'>{trip.tripTitle}</h1>
-        <p>{trip.destination} | {trip.startDate} - {trip.endDate} | {('$').repeat(trip.budget)}
+        <p>{trip.destination} | {new Date(trip.startDate).toLocaleDateString('en-US')} - {new Date(trip.endDate).toLocaleDateString('en-US')} | {('$').repeat(trip.budget)}
         </p>
       </div>
       <div id='tripDetailsContentContainer'>
         <TripInfo
           data={trip}
         />
-        {Number(userId) === trip.ownerId
+        {userId === trip.ownerId
         ? <Requests
             mutate={mutate}
             userId={userId}

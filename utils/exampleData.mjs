@@ -962,10 +962,19 @@ const tripData = [
       {
         "userId": "5",
         "status": "denied"
-      }
+      },
+      {
+        "userId": "1",
+        "status": "accepted"
+      },
+      {
+        "userId": "4",
+        "status": "pending"
+      },
     ],
     "users": [
-      "3"
+      "3",
+      "1"
     ],
     "messages": []
   },
@@ -988,11 +997,35 @@ const tripData = [
     "requests": [
       {
         "userId": "5",
+        "status": "pending"
+      },
+      {
+        "userId": "4",
+        "status": "accepted"
+      },
+      {
+        "userId": "7",
+        "status": "accepted"
+      },
+      {
+        "userId": "3",
+        "status": "accepted"
+      },
+      {
+        "userId": "1",
+        "status": "accepted"
+      },
+      {
+        "userId": "8",
+        "status": "pending"
+      },
+      {
+        "userId": "2",
         "status": "denied"
-      }
+      },
     ],
     "users": [
-      "7",
+      "6",
       "4",
       "7",
       "3",
@@ -1020,12 +1053,21 @@ const tripData = [
     ],
     "requests": [
       {
-        "userId": "5",
+        "userId": "1",
         "status": "accepted"
+      },
+      {
+        "userId": "5",
+        "status": "pending"
+      },
+      {
+        "userId": "4",
+        "status": "denied"
       }
     ],
     "users": [
-      "1"
+      "1",
+      "2"
     ],
     "messages": []
   },
@@ -1048,12 +1090,36 @@ const tripData = [
     ],
     "requests": [
       {
-        "userId": "5",
+        "userId": "1",
         "status": "accepted"
+      },
+      {
+        "userId": "8",
+        "status": "accepted"
+      },
+      {
+        "userId": "4",
+        "status": "accepted"
+      },
+      {
+        "userId": "3",
+        "status": "accepted"
+      },
+      {
+        "userId": "6",
+        "status": "denied"
+      },
+      {
+        "userId": "5",
+        "status": "pending"
+      },
+      {
+        "userId": "9",
+        "status": "pending"
       }
     ],
     "users": [
-      "8",
+      "1",
       "8",
       "4",
       "3",
@@ -1110,14 +1176,31 @@ const tripData = [
     ],
     "requests": [
       {
+        "userId": "4",
+        "status": "accepted"
+      },
+      {
+        "userId": "6",
+        "status": "accepted"
+      },
+      {
+        "userId": "1",
+        "status": "accepted"
+      },
+      {
         "userId": "5",
+        "status": "pending"
+      },
+      {
+        "userId": "7",
         "status": "denied"
-      }
+      },
     ],
     "users": [
       "4",
       "3",
-      "1"
+      "1",
+      "6"
     ],
     "messages": []
   },
