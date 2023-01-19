@@ -2,30 +2,30 @@ import styles from './cards.module.css';
 
 import Image from 'next/image'
 
-// const TripCard = ({trip}) => {
+const TripCard = ({trip}) => {
 
 
-//   let cardStyle = {
+  let cardStyle = {
 
-//     width: '240px',
-//     height: '280px',
-//     position:' relative',
-//     display: 'flex',
-//     flexDirection: 'column',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//     backgroundColor: 'antiquewhite',
-//     borderRadius: '25px',
+    width: '240px',
+    height: '280px',
+    position:' relative',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'antiquewhite',
+    borderRadius: '25px',
 
 
-//   }
-//   let imgStyle = {
-//     objectFit: 'cover',
-//     width: '80%',
-//     aspectRatio: '1',
-//     borderRadius: '25px',
-//     transform: 'translate(0px, -10px)'
-//   }
+  }
+  let imgStyle = {
+    objectFit: 'cover',
+    width: '80%',
+    aspectRatio: '1',
+    borderRadius: '25px',
+    transform: 'translate(0px, -10px)'
+  }
 
 
 
@@ -42,10 +42,10 @@ import Image from 'next/image'
       </div>
 
 
-//     </div>
+     </div>
 
-//     )
+    )
 
-// };
+};
 
-// export default TripCard;
+export default TripCard;

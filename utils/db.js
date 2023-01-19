@@ -10,20 +10,22 @@ const options = { useNewUrlParser: true, useUnifiedTopology: true };
 mongoose.set('strictQuery', true);
 mongoose.connect(url, options);
 
-const Profile =
-  mongoose.models.Profile || new mongoose.model('Profile', profileSchema);
+const UserData = mongoose.models.UserData || new mongoose.model('UserData', userDataSchema);
+const Session = mongoose.models.Session || new mongoose.model('Session', sessionSchema);
+
+const Profile = mongoose.models.Profile || new mongoose.model('Profile', profileSchema);
 const Trip = mongoose.models.Trip || new mongoose.model('Trip', tripSchema);
-const Message =
-  mongoose.models.Message || new mongoose.model('Message', messageSchema);
-const Notification =
-  mongoose.models.Notification ||
-  new mongoose.model('Notification', notificationSchema);
+const Message = mongoose.models.Message || new mongoose.model('Message', messageSchema);
+const Notification = mongoose.models.Notification || new mongoose.model('Notification', notificationSchema);
 
 var schemas = {
   Profile,
   Trip,
   Message,
-  Notification,
+  Notification
 };
 
 export default schemas;
+
+
+// import {User, Trip, Message} from '../db.js';
