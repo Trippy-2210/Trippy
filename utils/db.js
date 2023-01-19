@@ -1,4 +1,3 @@
-
 import profileSchema from './schemas/profile.js';
 import tripSchema from './schemas/trip.js';
 import messageSchema from './schemas/message.js';

@@ -15,11 +15,11 @@ const tripSchema = new mongoose.Schema(
     requests: [
       {
         userId: String,
-        status: Boolean,
+        status: String, // type string from notifications schema 'pending', 'accepted', or 'denied'
       },
     ],
     users: [String], // userId
-    messages: [String], // messageId
+    messages: [String], // message objectId
   },
   {
     versionKey: false, // You should be aware of the outcome after set to false
