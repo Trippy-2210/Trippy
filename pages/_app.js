@@ -1,11 +1,13 @@
 import '../styles/globalStyles.css';
-import '../styles/messages.css';
-
+import { ThemeProvider } from '@mui/material';
+import { theme } from '../styles/styles.js';
 
 export default function App({ Component, pageProps }) {
   return (
-    <div className='mainContainer v'>
-      <Component {...pageProps} />
-    </div>
+    <ThemeProvider theme={theme}>
+      <>
+        <Component {...pageProps} />
+      </>
+    </ThemeProvider>
   );
 }

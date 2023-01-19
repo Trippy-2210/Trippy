@@ -19,8 +19,6 @@ const Message = mongoose.models.Message || new mongoose.model('Message', message
 const Notification = mongoose.models.Notification || new mongoose.model('Notification', notificationSchema);
 
 var schemas = {
-  // UserData,
-  // Session,
   Profile,
   Trip,
   Message,

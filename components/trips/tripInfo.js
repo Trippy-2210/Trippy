@@ -3,9 +3,7 @@ import Image from 'next/image';
 function TripInfo({data}) {
 
   return (
-    <div>
-      <h1 className='tripInfoTitle'>{data.tripTitle}</h1>
-      <p>{data.destination} | {data.startDate} - {data.endDate} | {('$').repeat(data.budget)}</p>
+    <div id='tripInfoContainer'>
       <div className="tripInfoImageContainer">
         {/* <Image
           src={data.photo}
@@ -19,12 +17,20 @@ function TripInfo({data}) {
           alt='image of the destination city'
         />
       </div>
-      <p>{data.description}</p>
-      <ul>
-        {data.activities.map((activity) => (
-          <li key={activity}>{activity}</li>
-          ))}
-      </ul>
+      <div className='tripDescriptionContainer'>
+        <div>
+          <h2>Trip description:</h2>
+          <p>{data.description}</p>
+        </div>
+        <div>
+          <h2>Planned activities:</h2>
+          <ul>
+            {data.activities.map((activity) => (
+              <li key={activity}>{activity}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   )
 }
