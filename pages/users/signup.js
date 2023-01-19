@@ -20,7 +20,7 @@ function Signup() {
           if (response.data === 'wrong') {
             alert('That email address is already being used.');
           } else {
-            window.location.replace('/')
+            window.location.replace('/users/profile/createprofile')
           }
         });
     }

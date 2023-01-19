@@ -30,6 +30,12 @@ export async function middleware(req, res) {
     return response;
   }
 
+  if (authed && pathname === '/users/profile') {
+    url.pathname = `/users/profile/${result.user_id}`;
+    let response = NextResponse.redirect(url);
+    return response;
+  }
+
   if (!authed && !pathname.startsWith('/users/login') && !pathname.startsWith('/users/signup') && !pathname.startsWith('/_next') && !pathname.startsWith('/api/auth')) {
     url.pathname = '/users/login';
     let response = NextResponse.redirect(url);
