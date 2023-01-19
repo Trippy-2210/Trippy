@@ -1,10 +1,8 @@
 import useSWR from 'swr'
-// import { useRouter } from 'next/router'
 import UserTripListItem from './UserTripListItem.js'
+import axios from 'axios'
 
 const UserTrips = ({ ownerId }) => {
-  // let router = useRouter();
-  // let {id} = router.query;
 
   const fetcher = async (url) => {
     const res = await axios.get(url);
@@ -14,12 +12,16 @@ const UserTrips = ({ ownerId }) => {
   const { data, error, isLoading } = useSWR(`/api/profiles/userTrips/${ownerId}`, fetcher)
 
   if (isLoading) return <h2>Loading...</h2>
-  if (error) return <h2>Failed to load trips</h2>
+  if (error) {
+    console.log(error)
+    return <h2>Failed to load trips</h2>
+  }
+  let trips = data;
 
   return (
     <>
       <div className="user-trips">
-        {data.map((trip, i) =>  <UserTripListItem key={i} trip={trip}/>)}
+        {trips.map((trip, i) =>  <UserTripListItem key={i} trip={trip}/>)}
       </div>
     </>
   )
