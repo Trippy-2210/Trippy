@@ -1,0 +1,127 @@
+.header {
+  width: 100vw;
+  height: 70px;
+  background-color: rgb(201, 86, 71);
+  top: 0;
+  left: 0;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  margin: 9px auto 9px 9px;
+  width: 200px;
+  height: 80%;
+  font-size: 2rem;
+}
+
+.search input{
+  width: 200px;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0px 0px 1px 1px rgb(58, 57, 57);
+  text-indent: 4px;
+  font-size: 1.2rem;
+}
+
+.sandwich {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 90px;
+  height: 40px;
+  background-color: rgb(153, 205, 250);
+  border-radius: 24px;
+  box-shadow: 0px 0px 2px 0px black;
+  margin: 18px 18px 18px auto;
+  transform: translate(-10px);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.numberOfNotifications {
+  position: absolute;
+  font-size: .8rem;
+  text-align: center;
+  top: 3px;
+  right: 8px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid white;
+  background-color: red;
+  color: rgb(255, 255, 255)
+}
+
+.notificationsDropdown {
+  position: absolute;
+  width: 200%;
+  height: 120px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 1px 0px rgb(39, 80, 128);
+  background-color: rgb(153, 205, 250);
+  transform: translate(-25%, 70%);
+  z-index: 1;
+
+}
+
+.notificationsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.notificationsContainer div {
+  font-size: 1.2rem;
+  margin-top: 5px;
+  text-indent: 5px;
+}
+.notificationsContainer .navLink {
+  font-size: 1.2rem;
+  margin-top: 5px;
+  text-indent: 5px;
+  color: black;
+}
+
+.notificationsContainer .navLink * {
+  color: rgb(253, 4, 4);
+}
+
+
+.notificationsContainer *:hover {
+  font-size: 1.22rem;
+  color: rgb(209, 75, 75)
+}
+
+
+.sandwich:hover {
+  box-shadow: 1px 3px 4px 0px black;
+  transform: translate(-10px, -1px);
+}
+
+.sandwichLines {
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+  height: 15px;
+  transform: translate(5px);
+}
+
+.sandwichLines div {
+  width: 15px;
+  height: 3px;
+  border-radius: 9px;
+  background-color: rgb(78, 78, 78);
+}
+
+.sandwichPhoto {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  box-shadow: 0px 2px 2px 1px rgb(53, 53, 53);
+}
