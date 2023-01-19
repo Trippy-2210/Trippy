@@ -136,7 +136,7 @@ export default function Addtrip() {
           <div>
             <Button
               variant='contained'
-              color='secondary'
+              color='success'
               onClick={handleSubmit}
               sx={{ width: 300 }}
             >
