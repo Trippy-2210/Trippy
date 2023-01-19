@@ -3,7 +3,7 @@ import {useState} from 'react';
 
 
 function PollForm() {
-  const [pollForms, setPollForms] = useState('');
+  const [pollForms, setPollForms] = useState([]);
 
 const handleChange = () => {
 
