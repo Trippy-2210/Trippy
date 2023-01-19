@@ -9,9 +9,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 import styles from './addForm.module.css';
 
-export default function ActivityList({ activityList, setActivityList }) {
+export default function ActivityList({ activities, setActivities }) {
   const [activityInput, setActivityInput] = useState('');
-  const [activities, setActivities] = useState([]);
 
   function handleAddActivity(e) {
     if (activityInput) {
