@@ -8,7 +8,7 @@ import styles from './header.module.css'
 
 let data = {notifications: ['message', 'accepted', 'message', 'message', 'joinRequest', 'accepted']}
 
-const Header = () => {
+const SearchHeader = ({onSubmitHandler}) => {
 
 
 
@@ -17,7 +17,8 @@ const Header = () => {
       <div
       className={styles.headerContainer}    >
         <Logo />
-
+        <Search onSubmitHandler={onSubmitHandler}/>
+        {/* <GoogleMaps /> */}
         <Sandwich data={data}/>
       </div>
 
@@ -27,4 +28,4 @@ const Header = () => {
 
 };
 
-export default Header;
+export default SearchHeader;
