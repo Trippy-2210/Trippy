@@ -27,8 +27,8 @@ const Profile = () => {
 
   return (
     <div>
-      <UserInfo firstName={user.firstName} lastName={user.lastName} bio={user.bio} photo={user.photo} id={user.userId}/>
-      {/* <UserTripList ownerId={id}/> */}
+      {user !== undefined ? <UserInfo firstName={user.firstName} lastName={user.lastName} bio={user.bio} photo={user.photo} id={user.userId}/> : null}
+      {user !== undefined ? <UserTripList ownerId={user.userId}/> : null}
     </div>
   )
 }
