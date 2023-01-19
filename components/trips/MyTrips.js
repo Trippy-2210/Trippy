@@ -55,10 +55,11 @@ const MyTrips = ({}) => {
       }}
     >
       <h1>My Trips</h1>
-      {trips &&
-        trips.map((trip) => {
-          return <TripCard key={trip} trip={trip} />;
-        })}
+      {trips && trips.map(trip => {
+       return <TripCard trip={trip} key={trip._id}/>
+      })}
+
+
     </div>
   );
 };

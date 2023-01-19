@@ -2,29 +2,23 @@ import React from 'react';
 import Logo from './Logo.js'
 import Search from './Search.js'
 import Sandwich from './Sandwich.js'
+import GoogleMaps from '../trips/PlaceAutocomplete.js'
 
+import styles from './header.module.css'
 
-const Header = ({data}) => {
+let data = {notifications: ['message', 'accepted', 'message', 'message', 'joinRequest', 'accepted']}
+
+const Header = ({cityFilter, onSubmitHandler}) => {
 
 
   return(
-    <div className='header' style={{
-      width: '100vw',
-      height: '90px',
-      backgroundColor: 'rgb(201, 86, 71)',
-      position: 'fixed',
-      top: '0',
-      left: '0',}}>
+    <div className={styles.header}>
       <div
-      className='headerContainer'
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}    >
+      className={styles.headerContainer}    >
         <Logo />
-        <Search />
-        <Sandwich />
+        <Search cityFilter={cityFilter} onSubmitHandler={onSubmitHandler}/>
+        {/* <GoogleMaps /> */}
+        <Sandwich data={data}/>
       </div>
 
     </div>
