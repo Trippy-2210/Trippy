@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import TripInfo from '../../components/tripInfo.js';
 import Requests from '../../components/requests.js';
 import Attendees from '../../components/attendees.js';
+import Header from './../../components/header/Header.js';
 import axios from 'axios';
 import useSWR from 'swr';
 
@@ -28,6 +29,7 @@ const TripDetails = (props) => {
 
   return (
     <div>
+      <Header cityFilter={cityFilter} onSubmitHandler={onSubmitHandler}/>
       <TripInfo
         data={data}
       />

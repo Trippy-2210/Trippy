@@ -1,4 +1,3 @@
-import ProfilePhoto from '../../../components/users/createprofile/ProfilePhoto.js'
 import UserInfo from '../../../components/users/createprofile/UserInfo.js'
 
 const CreateProfile = () => {

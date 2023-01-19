@@ -2,6 +2,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import { useRouter } from 'next/router'
 import CloudinaryUpload from '../../../components/trips/CloudinaryUpload';
+import { TextField, Button, Box } from '@mui/material';
 
 const UserInfo = () => {
   const [firstName, setFirstName] = useState('')
@@ -25,36 +26,73 @@ const UserInfo = () => {
 
   const handleProfileCreation = (event) => {
     event.preventDefault()
-    axios.post('/api/profile/form', {
+    axios.post('/api/profiles/form', {
       userId: '',
       firstName: firstName,
       lastName: lastName,
       bio: bio,
       photo: photoUrl
     })
-    .then(() => router.push('/'))
+    .then(() => router.push('/trips'))
   }
 
   return (
   <>
-    <div className="upload-profile-photo">
-      <CloudinaryUpload label={'Upload Profile Photo'} url={photoUrl} setUrl={setPhotoUrl} />
-    </div>
-    <div className="user-info">
-      <form onSubmit={handleProfileCreation}>
-        <label htmlFor="first">First name:</label>
-        <input required type="text" name="firstName" minLength="1" maxLength="20" placeholder="First name" onChange={handleFirstNameChange} value={firstName}></input>
+    <Box
+      sx={{
+        width: "100%",
+        height: "100vh",
+        display: "flex",
+        "flex-direction": "column",
+        "align-items": "center",
+        "justify-content": "flex-start"
+      }}>
 
-        <label htmlFor="last">Last name:</label>
-        <input required type="text" name="lastName" minLength="1" maxLength="20" placeholder="Last name" onChange={handleLastNameChange} value={lastName}></input>
+      <CloudinaryUpload label={'Upload Profile Photo'} url={photoUrl} setUrl={setPhotoUrl} centered={true}/>
 
-        <p>Last name will only be shown in direct messages, not on your public profile</p>
+      <div style={{ marginTop: 16, width: '45%', display: 'flex', justifyContent: 'space-between' }}>
+        <TextField
+          sx={{ width: '47.5%' }}
+          color='primary'
+          label="First name"
+          inputProps={{ minLength:1, maxLength: 20 }}
+          value={firstName}
+          onChange={handleFirstNameChange}
+        />
 
-        <textarea required name="bio" minLength="20" maxLength="140" placeholder="About me..." onChange={handleBioChange} value={bio}></textarea>
+        <TextField
+          sx={{width: '47.5%' }}
+          color='primary'
+          label="Last name"
+          inputProps={{ minLength:1, maxLength: 20 }}
+          value={lastName}
+          onChange={handleLastNameChange}
+        />
+      </div>
 
-        <button type="submit">Continue</button>
-      </form>
-    </div>
+      <p>Last name will only be shown in direct messages, not on your public profile.</p>
+
+      <TextField
+        color='primary'
+        label='About me...'
+        placeholder='About me...'
+        multiline
+        minRows={3}
+        sx={{ margin: 1, width: '45%' }}
+        inputProps={{ minLength:1, maxLength: 140 }}
+        value={bio}
+        onChange={handleBioChange}
+      />
+
+      <Button
+        sx={{ margin: 1, width: '25%' }}
+        color='primary'
+        variant='contained'
+        onClick={handleProfileCreation}
+      >
+        Submit
+      </Button>
+    </Box>
   </>
   )
 }

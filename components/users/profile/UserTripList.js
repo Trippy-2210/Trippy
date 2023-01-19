@@ -1,5 +1,4 @@
 import useSWR from 'swr'
-import UserTripListItem from './UserTripListItem.js'
 import axios from 'axios'
 import MyTrips from '../../../components/trips/MyTrips.js'
 
