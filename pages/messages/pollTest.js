@@ -9,7 +9,7 @@ const pollAnswersOptions = [
 ];
 
 
-const PollTest = () => {
+function PollTest() {
 
   const [pollAnswers, setPollAnswers] = useState([]);
 
@@ -35,5 +35,5 @@ const PollTest = () => {
   )
 }
 
-export default pollTest;
+export default PollTest;
 

@@ -7,7 +7,7 @@ import FormLabel from '@mui/material/FormLabel';
 
 
 
-const Poll = () => {
+function Poll() {
   return(
     <FormControl>
       <FormLabel id="demo-radio-buttons-group-label">Travel</FormLabel>

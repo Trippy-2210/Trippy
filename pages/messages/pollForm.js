@@ -2,7 +2,7 @@ import {useState} from 'react';
 
 
 
-const PollForm = () => {
+function PollForm() {
   const [pollForms, setPollForms] = useState('');
 
 const handleChange = () => {
@@ -21,4 +21,4 @@ const handleChange = () => {
  )
 }
 
-export default pollForm;
+export default PollForm;
