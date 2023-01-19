@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;600&display=swap');
 
+html, body {
+  font-family: Quicksand, sans-serif;
+  font-weight: 600;
+}
+
+h1, h2, h3 {
+  font-family: Pacifico;
+}
+
 .tripInfoTitle {
   color: red;
 }
@@ -13,4 +22,16 @@
   height: 100%;
   width: 100%;
   object-fit: contain;
+}
+
+.h {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.v {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
