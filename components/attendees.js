@@ -20,7 +20,7 @@ function Attendees(props) {
         setRequestStatus(request.status);
       }
     })
-  }, [props.requests]);
+  }, [props.requests, props.userId]);
 
 
   async function handleRequestToJoin() {
