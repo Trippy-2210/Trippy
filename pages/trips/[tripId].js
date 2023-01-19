@@ -2,6 +2,8 @@ import { useRouter } from 'next/router';
 import TripInfo from '../../components/trips/tripInfo.js';
 import Requests from '../../components/trips/requests.js';
 import Attendees from '../../components/trips/attendees.js';
+import Header from './../../components/header/Header.js';
+
 import axios from 'axios';
 import useSWR from 'swr';
 
@@ -25,34 +27,37 @@ const TripDetails = (props) => {
   let {trip, userId} = data;
 
   return (
-    <div id="tripDetailsMainContainer">
-      <div id='tripInfoHeader'>
-        <h1 className='tripInfoTitle'>{trip.tripTitle}</h1>
-        <p>{trip.destination} | {new Date(trip.startDate).toLocaleDateString('en-US')} - {new Date(trip.endDate).toLocaleDateString('en-US')} | {('$').repeat(trip.budget)}
-        </p>
-      </div>
-      <div id='tripDetailsContentContainer'>
-        <TripInfo
-          data={trip}
-        />
-        {userId === trip.ownerId
-        ? <Requests
-            mutate={mutate}
-            userId={userId}
-            tripId={tripId}
-            requests={trip.requests}
+    <>
+      <Header onSubmitHandler={onSubmitHandler} />
+      <div id="tripDetailsMainContainer">
+        <div id='tripInfoHeader'>
+          <h1 className='tripInfoTitle'>{trip.tripTitle}</h1>
+          <p>{trip.destination} | {new Date(trip.startDate).toLocaleDateString('en-US')} - {new Date(trip.endDate).toLocaleDateString('en-US')} | {('$').repeat(trip.budget)}
+          </p>
+        </div>
+        <div id='tripDetailsContentContainer'>
+          <TripInfo
+            data={trip}
           />
-        : <Attendees
-            userId={userId}
-            tripId={tripId}
-            ownerId={trip.ownerId}
-            mutate={mutate}
-            requests={trip.requests}
-            attendees={trip.users}
-          />
-        }
+          {userId === trip.ownerId
+            ? <Requests
+              mutate={mutate}
+              userId={userId}
+              tripId={tripId}
+              requests={trip.requests}
+            />
+            : <Attendees
+              userId={userId}
+              tripId={tripId}
+              ownerId={trip.ownerId}
+              mutate={mutate}
+              requests={trip.requests}
+              attendees={trip.users}
+            />
+          }
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 

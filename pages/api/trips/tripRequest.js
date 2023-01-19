@@ -26,13 +26,16 @@ export default async function handler(req, res) {
 
     // add notification id to owner's notifications array
     const userNotif = await schemas.Profile.findOneAndUpdate(
-      { '_id': ownerId },
+      { 'userId': ownerId },
       { '$push': { 'notifications': notifId }}
     )
 
 
     res.status(201).send();
   } else if (req.method === 'PUT') {
+
+    console.log('request body', req.body);
+
     let _id = req.body.tripId;
     let userId = req.body.userId;
     let status = req.body.status;
@@ -59,7 +62,7 @@ export default async function handler(req, res) {
 
       // add notification id to users notifications array
       const userNotif = await schemas.Profile.findOneAndUpdate(
-        { '_id': userId },
+        { 'userId': userId },
         { '$push': { 'notifications': notifId }}
       )
     }

@@ -13,7 +13,7 @@ export function middleware(request, res) {
     response.cookies.set('logged', 'no');
     return response;
   } else {
-    requestHeaders.set('userid', '6');
+    requestHeaders.set('userid', '7');
     return NextResponse.next({
       request: {
         headers: requestHeaders

@@ -17,6 +17,7 @@ function Requests(props) {
           status: request.status,
           userId: request.userId,
           userName: `${userData.firstName} ${userData.lastName[0]}.`,
+          photo: userData.photo,
         })
       })
     })).then((userRequests) => {
@@ -45,9 +46,18 @@ function Requests(props) {
           if (request.status === 'pending') {
             return (
               <div className='userRequestContainer' key={request.userId}>
-                <Link href={`/users/profiles/${request.userId}`}>
-                  <p>{request.userName}</p>
-                </Link>
+                <div className='attendeeInfoContainer'>
+                  <div className='attendeePhotoContainer'>
+                    <img
+                      className='attendeePhoto'
+                      src={request.photo}
+                      alt='user profile photo'
+                    />
+                  </div>
+                  <Link href={`/users/profiles/${request.userId}`}>
+                    <p>{request.userName}</p>
+                  </Link>
+                </div>
                 <div className='userRequestButtonContainer'>
                   <Button
                     color='success'
@@ -81,9 +91,18 @@ function Requests(props) {
           if (request.status === 'accepted') {
             return (
               <div className='userRequestContainer' key={request.userId}>
-                <Link href={`/users/profiles/${request.userId}`}>
-                  <p>{request.userName}</p>
-                </Link>
+                <div className='attendeeInfoContainer'>
+                  <div className='attendeePhotoContainer'>
+                    <img
+                      className='attendeePhoto'
+                      src={request.photo}
+                      alt='user profile photo'
+                    />
+                  </div>
+                  <Link href={`/users/profiles/${request.userId}`}>
+                    <p>{request.userName}</p>
+                  </Link>
+                </div>
                 <div className='userRequestButtonContainer'>
                   <Button
                     color='error'
@@ -107,9 +126,18 @@ function Requests(props) {
           if (request.status === 'denied') {
             return (
               <div className='userRequestContainer' key={request.userId}>
-                <Link href={`/users/profiles/${request.userId}`}>
-                  <p>{request.userName}</p>
-                </Link>
+                <div className='attendeeInfoContainer'>
+                  <div className='attendeePhotoContainer'>
+                    <img
+                      className='attendeePhoto'
+                      src={request.photo}
+                      alt='user profile photo'
+                    />
+                  </div>
+                  <Link href={`/users/profiles/${request.userId}`}>
+                    <p>{request.userName}</p>
+                  </Link>
+                </div>
                 <div className='userRequestButtonContainer'>
                   <Button
                     color='success'

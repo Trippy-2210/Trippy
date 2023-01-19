@@ -59,7 +59,7 @@ function Attendees(props) {
             variant='contained'
             color='primary'
             sx={{ width: '100%', height: 50 }}
-            disableRipple='true'
+            disableRipple={true}
           >
             Request pending
           </Button>
@@ -90,6 +90,13 @@ function Attendees(props) {
       <div>
         {data.map((attendee, index) => (
           <div className='userContainer' key={index}>
+            <div className='attendeePhotoContainer'>
+              <img
+                className='attendeePhoto'
+                src={attendee.photo}
+                alt='user profile photo'
+              />
+            </div>
             <Link href={`/users/profiles/${attendee._id}`}>
               <p>{attendee.firstName} {attendee.lastName[0]}.</p>
             </Link>
