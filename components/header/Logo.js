@@ -1,15 +1,12 @@
 import React from 'react';
+import styles from './header.module.css'
+
 
 const Logo = ({data}) => {
 
 
   return(
-    <div className='logo'
-         style={{
-          fontSize: '4rem',
-          margin: '9px auto 9px 9px',
-          width: '200px',
-          height: '80%',}}>
+    <div className={styles.logo}>
       Trippy
     </div>
 

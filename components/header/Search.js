@@ -1,14 +1,16 @@
 import React from 'react';
 import Autocomplete from '@mui/material/Autocomplete';
+import styles from './header.module.css'
 
 const options = ['Option 1', 'Option 2'];
 
-const Search = () => {
+const Search = ({cityFilter, onSubmitHandler}) => {
   return (
-    <form className='search'>
+    <form className={styles.search} onSubmit={onSubmitHandler}>
       <label>
 
-        <Autocomplete
+        <input type='text'></input>
+        {/* <Autocomplete
           sx={{
             display: 'inline-block',
             '& input': {
@@ -29,7 +31,9 @@ const Search = () => {
               <input type="text" {...params.inputProps} />
             </div>
           )}
-        />
+        /> */}
+
+
       </label>
 
     </form>
