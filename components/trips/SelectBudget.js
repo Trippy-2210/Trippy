@@ -2,6 +2,7 @@ import { styled } from '@mui/material/styles';
 import PaidIcon from '@mui/icons-material/Paid';
 import PaidOutlinedIcon from '@mui/icons-material/PaidOutlined';
 import Rating from '@mui/material/Rating';
+import styles from './addForm.module.css';
 
 const StyledRating = styled(Rating)({
   '& .MuiRating-iconFilled': {
@@ -15,7 +16,7 @@ const StyledRating = styled(Rating)({
 export default function SelectBudget({ value, setValue }) {
   return (
     <>
-      <div>Budget:</div>
+      <div className={styles.budgetLabel}>Budget</div>
       <StyledRating
         name='customized-color'
         defaultValue={0}

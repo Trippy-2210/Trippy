@@ -18,9 +18,14 @@
   justify-content: center;
   align-items: center;
   border-radius: 1em;
-  margin: 10px 0px;
+  margin-bottom: 20px;
   background-color: #ddd;
 }
 .datePicker {
   width: 150px;
+}
+
+.budgetLabel {
+  font-size: 19px;
+  margin-bottom: 10px;
 }
