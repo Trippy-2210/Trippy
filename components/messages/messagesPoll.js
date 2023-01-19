@@ -5,11 +5,11 @@ const pollQuestion = "Should we fly out tomorrow?";
 const pollAnswersOptions = [
   {option: "Yes", votes: 2},
   {option: "No", votes: 15},
-  {option: "Why not both?", votes: 6},
+  {option: "I dont know", votes: 6},
 ];
 
 
-function PollTest() {
+function MessagesPoll() {
 
   const [pollAnswers, setPollAnswers] = useState([]);
 
@@ -35,5 +35,5 @@ function PollTest() {
   )
 }
 
-export default PollTest;
+export default MessagesPoll;
 
