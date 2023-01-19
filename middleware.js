@@ -24,8 +24,8 @@ export async function middleware(req, res) {
     authed = true;
   }
 
-  if (authed && (pathname.startsWith('/users/login') || pathname.startsWith('/users/signup'))) {
-    url.pathname = '/';
+  if (authed && (pathname.startsWith('/users/login') || pathname.startsWith('/users/signup') || url.pathname === '/')) {
+    url.pathname = '/trips';
     let response = NextResponse.redirect(url);
     return response;
   }
