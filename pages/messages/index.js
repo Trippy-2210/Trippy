@@ -2,8 +2,8 @@ import {useState, useEffect} from 'react';
 import axios from 'axios';
 import MyTrips from '../../components/trips/MyTrips.js';
 import Header from '../../components/header/Header.js';
-import ChatBox from './ChatBox.js';
-import AttendeeList from './AttendeeList.js';
+import ChatBox from '../../components/ChatBox.js';
+import AttendeeList from '../../components/AttendeeList.js';
 
 const Messages = function({userId}) {
   const user = userId || 1;
