@@ -21,13 +21,45 @@
 }
 
 .search input{
-  width: 200px;
-  height: 30px;
-  border-radius: 15px;
+  width: 400px;
+  height: 40px;
+  border-radius: 20px;
   border: none;
   box-shadow: 0px 0px 1px 1px rgb(58, 57, 57);
   text-indent: 4px;
   font-size: 1.2rem;
+  margin-right: 30px;
+}
+
+.search button {
+  position: absolute;
+  width: 60px;
+  height: 40px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  transform: translate(-150%, 2%) scaleY(1.05);
+  border: none;
+  border-left: 1px solid grey;
+  cursor: pointer;
+}
+
+.magnifyingGlass {
+  transform: scale(0.8);
+}
+.mag1 {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border: 1px solid black;
+  border-radius: 50%;
+  transform: translate(50%, -50%);
+}
+.mag2 {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-bottom: 1px solid black;
+  transform: translate(26px, 0) rotate(45deg);
 }
 
 .sandwich {

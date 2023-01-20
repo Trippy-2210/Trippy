@@ -1,0 +1,60 @@
+
+
+.main {
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+  height: 100vh;
+
+}
+
+.mainGrid {
+  position: absolute;
+  margin-top: 20px;
+  left: 20px;
+  display: grid;
+  width: 60vw;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-column-gap: min(10px);
+  grid-row-gap: 40px;
+  justify-content: space-between;
+  height: 70vh;
+  z-index: -10;
+}
+
+.myTripsContainer {
+  position: fixed;
+  right: 20px;
+  z-index: -1;
+}
+
+
+
+.line1 {
+  position: absolute;
+  width: 8000px;
+  height: 30px;
+  background-color: rgb(40, 99, 150);
+  transform: translate(65vw, 30vh) rotate(30deg);
+  z-index: -100;
+}
+.line2 {
+  position: absolute;
+  width: 8000px;
+  height: 30px;
+  background-color: rgb(114, 179, 236);
+  transform: translate(15vw, 28vh) rotate(195deg);
+  z-index: -100;
+}
+
+.line3 {
+  position: absolute;
+  width: 8000px;
+  height: 30px;
+  background-color: rgb(235, 77, 77);
+  transform: translate(30vw, 60vh) rotate(110deg);
+  z-index: -100;
+}
+
+
