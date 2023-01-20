@@ -4,12 +4,15 @@ import styles from './header.module.css'
 
 const options = ['Option 1', 'Option 2'];
 
-const Search = ({cityFilter, onSubmitHandler}) => {
+const Search = ({onSubmitHandler}) => {
   return (
     <form className={styles.search} onSubmit={onSubmitHandler}>
       <label>
 
-        <input type='text'></input>
+        <input
+        type='text'
+        placeholder='Search'>
+        </input>
         {/* <Autocomplete
           sx={{
             display: 'inline-block',
@@ -33,7 +36,12 @@ const Search = ({cityFilter, onSubmitHandler}) => {
           )}
         /> */}
 
-
+        <button className={styles.searchButton}>
+          <div className={styles.magnifyingGlass}>
+            <div className={styles.mag1}></div>
+            <div className={styles.mag2}></div>
+          </div>
+        </button>
       </label>
 
     </form>

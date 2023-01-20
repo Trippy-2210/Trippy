@@ -1,6 +1,6 @@
-import TripCard from './TripCardMsg.js';
+import TripCard from '../trips/TripCard.js';
 
-const MyTrips = ({trips}) => {
+const MyTrips = ({trips, setTrip}) => {
   var renderTrips = function() {
     var rendered = [];
 

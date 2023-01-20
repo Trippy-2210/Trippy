@@ -1,6 +1,7 @@
 import { TextField, Box, Button } from '@mui/material';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import EmptyHeader from '../../components/header/EmptyHeader.js';
 
 function Login() {
   const blankForm = {
@@ -22,6 +23,8 @@ function Login() {
   }
 
   return (
+    <>
+    <EmptyHeader />
     <Box
       sx={{
         width: "100%",
@@ -69,6 +72,7 @@ function Login() {
         >Signup</Button>
         </div>
     </Box>
+    </>
   );
 }
 

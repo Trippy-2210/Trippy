@@ -25,8 +25,8 @@ const Item = styled(Paper)(({ theme }) => ({
 
 
 const CreatePolls = ({pollToggle, resultToggle}) => {
-  const [title, setTitle] = useState("Should we fly tomorrow?");
-  const [options, setOptions] = useState(["Yes", "No"]);
+  const [title, setTitle] = useState("Question");
+  const [options, setOptions] = useState(["Option 1", "Option 2"]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -50,8 +50,8 @@ const CreatePolls = ({pollToggle, resultToggle}) => {
 
   return (
     <div className='pollContainer'>
-      <Container maxW="container.lg">
-      <Container maxW="container.md" mt={6} shadow="lg" p={8} rounded="2xl">
+      <Container>
+      <Container mt={6} shadow="lg" p={8} rounded="2xl">
         <h1>Create a poll</h1>
         <Input
           placeholder="Poll Title"
@@ -117,7 +117,6 @@ const CreatePolls = ({pollToggle, resultToggle}) => {
         </Button>
 
         <Button variant="contained" onClick={pollToggle}>
-          {/* <Link href="/messages/index">Back to messages</Link> */}
           Back to messages
         </Button>
       </Container>

@@ -92,17 +92,21 @@ export default function Addtrip() {
                 />
               </div>
               <div className={styles.choosedates}>
-                <DatePicker
-                  label='Start Date'
-                  value={startDate}
-                  setValue={setStartDate}
-                />
+                <div className={styles.datepickerContainer}>
+                  <DatePicker
+                    label='Start Date'
+                    value={startDate}
+                    setValue={setStartDate}
+                  />
+                </div>
                 <div className={styles.datesTO}>to</div>
-                <DatePicker
-                  label='End Date'
-                  value={endDate}
-                  setValue={setEndDate}
-                />
+                <div className={styles.datepickerContainer}>
+                  <DatePicker
+                    label='End Date'
+                    value={endDate}
+                    setValue={setEndDate}
+                  />
+                </div>
               </div>
               <div className={styles.budgetContainer}>
                 <SelectBudget value={budget} setValue={setBudget} />

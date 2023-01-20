@@ -1,0 +1,26 @@
+.line1 {
+  position: absolute;
+  width: 10000px;
+  height: 30px;
+  background-color: rgb(40, 99, 150);
+  transform: translate(-70%, -300vh)  rotate(30deg) ;
+  z-index: -100;
+}
+.line2 {
+  position: absolute;
+  width: 10000px;
+  height: 30px;
+  background-color: rgb(114, 179, 236);
+  transform: translate(-60%, -20vh) rotate(160deg)  ;
+  z-index: -100;
+
+}
+
+.line3 {
+  position: absolute;
+  width: 10000px;
+  height: 30px;
+  background-color: rgb(235, 77, 77);
+  transform: translate(-40%, -10vh) rotate(45deg)  ;
+  z-index: -100;
+}

@@ -1,6 +1,7 @@
+import React, {useEffect, useState} from 'react'
 import TripCard from './TripCard.js';
-
-// import styles from './cards.module.css';
+import styles from './cards.module.css';
+import axios from 'axios'
 
 // let trips = [
 //   {
@@ -25,11 +26,11 @@ import TripCard from './TripCard.js';
 //     ownerId: 2,
 //     tripTitle: 'Vacation in Gotham City',
 //     destination: 'Gotham City',
-//     startDate: 'dateformat?',
-//     endDate: 'dateformat?',
+//     startDate: 'May 21, 2023',
+//     endDate: 'June 1, 2023',
 //     description: 'Help me solve a riddle',
 //     activities: ['fun stuff', 'other stuff'],
-//     budget: 1,
+//     budget: 5,
 //     photo:
 //       'https://cdn.mos.cms.futurecdn.net/ujfM8sgekzFenoGfxLphhS-970-80.jpg.webp',
 //     requests: [{ userId: 5, status: true }],
@@ -39,24 +40,23 @@ import TripCard from './TripCard.js';
 // ];
 
 const MyTrips = ({ trips }) => {
+
+  // const [trip, setTrip] = useState()
+
+  // useEffect(() => {
+  //   axios.get('/api/trips/currentUser')
+  //     .then(response => {
+  //       console.log(response)
+  //     })
+  // }, [])
+  console.log('MY TRIPS', trips)
+
+
   return (
-    <div
-      className='myTrips'
-      style={{
-        width: '300px',
-        height: '80vh',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'space-around',
-        backgroundColor: '#1d53a48c',
-        zIndex: '-4',
-        borderRadius: '25px',
-      }}
-    >
+    <div className={styles.myTrips}>
       <h1>My Trips</h1>
-      {trips && trips.map(trip => {
-       return <TripCard trip={trip} key={trip._id}/>
+      {trips && trips.map((trip, i)=> {
+       return <TripCard trip={trip} key={i}/>
       })}
 
 

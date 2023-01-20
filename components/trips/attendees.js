@@ -97,7 +97,7 @@ function Attendees(props) {
                 alt='user profile photo'
               />
             </div>
-            <Link href={`/users/profiles/${attendee._id}`}>
+            <Link href={`/users/profile/${attendee.userId}`}>
               <p>{attendee.firstName} {attendee.lastName[0]}.</p>
             </Link>
           </div>

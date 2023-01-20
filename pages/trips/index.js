@@ -1,267 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios'
+import styles from './tripmain.module.css'
 import TripCard from './../../components/trips/TripCard.js'
 import MyTrips from './../../components/trips/MyTrips.js';
-import Header from './../../components/header/Header.js';
+import SearchHeader from './../../components/header/SearchHeader.js';
 
-let data = [
-  {
-    _id: 1,
-    tripId: 1,
-    ownerId: 1,
-    tripTitle: 'Vacation in Smallville',
-    destination: 'Smallville',
-    startDate: 'dateformat?',
-    endDate: 'dateformat?',
-    description: 'helping with the farm',
-    activities:['fun stuff', 'other stuff'],
-    budget: 1,
-    photo: 'https://flxt.tmsimg.com/assets/p7893454_b_v13_aa.jpg',
-    requests:[{userId: 4, status: true}],
-    users:[1,2],
-    messages: [1, 2, 3, 4]
-  },
-  {
-    _id: 2,
-    tripId: 2,
-    ownerId: 2,
-    tripTitle: 'Vacation in Gotham City',
-    destination: 'Gotham City',
-    startDate: 'dateformat?',
-    endDate: 'dateformat?',
-    description: 'Help me solve a riddle',
-    activities: ['fun stuff', 'other stuff'],
-    budget: 1,
-    photo: 'https://cdn.mos.cms.futurecdn.net/ujfM8sgekzFenoGfxLphhS-970-80.jpg.webp',
-    requests: [{userId: 5, status: true}],
-    users: [1,2],
-    messages: [5, 6 ,7]
-  },
-  {
-    _id: 3,
-    tripId: 1,
-    ownerId: 1,
-    tripTitle: 'Vacation in Smallville',
-    destination: 'Smallville',
-    startDate: 'dateformat?',
-    endDate: 'dateformat?',
-    description: 'helping with the farm',
-    activities:['fun stuff', 'other stuff'],
-    budget: 1,
-    photo: 'https://flxt.tmsimg.com/assets/p7893454_b_v13_aa.jpg',
-    requests:[{userId: 4, status: true}],
-    users:[1,2],
-    messages: [1, 2, 3, 4]
-  },
-  {
-    _id: 4,
-    tripId: 2,
-    ownerId: 2,
-    tripTitle: 'Vacation in Gotham City',
-    destination: 'Gotham City',
-    startDate: 'dateformat?',
-    endDate: 'dateformat?',
-    description: 'Help me solve a riddle',
-    activities: ['fun stuff', 'other stuff'],
-    budget: 1,
-    photo: 'https://cdn.mos.cms.futurecdn.net/ujfM8sgekzFenoGfxLphhS-970-80.jpg.webp',
-    requests: [{userId: 5, status: true}],
-    users: [1,2],
-    messages: [5, 6 ,7]
-  },
-  {
-    _id: 5,
-    tripId: 1,
-    ownerId: 1,
-    tripTitle: 'Vacation in Smallville',
-    destination: 'Smallville',
-    startDate: 'dateformat?',
-    endDate: 'dateformat?',
-    description: 'helping with the farm',
-    activities:['fun stuff', 'other stuff'],
-    budget: 1,
-    photo: 'https://flxt.tmsimg.com/assets/p7893454_b_v13_aa.jpg',
-    requests:[{userId: 4, status: true}],
-    users:[1,2],
-    messages: [1, 2, 3, 4]
-  },
-  {
-    _id: 6,
-    tripId: 2,
-    ownerId: 2,
-    tripTitle: 'Vacation in Gotham City',
-    destination: 'Gotham City',
-    startDate: 'dateformat?',
-    endDate: 'dateformat?',
-    description: 'Help me solve a riddle',
-    activities: ['fun stuff', 'other stuff'],
-    budget: 1,
-    photo: 'https://cdn.mos.cms.futurecdn.net/ujfM8sgekzFenoGfxLphhS-970-80.jpg.webp',
-    requests: [{userId: 5, status: true}],
-    users: [1,2],
-    messages: [5, 6 ,7]
-  },
-  {
-    _id: 7,
-    tripId: 1,
-    ownerId: 1,
-    tripTitle: 'Vacation in Smallville',
-    destination: 'Smallville',
-    startDate: 'dateformat?',
-    endDate: 'dateformat?',
-    description: 'helping with the farm',
-    activities:['fun stuff', 'other stuff'],
-    budget: 1,
-    photo: 'https://flxt.tmsimg.com/assets/p7893454_b_v13_aa.jpg',
-    requests:[{userId: 4, status: true}],
-    users:[1,2],
-    messages: [1, 2, 3, 4]
-  },
-  {
-    _id: 8,
-    tripId: 2,
-    ownerId: 2,
-    tripTitle: 'Vacation in Gotham City',
-    destination: 'Gotham City',
-    startDate: 'dateformat?',
-    endDate: 'dateformat?',
-    description: 'Help me solve a riddle',
-    activities: ['fun stuff', 'other stuff'],
-    budget: 1,
-    photo: 'https://cdn.mos.cms.futurecdn.net/ujfM8sgekzFenoGfxLphhS-970-80.jpg.webp',
-    requests: [{userId: 5, status: true}],
-    users: [1,2],
-    messages: [5, 6 ,7]
-  },
-  {
-    _id: 9,
-    tripId: 1,
-    ownerId: 1,
-    tripTitle: 'Vacation in Smallville',
-    destination: 'Smallville',
-    startDate: 'dateformat?',
-    endDate: 'dateformat?',
-    description: 'helping with the farm',
-    activities:['fun stuff', 'other stuff'],
-    budget: 1,
-    photo: 'https://flxt.tmsimg.com/assets/p7893454_b_v13_aa.jpg',
-    requests:[{userId: 4, status: true}],
-    users:[1,2],
-    messages: [1, 2, 3, 4]
-  },
-  {
-    _id: 10,
-    tripId: 2,
-    ownerId: 2,
-    tripTitle: 'Vacation in Gotham City',
-    destination: 'Gotham City',
-    startDate: 'dateformat?',
-    endDate: 'dateformat?',
-    description: 'Help me solve a riddle',
-    activities: ['fun stuff', 'other stuff'],
-    budget: 1,
-    photo: 'https://cdn.mos.cms.futurecdn.net/ujfM8sgekzFenoGfxLphhS-970-80.jpg.webp',
-    requests: [{userId: 5, status: true}],
-    users: [1,2],
-    messages: [5, 6 ,7]
-  },
-  {
-    _id: 11,
-    tripId: 1,
-    ownerId: 1,
-    tripTitle: 'Vacation in Smallville',
-    destination: 'Smallville',
-    startDate: 'dateformat?',
-    endDate: 'dateformat?',
-    description: 'helping with the farm',
-    activities:['fun stuff', 'other stuff'],
-    budget: 1,
-    photo: 'https://flxt.tmsimg.com/assets/p7893454_b_v13_aa.jpg',
-    requests:[{userId: 4, status: true}],
-    users:[1,2],
-    messages: [1, 2, 3, 4]
-  },
-  {
-    _id: 12,
-    tripId: 2,
-    ownerId: 2,
-    tripTitle: 'Vacation in Gotham City',
-    destination: 'Gotham City',
-    startDate: 'dateformat?',
-    endDate: 'dateformat?',
-    description: 'Help me solve a riddle',
-    activities: ['fun stuff', 'other stuff'],
-    budget: 1,
-    photo: 'https://cdn.mos.cms.futurecdn.net/ujfM8sgekzFenoGfxLphhS-970-80.jpg.webp',
-    requests: [{userId: 5, status: true}],
-    users: [1,2],
-    messages: [5, 6 ,7]
-  },
-  {
-    _id: 13,
-    tripId: 1,
-    ownerId: 1,
-    tripTitle: 'Vacation in Smallville',
-    destination: 'Smallville',
-    startDate: 'dateformat?',
-    endDate: 'dateformat?',
-    description: 'helping with the farm',
-    activities:['fun stuff', 'other stuff'],
-    budget: 1,
-    photo: 'https://flxt.tmsimg.com/assets/p7893454_b_v13_aa.jpg',
-    requests:[{userId: 4, status: true}],
-    users:[1,2],
-    messages: [1, 2, 3, 4]
-  },
-  {
-    _id: 14,
-    tripId: 2,
-    ownerId: 2,
-    tripTitle: 'Vacation in Gotham City',
-    destination: 'Gotham City',
-    startDate: 'dateformat?',
-    endDate: 'dateformat?',
-    description: 'Help me solve a riddle',
-    activities: ['fun stuff', 'other stuff'],
-    budget: 1,
-    photo: 'https://cdn.mos.cms.futurecdn.net/ujfM8sgekzFenoGfxLphhS-970-80.jpg.webp',
-    requests: [{userId: 5, status: true}],
-    users: [1,2],
-    messages: [5, 6 ,7]
-  },
-  {
-    _id: 15,
-    tripId: 1,
-    ownerId: 1,
-    tripTitle: 'Vacation in Smallville',
-    destination: 'Smallville',
-    startDate: 'dateformat?',
-    endDate: 'dateformat?',
-    description: 'helping with the farm',
-    activities:['fun stuff', 'other stuff'],
-    budget: 1,
-    photo: 'https://flxt.tmsimg.com/assets/p7893454_b_v13_aa.jpg',
-    requests:[{userId: 4, status: true}],
-    users:[1,2],
-    messages: [1, 2, 3, 4]
-  },
-  {
-    _id: 16,
-    tripId: 2,
-    ownerId: 2,
-    tripTitle: 'Vacation in Gotham City',
-    destination: 'Gotham City',
-    startDate: 'dateformat?',
-    endDate: 'dateformat?',
-    description: 'Help me solve a riddle',
-    activities: ['fun stuff', 'other stuff'],
-    budget: 1,
-    photo: 'https://cdn.mos.cms.futurecdn.net/ujfM8sgekzFenoGfxLphhS-970-80.jpg.webp',
-    requests: [{userId: 5, status: true}],
-    users: [1,2],
-    messages: [5, 6 ,7]
-  }
-]
+import Link from 'next/link'
 
 const Main = ({}) => {
 
@@ -271,9 +15,14 @@ const Main = ({}) => {
 
   const [trips, setTrips] = useState([]);
 
+  const [ list, setList   ] = useState([])
+  const  [searchlist  , setSearchlist ] = useState([])
+  const [trips, setTrips     ] = useState([]);
+
   var getUserTrips = function() {
     axios.get('/api/messages/getUserTrips')
       .then(function(response) {
+        console.log('TRIPS', response)
         setTrips(response.data.trips);
       })
   };
@@ -283,51 +32,85 @@ const Main = ({}) => {
   const onSubmitHandler = (event) => {
     event.preventDefault()
     let query = event.nativeEvent.target[0].value;
-
-    axios.get('/api/trips/allTrips', {tripTitle: query})
-    .then(response => {
-      setSearchlist(response.data)
-      console.log(response)
-
-    })
+    axios.post('/api/trips/searchTrips', {query: query})
+      .then(response => {
+        setSearchlist(response.data)
+        console.log(response)
+      })
   }
 
+  useEffect(() => {
+    axios.get('/api/trips/allTrips')
+    .then(response => {
+      setList(response.data)
 
+    })
+  },[])
 
-  return(
-    <>
-      <Header cityFilter={cityFilter} onSubmitHandler={onSubmitHandler}/>
-      <div className='main' style={{
-            display: 'flex',
-            justifyContent: 'space-around',
-            width: '100vw',
-            height: '100vh',
-          }}>
+  if (searchlist.length > 0) {
+    return(
+      <>
+        <SearchHeader onSubmitHandler={onSubmitHandler} />
+        <div className={styles.main} >
+          <div className={styles.line1}></div>
+          <div className={styles.line2}></div>
+          <div className={styles.line3}></div>
+          <div className={styles.line4}></div>
+          <div className={styles.line5}></div>
 
-            <div className='mainGrid' style={{
-            display: 'grid',
-            width: '60vw',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gridTemplateRows: 'auto',
-            gridRowGap: '20px',
-            justifyContent: 'space-between',
-            height: '70vh',
-            zIndex: '-10'
-          }}>
-              {list && list.map(trip => {
-                return <TripCard trip={trip} key={trip._id}/>
-              })}
+              <div className={styles.mainGrid} >
+                {searchlist && searchlist.map(trip => {
+                  return <TripCard trip={trip} key={trip._id}/>
+                })}
+        </div>
+        <div className={styles.myTripsContainer}>
+
+          <Link href='/trips/addtrip' style={{ textDecoration: 'none', color: 'black' }}>
+            <div className={styles.createTrip} >Create a Trip</div>
+          </Link>
+          <div className={styles.myTripsScroll}>
+            <MyTrips trips={trips}/>
+          </div>
+
+        </div>
+
       </div>
-      <div style={{display: 'flex', flexDirection: 'column'}}>
-        <div style={{fontSize: '2rem', textAlign: 'center', color: 'red'}}>Create a Trip</div>
-        <MyTrips trips={trips}/>
+      </>
+
+
+      )
+  } else {
+    return(
+      <>
+
+        <SearchHeader onSubmitHandler={onSubmitHandler}/>
+        <div className={styles.main}>
+
+              <div className={styles.line1}></div>
+              <div className={styles.line2}></div>
+              <div className={styles.line3}></div>
+              <div className={styles.line4}></div>
+              <div className={styles.line5}></div>
+
+              <div className={styles.mainGrid}>
+                {list && list.map(trip => {
+                  return <TripCard trip={trip} key={trip._id}/>
+                })}
+        </div>
+        <div className={styles.myTripsContainer} >
+          <Link href='/trips/addtrip' style={{ textDecoration: 'none', color: 'black' }}>
+            <div className={styles.createTrip} >Create a Trip</div>
+          </Link>
+          <MyTrips trips={trips}/>
+        </div>
+
       </div>
-
-    </div>
-    </>
+      </>
 
 
-    )
+      )
+  }
+
 
 };
 

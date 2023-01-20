@@ -43,9 +43,9 @@ const UserInfo = () => {
         width: "100%",
         height: "100vh",
         display: "flex",
-        "flex-direction": "column",
-        "align-items": "center",
-        "justify-content": "flex-start"
+        "flexDirection": "column",
+        "alignItems": "center",
+        "justifyContent": "flex-start"
       }}>
 
       <CloudinaryUpload label={'Upload Profile Photo'} url={photoUrl} setUrl={setPhotoUrl} centered={true}/>
@@ -75,7 +75,7 @@ const UserInfo = () => {
       <TextField
         color='primary'
         label='About me...'
-        placeholder='About me...'
+        placeholder='About me... (140 character limit)'
         multiline
         minRows={3}
         sx={{ margin: 1, width: '45%' }}

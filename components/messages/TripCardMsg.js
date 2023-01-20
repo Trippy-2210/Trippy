@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-const TripCard = ({trip}) => {
+const TripCard = ({trip, setTrip}) => {
   let imgStyle = {
     objectFit: 'cover',
     width: '80%',

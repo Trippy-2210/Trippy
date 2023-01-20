@@ -6,6 +6,8 @@ import UserInfo from '../../../../components/users/profile/UserInfo.js'
 import UserTripList from '../../../../components/users/profile/UserTripList.js'
 import Header from '../../../../components/header/Header.js';
 
+import styles from './profile.module.css'
+
 const Profile = () => {
   const [profileData, setProfileData] = useState({})
   let router = useRouter();
@@ -31,20 +33,24 @@ const Profile = () => {
     flexDirection: "column",
     justifyContent: "space-around",
     width: "65%",
-    margin: "0 auto"
+    margin: "50px auto",
+    gap: "50px"
   }
 
   return (
     <>
       <Header />
-      <div style={styleObj}>
-        <div style={{margin: "5px", padding: "20px"}}>
+      <div className="user-info-box" style={styleObj}>
+        <div>
           {user !== undefined ? <UserInfo firstName={user.firstName} lastName={user.lastName} bio={user.bio} photo={user.photo} id={user.userId}/> : null}
         </div>
         <div>
           {user !== undefined ? <UserTripList ownerId={user.userId}/> : null}
         </div>
       </div>
+              <div className={styles.line1}></div>
+              <div className={styles.line2}></div>
+              <div className={styles.line3}></div>
     </>
   )
 }
