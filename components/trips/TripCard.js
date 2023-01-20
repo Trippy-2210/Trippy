@@ -42,7 +42,7 @@ const TripCard = ({trip}) => {
       </div>
 
 
-    </div>
+     </div>
 
     )
 

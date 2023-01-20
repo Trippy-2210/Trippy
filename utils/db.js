@@ -2,10 +2,9 @@ import profileSchema from './schemas/profile.js';
 import tripSchema from './schemas/trip.js';
 import messageSchema from './schemas/message.js';
 import notificationSchema from './schemas/notification.js';
+import mongoose from 'mongoose';
 
-const mongoose = require('mongoose');
-
-const url = 'mongodb://localhost:27017/trippy';
+const url = process.env.MONGO_ATLAS;
 const options = { useNewUrlParser: true, useUnifiedTopology: true };
 
 mongoose.set('strictQuery', true);

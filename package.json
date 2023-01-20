@@ -36,8 +36,10 @@
     "mongoose": "^6.8.3",
     "next": "^13.1.2",
     "pg": "^8.8.0",
+    "postgres": "^3.3.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-polls": "^1.2.0",
     "swr": "^2.0.0"
   },
   "devDependencies": {

@@ -1,27 +1,137 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;600&display=swap');
 
-html, body {
-  font-family: Quicksand, sans-serif;
-  font-weight: 600;
-}
-
-h1, h2, h3 {
-  font-family: Pacifico;
-}
-
 .tripInfoTitle {
   color: red;
 }
 
 .tripInfoImageContainer {
-  height: 300px;
+  border-radius: 10px;
+  height: 600px;
   width: 100%;
+  overflow: hidden;
 }
 
 .tripInfoImage {
   height: 100%;
   width: 100%;
-  object-fit: contain;
+  object-fit: cover;
+}
+
+.tripDescriptionContainer {
+  background-color: #293142;
+  padding: 20px;
+  color: white;
+  margin-top: 20px;
+  border-radius: 10px;
+  display: flex;
+}
+
+.tripDescriptionContainer div {
+  padding: 0 20px;
+  width: 50%;
+  height: 100%
+}
+
+.tripDescriptionContainer div h2 {
+  margin-top: 0;
+}
+
+.tripAttendeesContainer {
+  width: 25%;
+}
+
+#requestsHeader {
+  margin-bottom: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #293142;
+}
+
+.tripRequestButtonContainer {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #293142;
+  margin-bottom: 10px;
+}
+
+.tripAttendeesContainer h2 {
+  margin: 0;
+}
+
+.tripAttendeesContainer h3 {
+  margin: 10px 0;
+}
+
+.attendeePhotoContainer {
+  margin: 0 20px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.attendeePhoto {
+  object-fit: cover;
+  width: 50px;
+  height: 50px;
+}
+
+.attendeeInfoContainer {
+  width: 90%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.userContainer {
+  margin: 10px 0;
+  /* padding: 0 20px; */
+  height: 100px;
+  width: 100%;
+  border-radius: 5px;
+  background-color: #293142;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.userContainer p:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.userContainer p {
+  color: white;
+  font-size: 20px;
+}
+
+.userRequestContainer {
+  margin: 10px 0;
+  height: 150px;
+  width: 100%;
+  border-radius: 5px;
+  background-color: #293142;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.userRequestContainer p {
+  margin: 0;
+  color: white;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.userRequestContainer p:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.userRequestButtonContainer {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
 }
 
 .h {
