@@ -16,7 +16,7 @@ const TripCard = ({trip}) => {
   const router = useRouter()
 
   const onClickHandler = () => {
-    router.push(`/trips/${trip.tripId}`)
+    router.push(`/trips/${trip._id}`)
     console.log('hello')
   }
 

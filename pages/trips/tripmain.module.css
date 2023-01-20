@@ -57,7 +57,7 @@
   width: 10000px;
   height: 30px;
   background-color: rgb(40, 99, 150);
-  transform: translate(195vw, 0vh) translateZ(-30px) rotate(30deg) scale(4);
+  transform: translate(400vw, 0vh) translateZ(-60px) rotate(30deg) scale(7);
   z-index: -100;
 }
 .line2 {
@@ -85,7 +85,7 @@
   width: 10000px;
   height: 30px;
   background-color: rgb(114, 179, 236);
-  transform: translate(195vw, 500vh) translateZ(-18px) rotate(30deg) scale(4);
+  transform: translate(195vw, 500vh) translateZ(-18px) rotate(30deg) scale(2.8);
   z-index: -100;
 }
 
@@ -94,7 +94,7 @@
   width: 10000px;
   height: 30px;
   background-color: rgb(40, 99, 150);
-  transform: translate(100vw, 200vh) translateZ(-24px) rotate(-45deg) scale(4);
+  transform: translate(200vw, 200vh) translateZ(-30px) rotate(-45deg) scale(4);
   z-index: -100;
 }
 
