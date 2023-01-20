@@ -26,7 +26,7 @@ export default async function handler(req, res) {
 
     // add notification id to owner's notifications array
     const userNotif = await schemas.Profile.findOneAndUpdate(
-      { '_id': ownerId },
+      { 'userId': ownerId },
       { '$push': { 'notifications': notifId }}
     )
 
@@ -59,7 +59,7 @@ export default async function handler(req, res) {
 
       // add notification id to users notifications array
       const userNotif = await schemas.Profile.findOneAndUpdate(
-        { '_id': userId },
+        { 'userId': userId },
         { '$push': { 'notifications': notifId }}
       )
     }

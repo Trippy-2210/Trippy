@@ -7,6 +7,6 @@ export default async function handler(req, res) {
     await sql`INSERT INTO sessions (session_id, user_id) VALUES (${session}, null);`;
     res.send({session_id: session, user_id: null});
   } else {
-      res.send(results[0]);
+    res.send(results[0]);
   }
 }

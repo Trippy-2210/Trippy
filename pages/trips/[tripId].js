@@ -26,9 +26,13 @@ const TripDetails = (props) => {
 
   let {trip, userId} = data;
 
+  console.log(userId, typeof userId);
+  console.log(trip.ownerId, typeof trip.ownerId);
+
+
   return (
     <>
-      <Header onSubmitHandler={onSubmitHandler} />
+      {/* <Header onSubmitHandler={onSubmitHandler} /> */}
       <div id="tripDetailsMainContainer">
         <div id='tripInfoHeader'>
           <h1 className='tripInfoTitle'>{trip.tripTitle}</h1>
