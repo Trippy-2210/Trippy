@@ -10,6 +10,11 @@
   background-color: antiquewhite;
   border-radius: 25px;
   cursor: pointer;
+  transition: 0.25s linear;
+}
+
+.tripCard:hover {
+  transform: scale(1.05);
 }
 
 .tripCard img {

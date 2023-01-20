@@ -74,6 +74,7 @@
   transform: translate(-10px);
   transition: 0.3s;
   cursor: pointer;
+  z-index: 100;
 }
 
 .numberOfNotifications {

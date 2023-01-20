@@ -19,7 +19,7 @@
   width: 60vw;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
-  grid-column-gap: min(10px);
+  grid-column-gap: min(30px);
   grid-row-gap: 40px;
   justify-content: space-between;
   height: 70vh;

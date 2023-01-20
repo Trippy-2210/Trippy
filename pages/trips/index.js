@@ -5,6 +5,8 @@ import TripCard from './../../components/trips/TripCard.js'
 import MyTrips from './../../components/trips/MyTrips.js';
 import SearchHeader from './../../components/header/SearchHeader.js';
 
+import Link from 'next/link'
+
 
 
 const Main = ({}) => {
@@ -46,7 +48,9 @@ const Main = ({}) => {
                 })}
         </div>
         <div className={styles.myTripsContainer}>
-          <div className={styles.createTrip} >Create a Trip</div>
+          <Link href='/trips/addtrip' style={{ textDecoration: 'none', color: 'black' }}>
+            <div className={styles.createTrip} >Create a Trip</div>
+          </Link>
           <MyTrips />
         </div>
 
@@ -71,8 +75,10 @@ const Main = ({}) => {
                   return <TripCard trip={trip} key={trip._id}/>
                 })}
         </div>
-        <div className={styles.myTripsContainer}>
-          <div className={styles.createTrip}>Create a Trip</div>
+        <div className={styles.myTripsContainer} >
+          <Link href='/trips/addtrip' style={{ textDecoration: 'none', color: 'black' }}>
+            <div className={styles.createTrip} >Create a Trip</div>
+          </Link>
           <MyTrips />
         </div>
 
