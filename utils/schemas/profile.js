@@ -5,7 +5,7 @@ const profileSchema = new mongoose.Schema(
     userId: String,
     firstName: String,
     lastName: String,
-    bio: String,
+    bio: {type: String, maxLength: 140},
     photo: String,
     trips: [], // tripId
     notifications: [String], // notificationId
