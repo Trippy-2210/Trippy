@@ -1,16 +1,11 @@
 import React from 'react';
 import Logo from './Logo.js'
-import Search from './Search.js'
-import Sandwich from './Sandwich.js'
-import GoogleMaps from '../trips/PlaceAutocomplete.js'
 
 import styles from './header.module.css'
 
 let data = {notifications: ['message', 'accepted', 'message', 'message', 'joinRequest', 'accepted']}
 
-const Header = () => {
-
-
+const EmptyHeader = ({onSubmitHandler}) => {
 
   return(
     <div className={styles.header}>
@@ -18,7 +13,6 @@ const Header = () => {
       className={styles.headerContainer}    >
         <Logo />
 
-        <Sandwich data={data}/>
       </div>
 
     </div>
@@ -27,4 +21,4 @@ const Header = () => {
 
 };
 
-export default Header;
+export default EmptyHeader;

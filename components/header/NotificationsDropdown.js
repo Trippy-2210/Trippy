@@ -21,9 +21,16 @@ const NotificationsDropdown = ({data}) => {
       <div className={styles.notificationsContainer}>
 
         <Link href="/" className={styles.navLink}>Profile</Link>
+
         {notes.messages ?
-        <Link href="/messages" className={styles.navLink}>Messages &#40;<span>{notes.messages}</span>&#41;</Link> : <Link href="/messages" className={styles.navLink}>Messages</Link>}
-        {notes.trips ? <Link href="/trips" className={styles.navLink}>Trips &#40;<span >{notes.trips}</span>&#41;</Link> : <Link href="/trips" className={styles.navLink}>Trips</Link>}
+        <Link href="/messages" className={styles.navLink}>Messages &#40;<span>{notes.messages}</span>&#41;</Link> :
+        <Link href="/messages" className={styles.navLink}>Messages</Link>}
+
+        {notes.trips ?
+        <Link href="/trips" className={styles.navLink}>Trips &#40;<span >{notes.trips}</span>&#41;</Link> :
+        <Link href="/trips" className={styles.navLink}>Trips</Link>}
+
+        <Link href="/logout" className={styles.navLink}>logout</Link>
 
       </div>
 

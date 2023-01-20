@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import NotificationsDropdown from './NotificationsDropdown.js'
 
 import styles from './header.module.css'
@@ -9,6 +9,13 @@ const Sandwich = ({data}) => {
 
   const [show, setShow] = useState(false)
   const [style, setStyle] = useState({})
+
+  // useEffect(() => {
+  //   axios.get('api/user')
+  //     .then(response => {
+
+  //     })
+  // }, [])
 
   return(
     <div

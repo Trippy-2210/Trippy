@@ -1,0 +1,101 @@
+
+
+.main {
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  overflow-x: hidden;
+  perspective: 10px;
+  z-index: -100;
+}
+
+.mainGrid {
+  margin-top: 20px;
+  display: grid;
+  width: 60vw;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-column-gap: min(30px);
+  grid-row-gap: 40px;
+  justify-content: space-between;
+  height: 70vh;
+  z-index: -10;
+}
+
+.myTripsContainer {
+  position: sticky;
+  margin-left: 20px;
+  top: 0px;
+  z-index: -1;
+}
+
+.createTrip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0px 15px 30px;
+  width: 80%;
+  height: 40px;
+  border-radius: 20px;
+  background-color: rgba(240, 122, 122, 0.808);
+  font-size: 1.8rem;
+  box-shadow: 4px 4px 0px 0px rgba(156, 45, 45, 0.808);
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.createTrip:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px 0px rgba(156, 45, 45, 0.808);
+
+}
+
+.line1 {
+  position: absolute;
+  width: 10000px;
+  height: 30px;
+  background-color: rgb(40, 99, 150);
+  transform: translate(400vw, 0vh) translateZ(-60px) rotate(30deg) scale(7);
+  z-index: -100;
+}
+.line2 {
+  position: absolute;
+  width: 10000px;
+  height: 30px;
+  background-color: rgb(114, 179, 236);
+  transform: translate(60vw, 80vh) rotate(160deg) translateZ(-20px) scale(3);
+  z-index: -100;
+
+}
+
+.line3 {
+  position: absolute;
+  width: 10000px;
+  height: 30px;
+  background-color: rgb(235, 77, 77);
+  transform: translate(30vw, 200vh) rotate(45deg) translateZ(-12px) scale(2.2);
+  z-index: -100;
+
+}
+
+.line4 {
+  position: absolute;
+  width: 10000px;
+  height: 30px;
+  background-color: rgb(114, 179, 236);
+  transform: translate(195vw, 500vh) translateZ(-18px) rotate(30deg) scale(2.8);
+  z-index: -100;
+}
+
+.line5 {
+  position: absolute;
+  width: 10000px;
+  height: 30px;
+  background-color: rgb(40, 99, 150);
+  transform: translate(200vw, 200vh) translateZ(-30px) rotate(-45deg) scale(4);
+  z-index: -100;
+}
+
+
