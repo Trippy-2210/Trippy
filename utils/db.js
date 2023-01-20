@@ -4,7 +4,8 @@ import messageSchema from './schemas/message.js';
 import notificationSchema from './schemas/notification.js';
 import mongoose from 'mongoose';
 
-const url = 'mongodb://localhost:27017/trippy';
+// const url = 'mongodb://localhost:27017/trippy';
+const url = process.env.MONGO_ATLAS;
 const options = { useNewUrlParser: true, useUnifiedTopology: true };
 
 mongoose.set('strictQuery', true);
