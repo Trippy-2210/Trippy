@@ -8,7 +8,6 @@ export default async function handler(req, res) {
   let checkEmail = await sql`SELECT * FROM users WHERE email = ${email};`;
 
   if (checkEmail[0]) {
-    await sql.end();
     res.send('wrong');
     return;
   }
@@ -20,7 +19,6 @@ export default async function handler(req, res) {
 
   let id = await sql`INSERT INTO users (email, password, salt) VALUES (${email}, ${hash}, ${salt}) RETURNING id;`;
   await sql`UPDATE sessions SET user_id = ${id[0].id} WHERE session_id = ${session_id};`;
-  await sql.end();
 
 
   res.status(200).send();
