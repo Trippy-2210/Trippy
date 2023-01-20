@@ -37,7 +37,7 @@ export default function CloudinaryWidget({ url, setUrl, label, centered}) {
             alt='Uploaded image'
             width={200}
             height={200}
-            style={{ borderRadius: '1em' }}
+            style={{ borderRadius: '1em', marginBottom: 20 }}
           />
         </div>
       ) : (
