@@ -1,21 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import NotificationsDropdown from './NotificationsDropdown.js'
-
 import styles from './header.module.css'
 
 
 
-const Sandwich = ({data}) => {
+const Sandwich = ({data, notes}) => {
 
   const [show, setShow] = useState(false)
   const [style, setStyle] = useState({})
 
-  // useEffect(() => {
-  //   axios.get('api/user')
-  //     .then(response => {
-
-  //     })
-  // }, [])
 
   return(
     <div
@@ -34,12 +27,12 @@ const Sandwich = ({data}) => {
         <div></div>
         <div></div>
       </div>
-      {data.notifications.length > 0 ? <div className={styles.numberOfNotifications}>{data.notifications.length}</div> : null}
+      {notes.length > 0 ? <div className={styles.numberOfNotifications}>{notes.length}</div> : null}
       <img
       className={styles.sandwichPhoto}
       src='https://m.media-amazon.com/images/I/41hjCc+ZlDL._AC_SX425_.jpg'
       ></img>
-      {show ? <NotificationsDropdown data={data}/> : null}
+      {show ? <NotificationsDropdown data={notes}/> : null}
     </div>
 
     )

@@ -11,11 +11,13 @@
   flex-wrap: wrap;
   align-items: center;
   margin: 20px 0px;
+  row-gap: 20px;
 }
 
 .datesTO {
   margin: 15px;
 }
+
 
 .description_input {
   max-width: 400px;
@@ -28,6 +30,9 @@
 
 .activity_list {
   max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .budgetContainer {
@@ -39,6 +44,8 @@
   justify-content: center;
   align-items: center;
   margin: 10px;
+
+  padding: 30px;
 }
 .formItems {
   display: flex;
@@ -58,3 +65,4 @@
   margin: 10px 30px;
   align-items: center;
 }
+

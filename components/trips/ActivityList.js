@@ -37,7 +37,7 @@ export default function ActivityList({ activities, setActivities }) {
             id='activity-input'
             variant='outlined'
             label='Activities'
-            sx={{ width: 300 }}
+            sx={{ width: '100%' }}
             value={activityInput}
             onChange={(e) => setActivityInput(e.target.value)}
             onKeyDown={handleAddActivityEnter}

@@ -10,6 +10,13 @@ export async function middleware(req, res) {
   const pathname = url.pathname;
   let session_id = req.cookies.get('session_id') ? req.cookies.get('session_id').value : crypto.randomUUID();
 
+  if (pathname === '/logout') {
+    url.pathname = '/users/login';
+    let response = NextResponse.redirect(url);
+    response.cookies.delete('session_id');
+    return response;
+  }
+
   if (!req.cookies.get('session_id')) {
     url.pathname = '/users/login';
     let response = NextResponse.redirect(url);

@@ -54,7 +54,7 @@ function Requests(props) {
                       alt='user profile photo'
                     />
                   </div>
-                  <Link href={`/users/profiles/${request.userId}`}>
+                  <Link href={`/users/profile/${request.userId}`}>
                     <p>{request.userName}</p>
                   </Link>
                 </div>
@@ -99,7 +99,7 @@ function Requests(props) {
                       alt='user profile photo'
                     />
                   </div>
-                  <Link href={`/users/profiles/${request.userId}`}>
+                  <Link href={`/users/profile/${request.userId}`}>
                     <p>{request.userName}</p>
                   </Link>
                 </div>
@@ -134,7 +134,7 @@ function Requests(props) {
                       alt='user profile photo'
                     />
                   </div>
-                  <Link href={`/users/profiles/${request.userId}`}>
+                  <Link href={`/users/profile/${request.userId}`}>
                     <p>{request.userName}</p>
                   </Link>
                 </div>

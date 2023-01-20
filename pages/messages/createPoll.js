@@ -50,8 +50,8 @@ const CreatePolls = ({pollToggle, resultToggle}) => {
 
   return (
     <div className='pollContainer'>
-      <Container maxW="container.lg">
-      <Container maxW="container.md" mt={6} shadow="lg" p={8} rounded="2xl">
+      <Container>
+      <Container mt={6} shadow="lg" p={8} rounded="2xl">
         <h1>Create a poll</h1>
         <Input
           placeholder="Poll Title"
@@ -117,7 +117,6 @@ const CreatePolls = ({pollToggle, resultToggle}) => {
         </Button>
 
         <Button variant="contained" onClick={pollToggle}>
-          {/* <Link href="/messages/index">Back to messages</Link> */}
           Back to messages
         </Button>
       </Container>

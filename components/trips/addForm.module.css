@@ -1,13 +1,13 @@
 .fieldAndbutton {
   display: flex;
-  flex-wrap: wrap;
   max-width: 400px;
   width: 400px;
-  align-items: center;
   margin-top: 15px;
+  justify-content: center;
 }
 .activity_text_field {
   margin-right: 10px;
+  width: 70%;
 }
 
 .imagePlaceholder {

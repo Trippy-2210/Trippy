@@ -26,7 +26,7 @@ const Messages = function() {
     <>
       <Header />
       <div className='messagesContainer h'>
-        <MyTrips trips={trips}/>
+        <MyTrips trips={trips} setTrip={setTrip}/>
         <ChatBox user={user} trip={trip}/>
         <AttendeeList trip={trip}/>
       </div>
