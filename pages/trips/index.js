@@ -41,6 +41,8 @@ const Main = ({}) => {
           <div className={styles.line1}></div>
           <div className={styles.line2}></div>
           <div className={styles.line3}></div>
+          <div className={styles.line4}></div>
+          <div className={styles.line5}></div>
 
               <div className={styles.mainGrid} >
                 {searchlist && searchlist.map(trip => {
@@ -69,6 +71,8 @@ const Main = ({}) => {
               <div className={styles.line1}></div>
               <div className={styles.line2}></div>
               <div className={styles.line3}></div>
+              <div className={styles.line4}></div>
+              <div className={styles.line5}></div>
 
               <div className={styles.mainGrid}>
                 {list && list.map(trip => {

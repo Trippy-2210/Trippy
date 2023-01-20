@@ -1,5 +1,7 @@
+import React, {useEffect, useState} from 'react'
 import TripCard from './TripCard.js';
 import styles from './cards.module.css';
+import axios from 'axios'
 
 let trips = [
   {
@@ -24,11 +26,11 @@ let trips = [
     ownerId: 2,
     tripTitle: 'Vacation in Gotham City',
     destination: 'Gotham City',
-    startDate: 'dateformat?',
-    endDate: 'dateformat?',
+    startDate: 'May 21, 2023',
+    endDate: 'June 1, 2023',
     description: 'Help me solve a riddle',
     activities: ['fun stuff', 'other stuff'],
-    budget: 1,
+    budget: 5,
     photo:
       'https://cdn.mos.cms.futurecdn.net/ujfM8sgekzFenoGfxLphhS-970-80.jpg.webp',
     requests: [{ userId: 5, status: true }],
@@ -39,9 +41,10 @@ let trips = [
 
 const MyTrips = ({}) => {
 
-  // const url = `/api/profile/${userId}`
+  // const [trip, setTrip] = useState()
+
   // useEffect(() => {
-  //   axios.get(url)
+  //   axios.get('/api/trips/currentUser')
   //     .then(response => {
   //       console.log(response)
   //     })

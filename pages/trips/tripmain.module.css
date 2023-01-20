@@ -12,9 +12,7 @@
 }
 
 .mainGrid {
-  position: absolute;
   margin-top: 20px;
-  left: 20px;
   display: grid;
   width: 60vw;
   grid-template-columns: repeat(3, 1fr);
@@ -27,8 +25,9 @@
 }
 
 .myTripsContainer {
-  position: fixed;
-  right: 20px;
+  position: sticky;
+  margin-left: 20px;
+  top: 0px;
   z-index: -1;
 }
 
@@ -55,7 +54,7 @@
 
 .line1 {
   position: absolute;
-  width: 8000px;
+  width: 10000px;
   height: 30px;
   background-color: rgb(40, 99, 150);
   transform: translate(195vw, 0vh) translateZ(-30px) rotate(30deg) scale(4);
@@ -63,7 +62,7 @@
 }
 .line2 {
   position: absolute;
-  width: 8000px;
+  width: 10000px;
   height: 30px;
   background-color: rgb(114, 179, 236);
   transform: translate(60vw, 80vh) rotate(160deg) translateZ(-20px) scale(3);
@@ -73,12 +72,30 @@
 
 .line3 {
   position: absolute;
-  width: 8000px;
+  width: 10000px;
   height: 30px;
   background-color: rgb(235, 77, 77);
-  transform: translate(30vw, 60vh) rotate(45deg) translateZ(-12px) scale(2.2);
+  transform: translate(30vw, 200vh) rotate(45deg) translateZ(-12px) scale(2.2);
   z-index: -100;
 
+}
+
+.line4 {
+  position: absolute;
+  width: 10000px;
+  height: 30px;
+  background-color: rgb(114, 179, 236);
+  transform: translate(195vw, 500vh) translateZ(-18px) rotate(30deg) scale(4);
+  z-index: -100;
+}
+
+.line5 {
+  position: absolute;
+  width: 10000px;
+  height: 30px;
+  background-color: rgb(40, 99, 150);
+  transform: translate(100vw, 200vh) translateZ(-24px) rotate(-45deg) scale(4);
+  z-index: -100;
 }
 
 

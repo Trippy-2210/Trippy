@@ -7,6 +7,12 @@ import { useRouter } from 'next/router'
 
 const TripCard = ({trip}) => {
 
+  //#c1f4ffe6
+  //#4469d1e6
+  //#ef6b6be6
+  const colors = ['#ef6b6be6', '#4469d1e6', '#c1f4ffe6']
+  let color = colors[Math.floor(Math.random() * 3)]
+
   const router = useRouter()
 
   const onClickHandler = () => {
@@ -23,11 +29,12 @@ const TripCard = ({trip}) => {
       <div
       className={styles.tripCard}
       onClick={onClickHandler}
+      style={{backgroundColor: color}}
       >
 
         <img src={trip.photo} alt={'trip image'}></img>
 
-        <div className={styles.info}>
+        <div className={styles.info} >
           <div className={styles.cardTitle}>{trip.tripTitle}</div>
           <div>{trip.destination}</div>
           <div>{budget}</div>
@@ -36,9 +43,6 @@ const TripCard = ({trip}) => {
         </div>
 
       </div>
-
-
-
 
     )
 
