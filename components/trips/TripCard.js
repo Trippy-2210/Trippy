@@ -9,35 +9,15 @@ const TripCard = ({trip}) => {
 
   const router = useRouter()
 
-
-  let cardStyle = {
-
-    width: '240px',
-    height: '280px',
-    position:' relative',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'antiquewhite',
-    borderRadius: '25px',
-    cursor: 'pointer',
-
-  }
-  let imgStyle = {
-    objectFit: 'cover',
-    width: '80%',
-    aspectRatio: '1',
-    borderRadius: '25px',
-    transform: 'translate(0px, -10px)'
-  }
-
   const onClickHandler = () => {
     router.push(`/trips/${trip.tripId}`)
     console.log('hello')
   }
 
-
+  let startDate = new Date(trip.startDate).toLocaleDateString('en-US')
+  let endDate = new Date(trip.endDate).toLocaleDateString('en-US')
+  let budget = ''
+  for (let i = 0; i < trip.budget; i++) budget += '$'
   return (
 
       <div
@@ -45,12 +25,13 @@ const TripCard = ({trip}) => {
       onClick={onClickHandler}
       >
 
-        <img src={trip.photo} style={imgStyle} alt={'trip image'}></img>
+        <img src={trip.photo} alt={'trip image'}></img>
 
-        <div className={styles.cardTitle} >
-          <div style={{fontSize: '1rem'}}>{trip.tripTitle}</div>
+        <div className={styles.info}>
+          <div className={styles.cardTitle}>{trip.tripTitle}</div>
           <div>{trip.destination}</div>
-          <div style={{fontSize: '.8rem'}}>{trip.startDate} - {trip.endDate}</div>
+          <div>{budget}</div>
+          <div style={{fontSize: '.8rem'}}>{startDate} - {endDate}</div>
           <div></div>
         </div>
 
