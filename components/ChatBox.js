@@ -37,8 +37,6 @@ const ChatBox = function({user, trip}) {
 
     axios.put('/api/messages/addMessage', message)
       .then(function(response) {
-        console.log(response);
-
         getMessages();
       })
 
@@ -51,6 +49,8 @@ const ChatBox = function({user, trip}) {
     axios.get('/api/messages/' + trip._id)
       .then(function(response) {
         setMessages(response.data);
+
+        console.log(response.data);
       })
   };
 
