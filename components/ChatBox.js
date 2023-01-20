@@ -3,8 +3,14 @@ import {IoMdSend as Send} from 'react-icons/io';
 import {FaPoll as Poll}   from 'react-icons/fa';
 import axios from 'axios';
 
+import CreatePolls from '../pages/messages/createPoll.js';
+import ViewPoll    from '../pages/messages/viewPoll.js';
+
 const ChatBox = function({user, trip}) {
   const [messageData, setMessages] = useState([]);
+  const [pollCreation, togglePoll] = useState(false);
+  const [pollResults, togglePollResults] = useState(false);
+  const [polls, setPolls] = useState([]);
 
   var renderMessages = function() {
     if (!user) {return;}
@@ -27,6 +33,35 @@ const ChatBox = function({user, trip}) {
     })
 
     return messages;
+  };
+
+  var renderPoll = function() {
+    if (!pollCreation) {return;}
+
+    var showResults = function() {
+      togglePoll(false);
+      togglePollResults(true);
+    };
+
+    var poll = (
+      <div className='pollModal v'>
+        <CreatePolls pollToggle={()=>{togglePoll(false)}} resultToggle={showResults}/>
+      </div>
+    );
+
+    return poll;
+  };
+
+  var renderPollResults = function() {
+    if (!pollResults) {return;}
+
+    var results = (
+      <div className='pollModal v'>
+        <ViewPoll pollToggle={()=>{togglePollResults(false)}}/>
+      </div>
+    );
+
+    return results;
   };
 
   var sendMessage = function(e) {
@@ -63,6 +98,8 @@ const ChatBox = function({user, trip}) {
 
   return (
     <div className='messagesMain v'>
+      {renderPoll()}
+      {renderPollResults()}
       <div className='chat v'>
         {renderMessages()}
       </div>
@@ -75,7 +112,7 @@ const ChatBox = function({user, trip}) {
             placeholder='Send a message!'
             autoComplete='off'
           />
-          <Poll className='chatButton' size={30} />
+          <Poll className='chatButton' size={30} onClick={()=>{togglePoll(!pollCreation)}}/>
           <Send className='chatButton' size={30} onClick={sendMessage}/>
         </div>
 

@@ -24,9 +24,9 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 
-const CreatePolls = () => {
-  const [title, setTitle] = useState("Create a question here");
-  const [options, setOptions] = useState(["Option 1", "Option 2"]);
+const CreatePolls = ({pollToggle, resultToggle}) => {
+  const [title, setTitle] = useState("Should we fly tomorrow?");
+  const [options, setOptions] = useState(["Yes", "No"]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -49,19 +49,15 @@ const CreatePolls = () => {
   };
 
   return (
-    <div>
+    <div className='pollContainer'>
       <Container maxW="container.lg">
-
-
       <Container maxW="container.md" mt={6} shadow="lg" p={8} rounded="2xl">
         <h1>Create a poll</h1>
-
         <Input
           placeholder="Poll Title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
-
 
         <Stack spacing={4}>
           {options.map((option, index) => (
@@ -115,13 +111,15 @@ const CreatePolls = () => {
             {error}
           </Alert>
         )}
-        <Button variant="contained">
-        <Link href="/messages/viewPoll" onClick={submit}>Create Poll</Link>
+
+        <Button variant="contained" onClick={resultToggle}>
+          Create Poll
         </Button>
 
-        <Button variant="contained">
-      <Link href="/messages/index">Back to messages</Link>
-      </Button>
+        <Button variant="contained" onClick={pollToggle}>
+          {/* <Link href="/messages/index">Back to messages</Link> */}
+          Back to messages
+        </Button>
       </Container>
     </Container>
     </div>

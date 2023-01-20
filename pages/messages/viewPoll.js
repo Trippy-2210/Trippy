@@ -27,9 +27,7 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-function ViewPoll() {
-
-
+function ViewPoll({pollToggle}) {
   const [pollData, setPollData] = useState({
     title: "Should we fly tomorrow?",
     options: [
@@ -70,11 +68,9 @@ function ViewPoll() {
   };
 
   return (
-    <Container maxW="container.lg">
-
-
-      <Container maxW="container.md" mt={6} shadow="lg" p={8} rounded="2xl">
-        {pollData.title}
+    <Container className='pollResults v'>
+      <Container sx={{textAlign: 'center'}} maxW="container.md" mt={6} shadow="lg" p={8} rounded="2xl">
+        <div style={{padding: '0.5vh'}}>{pollData.title}</div>
         {voted ? (
           <Stack spacing={4} mb={4}>
             {pollData.options.map((option, index) => (
@@ -112,8 +108,8 @@ function ViewPoll() {
           </Stack>
         )}
       </Container>
-      <Button variant="contained">
-      <Link href="/messages/index">Back to messages</Link>
+      <Button variant="contained" onClick={pollToggle}>
+        Back to messages.
       </Button>
 
     </Container>

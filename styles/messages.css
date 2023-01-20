@@ -97,3 +97,24 @@
 .cardText * {
   margin: 0;
 }
+
+.pollModal {
+  z-index: 10;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.pollContainer, .pollResults {
+  background-color: white;
+  padding: 2vh;
+  border-radius: 25px;
+}
+
+.pollResults {
+  max-width: 400px;
+}
