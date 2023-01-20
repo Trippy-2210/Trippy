@@ -4,7 +4,7 @@ import styles from './header.module.css'
 
 const options = ['Option 1', 'Option 2'];
 
-const Search = ({cityFilter, onSubmitHandler}) => {
+const Search = ({onSubmitHandler}) => {
   return (
     <form className={styles.search} onSubmit={onSubmitHandler}>
       <label>
