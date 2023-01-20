@@ -8,8 +8,6 @@ export default async function handler(req, res) {
   var attendees = [];
   var promises = [];
 
-  console.log(messages);
-
   messages.map(function(msg) {
     var message = {
       createdAt: msg.createdAt,

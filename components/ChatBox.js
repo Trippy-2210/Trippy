@@ -1,10 +1,14 @@
 import {useState, useEffect} from 'react';
+import {IoMdSend as Send} from 'react-icons/io';
+import {FaPoll as Poll}   from 'react-icons/fa';
 import axios from 'axios';
 
 const ChatBox = function({user, trip}) {
   const [messageData, setMessages] = useState([]);
 
   var renderMessages = function() {
+    if (!user) {return;}
+
     var messages = [];
     var lastUser = null;
 
@@ -26,12 +30,14 @@ const ChatBox = function({user, trip}) {
   };
 
   var sendMessage = function(e) {
+    var form = document.getElementById('form');
+
     e.preventDefault();
 
     var message = {
       tripId: trip._id,
       userId: user,
-      content: e.target.chatInput.value,
+      content: form.chatInput.value,
       createdAt: new Date().toISOString()
     };
 
@@ -39,12 +45,9 @@ const ChatBox = function({user, trip}) {
 
     setMessages([...msgs, message]);
 
-    axios.put('/api/messages/addMessage', message)
-      .then(function(response) {
-        getMessages();
-      })
+    axios.put('/api/messages/addMessage', message);
 
-    e.target.reset();
+    form.reset();
   };
 
   var getMessages = function() {
@@ -53,8 +56,6 @@ const ChatBox = function({user, trip}) {
     axios.get('/api/messages/' + trip._id)
       .then(function(response) {
         setMessages(response.data);
-
-        console.log(response.data);
       })
   };
 
@@ -65,8 +66,19 @@ const ChatBox = function({user, trip}) {
       <div className='chat v'>
         {renderMessages()}
       </div>
-      <form onSubmit={sendMessage}>
-        <input className='chatInput' name='chatInput' type='text' placeholder='Send a message!'/>
+      <form id='form' onSubmit={sendMessage}>
+        <div className='chatBox h'>
+          <input
+            className='chatInput'
+            name='chatInput'
+            type='text'
+            placeholder='Send a message!'
+            autoComplete='off'
+          />
+          <Poll className='chatButton' size={30} />
+          <Send className='chatButton' size={30} onClick={sendMessage}/>
+        </div>
+
         <input type='submit' style={{display: "none"}}/>
       </form>
     </div>

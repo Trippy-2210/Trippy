@@ -8,11 +8,9 @@ const pollAnswersOptions = [
   {option: "I dont know", votes: 6},
 ];
 
-
 function MessagesPoll() {
 
   const [pollAnswers, setPollAnswers] = useState([]);
-
 
   useEffect(() => {
     setPollAnswers(pollAnswersOptions);
