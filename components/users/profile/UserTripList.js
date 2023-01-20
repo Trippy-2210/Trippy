@@ -1,6 +1,6 @@
 import useSWR from 'swr'
 import axios from 'axios'
-import MyTrips from '../../../components/trips/MyTrips.js'
+import ProfileMyTrips from './ProfileMyTrips.js'
 
 const UserTrips = ({ ownerId }) => {
 
@@ -19,7 +19,7 @@ const UserTrips = ({ ownerId }) => {
   let trips = data;
 
   return (
-    <MyTrips trips={trips}/>
+    <ProfileMyTrips trips={trips}/>
   )
 }
 
