@@ -38,6 +38,16 @@ let trips = [
 ];
 
 const MyTrips = ({}) => {
+
+  // const url = `/api/profile/${userId}`
+  // useEffect(() => {
+  //   axios.get(url)
+  //     .then(response => {
+  //       console.log(response)
+  //     })
+  // }, [])
+
+
   return (
     <div className={styles.myTrips}>
       <h1>My Trips</h1>
