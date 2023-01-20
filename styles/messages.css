@@ -1,6 +1,6 @@
 .messagesContainer {
   width: 100%;
-  height: 100%;
+  height: 92vh;
 }
 
 .messagesMain {
@@ -26,11 +26,22 @@
 }
 
 .chatInput {
+  padding: 4px;
+  flex: 1 1 auto;
+  outline: none;
+  border: none;
+  background: none;
+}
+
+.chatBox {
   width: 100%;
   height: 32px;
   padding: 0;
-  outline: none;
-  box-sizing: border-box;
+  margin-bottom: 0.5vh;
+  box-sizing: content-box;
+  border: 1px solid;
+  border-radius: 25px;
+  align-items: center;
 }
 
 .messagesTrips {
@@ -49,6 +60,61 @@
   margin-bottom: 0.25vw;
 }
 
-.msgMyTrips {
+.myTripsMsg {
+  width: 300px;
+  height: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #1d53a48c;
+  z-index: -4;
+  border-radius: 25px;
+  overflow: overlay;
+}
 
+.tripCardMsg {
+  width: 90%;
+  min-height: 280px;
+  padding-top: 2vh;
+  padding-bottom: 1vh;
+  margin-bottom: 1vh;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 50px;
+  background-color: antiquewhite;
+}
+
+.cardTitleMsg {
+  width: 90%;
+  text-align: center;
+  align-items: center;
+}
+
+.cardText {
+  padding-bottom: 0.25vh;
+  font-size: 1rem;
+}
+
+.cardText * {
+  margin: 0;
+}
+
+.pollModal {
+  z-index: 10;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.pollContainer, .pollResults {
+  background-color: white;
+  padding: 2vh;
+  border-radius: 25px;
+}
+
+.pollResults {
+  max-width: 400px;
 }

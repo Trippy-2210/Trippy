@@ -2,6 +2,26 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;600&display=swap');
 
+html, body {
+  font-family: Quicksand, sans-serif;
+  font-weight: 800;
+}
+
+h1, h2, h3 {
+  margin: 1vh;
+  font-family: Pacifico;
+}
+
+html, body {
+  font-family: Quicksand, sans-serif;
+  font-weight: 800;
+}
+
+h1, h2, h3 {
+  margin: 1vh;
+  font-family: Pacifico;
+}
+
 
 body {
   margin: 0;
