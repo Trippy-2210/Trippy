@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from 'axios'
 import TripCard from './../../components/trips/TripCard.js'
 import MyTrips from './../../components/trips/MyTrips.js';
@@ -263,14 +263,22 @@ let data = [
   }
 ]
 
-
-
 const Main = ({}) => {
 
-  const [ list, setList ] = useState(data)
-  const [ searchlist, setSearchlist] = useState([])
-  const [ cityFilter, setCityFilter] = useState('')
+  const [list, setList] = useState(data)
+  const [searchlist, setSearchlist] = useState([])
+  const [cityFilter, setCityFilter] = useState('')
 
+  const [trips, setTrips] = useState([]);
+
+  var getUserTrips = function() {
+    axios.get('/api/messages/getUserTrips')
+      .then(function(response) {
+        setTrips(response.data.trips);
+      })
+  };
+
+  useEffect(getUserTrips, []);
 
   const onSubmitHandler = (event) => {
     event.preventDefault()
@@ -312,7 +320,7 @@ const Main = ({}) => {
       </div>
       <div style={{display: 'flex', flexDirection: 'column'}}>
         <div style={{fontSize: '2rem', textAlign: 'center', color: 'red'}}>Create a Trip</div>
-        <MyTrips />
+        <MyTrips trips={trips}/>
       </div>
 
     </div>

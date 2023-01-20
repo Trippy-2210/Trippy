@@ -63,6 +63,7 @@ export default async function handler(req, res) {
         { '$push': { 'notifications': notifId }}
       )
     }
+
     if (remove) {
       const removeUser = await schemas.Trip.findOneAndUpdate(
         { _id },
