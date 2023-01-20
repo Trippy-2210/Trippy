@@ -5,8 +5,10 @@ export default async function handler(req, res) {
   let results = await sql`SELECT * FROM sessions WHERE session_id = ${session}`;
   if (!results[0]) {
     await sql`INSERT INTO sessions (session_id, user_id) VALUES (${session}, null);`;
+    await sql.end();
     res.send({session_id: session, user_id: null});
   } else {
-      res.send(results[0]);
+    await sql.end();
+    res.send(results[0]);
   }
 }
