@@ -6,6 +6,8 @@ import UserInfo from '../../../../components/users/profile/UserInfo.js'
 import UserTripList from '../../../../components/users/profile/UserTripList.js'
 import Header from '../../../../components/header/Header.js';
 
+import styles from './profile.module.css'
+
 const Profile = () => {
   const [profileData, setProfileData] = useState({})
   let router = useRouter();
@@ -46,6 +48,9 @@ const Profile = () => {
           {user !== undefined ? <UserTripList ownerId={user.userId}/> : null}
         </div>
       </div>
+              <div className={styles.line1}></div>
+              <div className={styles.line2}></div>
+              <div className={styles.line3}></div>
     </>
   )
 }

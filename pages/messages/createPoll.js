@@ -25,8 +25,8 @@ const Item = styled(Paper)(({ theme }) => ({
 
 
 const CreatePolls = ({pollToggle, resultToggle}) => {
-  const [title, setTitle] = useState("Should we fly tomorrow?");
-  const [options, setOptions] = useState(["Yes", "No"]);
+  const [title, setTitle] = useState("Question");
+  const [options, setOptions] = useState(["Option 1", "Option 2"]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 

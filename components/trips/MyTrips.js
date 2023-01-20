@@ -49,13 +49,14 @@ const MyTrips = ({ trips }) => {
   //       console.log(response)
   //     })
   // }, [])
+  console.log('MY TRIPS', trips)
 
 
   return (
     <div className={styles.myTrips}>
       <h1>My Trips</h1>
-      {trips && trips.map(trip => {
-       return <TripCard trip={trip} key={trip._id}/>
+      {trips && trips.map((trip, i)=> {
+       return <TripCard trip={trip} key={i}/>
       })}
 
 

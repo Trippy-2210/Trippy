@@ -13,20 +13,23 @@ const SearchHeader = ({onSubmitHandler}) => {
 
   const [data, setData] = useState(data1)
   const [notes, setNotes] = useState([])
+
   useEffect(() => {
     axios.get('/api/trips/currentUser')
       .then(response => {
-        console.log('Search Header', response)
+        console.log('Search Header', response.data)
+        setData(response.data)
         response.data[0].notifications.forEach(item => {
           axios.post('/api/notifications/user', {query: item})
             .then(note => {
-              console.log('NOTIFICATION TYPE', note.data.type)
+              // console.log('NOTIFICATION TYPE', note.data.type)
               setNotes([...notes, note.data.type])
             })
         })
       })
   }, [])
-  console.log(notes)
+
+
   return(
     <div className={styles.header}>
       <div

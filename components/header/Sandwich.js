@@ -9,7 +9,6 @@ const Sandwich = ({data, notes}) => {
   const [show, setShow] = useState(false)
   const [style, setStyle] = useState({})
 
-
   return(
     <div
     className={styles.sandwich}

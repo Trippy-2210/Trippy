@@ -29,6 +29,12 @@
   margin-left: 20px;
   top: 0px;
   z-index: -1;
+  overflow: auto;
+  padding-bottom: 100px;
+}
+
+.myTripsContainer::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
 }
 
 .createTrip {

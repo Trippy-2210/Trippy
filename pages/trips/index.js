@@ -11,9 +11,19 @@ import Link from 'next/link'
 
 const Main = ({}) => {
 
-  const [ list, setList ] = useState([])
-  const [ searchlist, setSearchlist] = useState([])
+  const [ list, setList   ] = useState([])
+  const  [searchlist  , setSearchlist ] = useState([])
+  const [trips, setTrips     ] = useState([]);
 
+  var getUserTrips = function() {
+    axios.get('/api/messages/getUserTrips')
+      .then(function(response) {
+        console.log('TRIPS', response)
+        setTrips(response.data.trips);
+      })
+  };
+
+  useEffect(getUserTrips, []);
 
   const onSubmitHandler = (event) => {
     event.preventDefault()
@@ -50,10 +60,14 @@ const Main = ({}) => {
                 })}
         </div>
         <div className={styles.myTripsContainer}>
+
           <Link href='/trips/addtrip' style={{ textDecoration: 'none', color: 'black' }}>
             <div className={styles.createTrip} >Create a Trip</div>
           </Link>
-          <MyTrips />
+          <div className={styles.myTripsScroll}>
+            <MyTrips trips={trips}/>
+          </div>
+
         </div>
 
       </div>
@@ -83,7 +97,7 @@ const Main = ({}) => {
           <Link href='/trips/addtrip' style={{ textDecoration: 'none', color: 'black' }}>
             <div className={styles.createTrip} >Create a Trip</div>
           </Link>
-          <MyTrips />
+          <MyTrips trips={trips}/>
         </div>
 
       </div>
