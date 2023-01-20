@@ -4,6 +4,8 @@ import axios from 'axios';
 const AttendeeList = function({trip}) {
   const [attendeeData, setAttendees] = useState([]);
 
+  console.log(trip, attendeeData);
+
   var renderAttendees = function() {
     var attendees = [];
 
