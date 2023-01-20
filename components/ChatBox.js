@@ -35,6 +35,10 @@ const ChatBox = function({user, trip}) {
       createdAt: new Date().toISOString()
     };
 
+    var msgs = messageData;
+
+    setMessages([...msgs, message]);
+
     axios.put('/api/messages/addMessage', message)
       .then(function(response) {
         getMessages();
