@@ -4,8 +4,10 @@
 
 Trippy is a travel-based social media application that creates an avenue for the community to find companions who share the common interest of traveling using Next.js, Node, and Socket.io. This project was created by a team of 7 using agile methodolgies.
 
+
 # Demo
 demo link
+
 
 # Features
 • User authentication: New users will be required to create an account before they are able to use the website and see the trips of others. Users must be logged into the website in order to navigate through the rest of the pages. Upon account creation, users will be able to create their own profile page. Our user database will be designed to be secure, while at the same time giving the website owners easy access to a list of our user’s email addresses for use in any future possible email campaigns / account recovery.
@@ -19,6 +21,7 @@ demo link
 • Create trip page: The main content of the trip creation page will be a form prompting the user for information about their trip including destination, dates, and budget. To facilitate differentiation between trips with the same destination, users will also be asked to give a fun/interesting title for their trip, a photo, and a list of potential activities.
 
 • Messages page: Upon clicking the message page, the page will display ‘No current trips’ if the user has no current trips, and if the user has a trip(s), trips will be displayed on the left side of the page in a list. When a user clicks on a trip, that group chat will be centered and take a majority of the page. On the right side of the page, there will be an interface allowing you to view users in the chat and interact with some of the more advanced features.
+
 
 # Authors
 [Aaron Mikulka](https://github.com/amikulka)
@@ -36,7 +39,7 @@ demo link
 [Stephen Chong](https://github.com/chongstephen)
 
 
-## Tech Stack
+# Tech Stack
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=white&style=for-the-badge)
 ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
@@ -50,16 +53,14 @@ demo link
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 
-
-## Developer Tools
+# Developer Tools
 ![Slack](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white)
 ![Trello](https://img.shields.io/badge/Trello-%23026AA7.svg?style=for-the-badge&logo=Trello&logoColor=white)
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
 
 
-
-## Installation & Use
+# Installation & Use
 1. Clone the repo
     ```
     git clone https://github.com/Trippy-2210/Trippy.git
