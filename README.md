@@ -4,6 +4,9 @@
 
 Trippy is a travel-based social media application that creates an avenue for the community to find companions who share the common interest of traveling using Next.js, Node, and Socket.io. This project was created by a team of 7 using agile methodolgies.
 
+# Demo
+demo link
+
 # Features
 • User authentication: New users will be required to create an account before they are able to use the website and see the trips of others. Users must be logged into the website in order to navigate through the rest of the pages. Upon account creation, users will be able to create their own profile page. Our user database will be designed to be secure, while at the same time giving the website owners easy access to a list of our user’s email addresses for use in any future possible email campaigns / account recovery.
 
