@@ -20,17 +20,17 @@ Trippy is a travel-based social media application that creates an avenue for the
 # Authors
 [Aaron Mikulka](https://github.com/amikulka)
 
-Ben Stemen
+[Ben Stemen](https://github.com/bdstemen)
 
-Haillie Willoughby
+[Haillie Willoughby](https://github.com/letmeeatbrioche)
 
-Julian Mclendon
+[Julian Mclendon](https://github.com/jkmclendon)
 
-Luke Anger
+[Luke Anger](https://github.com/LukeAnger)
 
-Ryan Anger
+[Ryan Anger](https://github.com/ryananger)
 
-Stephen Chong
+[Stephen Chong](https://github.com/chongstephen)
 
 
 ## Tech Stack
