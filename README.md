@@ -62,7 +62,7 @@ Stephen Chong
     ```
     npm install
     ```
-3. Rename `example.env` to `.env`
+3. Rename `.env.local.example` to `.env`
 4. Create all necessry API tokens and insert into `.env`
 5. Compile the client-side code with webpack
    ```
