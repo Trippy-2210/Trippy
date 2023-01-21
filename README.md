@@ -17,6 +17,14 @@ Trippy is a travel-based social media application that creates an avenue for the
 
 • Messages page: Upon clicking the message page, the page will display ‘No current trips’ if the user has no current trips, and if the user has a trip(s), trips will be displayed on the left side of the page in a list. When a user clicks on a trip, that group chat will be centered and take a majority of the page. On the right side of the page, there will be an interface allowing you to view users in the chat and interact with some of the more advanced features.
 
+# Authors
+Aaron Mikulka
+Ben Stemen
+Haillie Willoughby
+Julian Mclendon
+Luke Anger
+Ryan Anger
+Stephen Chong
 
 
 ## Tech Stack
