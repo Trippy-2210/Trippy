@@ -8,12 +8,7 @@ import SearchHeader from './../../components/header/SearchHeader.js';
 import Link from 'next/link'
 
 const Main = ({}) => {
-
-  const [list, setList] = useState(data)
-  const [searchlist, setSearchlist] = useState([])
   const [cityFilter, setCityFilter] = useState('')
-
-  const [trips, setTrips] = useState([]);
 
   const [ list, setList   ] = useState([])
   const  [searchlist  , setSearchlist ] = useState([])

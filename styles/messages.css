@@ -12,7 +12,9 @@
 }
 
 .chat {
-  height: auto;
+  height: 90%;
+  overflow: auto;
+  justify-content: flex-end;
   margin-bottom: 0.5vw;
 }
 
@@ -62,11 +64,11 @@
 
 .myTripsMsg {
   width: 300px;
-  height: 100%;
+  margin: 1vw;
+  padding: 1vw;
   align-items: center;
   justify-content: flex-start;
   background-color: #1d53a48c;
-  z-index: -4;
   border-radius: 25px;
   overflow: overlay;
 }
@@ -75,7 +77,7 @@
   width: 90%;
   min-height: 280px;
   padding-top: 2vh;
-  padding-bottom: 1vh;
+  padding-bottom: 2vh;
   margin-bottom: 1vh;
   justify-content: flex-start;
   align-items: center;

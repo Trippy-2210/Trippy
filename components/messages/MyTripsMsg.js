@@ -1,4 +1,4 @@
-import TripCard from '../trips/TripCard.js';
+import TripCard from './TripCardMsg.js';
 
 const MyTrips = ({trips, setTrip}) => {
   var renderTrips = function() {
@@ -13,7 +13,6 @@ const MyTrips = ({trips, setTrip}) => {
 
   return (
     <div className='myTripsMsg v'>
-      <h1>My Trips</h1>
       {trips && renderTrips()}
     </div>
   );

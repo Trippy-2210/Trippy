@@ -1,16 +1,32 @@
 import {useState, useEffect} from 'react';
 import {IoMdSend as Send} from 'react-icons/io';
 import {FaPoll as Poll}   from 'react-icons/fa';
+import {io} from 'socket.io-client';
 import axios from 'axios';
 
 import CreatePolls from '../pages/messages/createPoll.js';
 import ViewPoll    from '../pages/messages/viewPoll.js';
+
+var socket;
 
 const ChatBox = function({user, trip}) {
   const [messageData, setMessages] = useState([]);
   const [pollCreation, togglePoll] = useState(false);
   const [pollResults, togglePollResults] = useState(false);
   const [polls, setPolls] = useState([]);
+
+  var socketInit = function() {
+    fetch('/api/socket')
+      .then(function() {
+        socket = io();
+
+        socket.on('connect', () => {
+          console.log('Connected to socket.');
+        })
+
+        socket.on('update', getMessages);
+      });
+  };
 
   var renderMessages = function() {
     if (!user) {return;}
@@ -80,6 +96,8 @@ const ChatBox = function({user, trip}) {
 
     setMessages([...msgs, message]);
 
+    socket.emit('newMessage', message.content);
+
     axios.put('/api/messages/addMessage', message);
 
     form.reset();
@@ -94,6 +112,7 @@ const ChatBox = function({user, trip}) {
       })
   };
 
+  useEffect(socketInit, []);
   useEffect(getMessages, [trip]);
 
   return (
