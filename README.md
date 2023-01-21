@@ -16,13 +16,7 @@ Trippy is a travel-based social media application that creates an avenue for the
 
 • Messages page: Upon clicking the message page, the page will display ‘No current trips’ if the user has no current trips, and if the user has a trip(s), trips will be displayed on the left side of the page in a list. When a user clicks on a trip, that group chat will be centered and take a majority of the page. On the right side of the page, there will be an interface allowing you to view users in the chat and interact with some of the more advanced features.
 
-#Available Script
-req.headers.userid will give access to the userid of the currently logged in user within all API routes
-eventually, if a user is not logged in, the API routes will not be hit and everyone will be redirected to the login page
 
-will need to copy .env.local.example into a file named .env.local on the root directory and you can access those variables through process.env.VAR_NAME
-
-created dev branch
 
 ## Tech Stack
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
