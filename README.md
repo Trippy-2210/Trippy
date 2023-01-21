@@ -36,3 +36,22 @@ Trippy is a travel-based social media application that creates an avenue for the
 ![Trello](https://img.shields.io/badge/Trello-%23026AA7.svg?style=for-the-badge&logo=Trello&logoColor=white)
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
+
+
+
+## Installation & Use
+1. Clone the repo
+    ```
+    git clone https://github.com/Trippy-2210/Trippy.git
+    ```
+2. Install all required packages
+    ```
+    npm install
+    ```
+3. Rename `example.env` to `.env`
+4. Create all necessry API tokens and insert into `.env`
+5. Compile the client-side code with webpack
+   ```
+   npm run dev
+   ```
+6. Navigate to localhost:3000
