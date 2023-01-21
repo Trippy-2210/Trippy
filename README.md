@@ -1,17 +1,22 @@
 # Trippy
 
-##Description
+#Description
 Trippy is a travel-based social media application that creates an avenue for the community to find companions who share the common interest of traveling using Next.js, Node, and Socket.io. This project was created by a team of 7.
 
-##Features
+#Features
+
 • User authentication: New users will be required to create an account before they are able to use the website and see the trips of others. Users must be logged into the website in order to navigate through the rest of the pages. Upon account creation, users will be able to create their own profile page. Our user database will be designed to be secure, while at the same time giving the website owners easy access to a list of our user’s email addresses for use in any future possible email campaigns / account recovery.
+
 • Profile page: Users will be able to view their own profile and the profile of others in order to give users insight into their potential travel partners. Users will be able to see other users’ first name (last name will be shown to other users if a connection is made), bio, interests, bucket list, and trips that user has created. Users will also have the ability to edit their own profiles.
 • Home page: The main content of the home page will be a list of trips created by other users, where each trip will be represented by a card that displays a user-uploaded photo, trip title, destination, and dates. The user will be able to search trips by destination and filter the list by budget and date. Upon clicking on a trip, the user will be taken  to the corresponding trip detail page. Also on the homepage will be a list of trips the user has either created or joined. 
+
 • Trip detail page: This page will present users with additional information about the trip including budget, planned activities, and a list of users who have joined the trip. If interested, a user can request to join the trip from this page. The creator/owner of the trip will be presented with a list of users who have requested to join the trip and they will be able to accept/deny requests. 
+
 • Create trip page: The main content of the trip creation page will be a form prompting the user for information about their trip including destination, dates, and budget. To facilitate differentiation between trips with the same destination, users will also be asked to give a fun/interesting title for their trip, a photo, and a list of potential activities.
+
 • Messages page: Upon clicking the message page, the page will display ‘No current trips’ if the user has no current trips, and if the user has a trip(s), trips will be displayed on the left side of the page in a list. When a user clicks on a trip, that group chat will be centered and take a majority of the page. On the right side of the page, there will be an interface allowing you to view users in the chat and interact with some of the more advanced features.
 
-##Available Script
+#Available Script
 req.headers.userid will give access to the userid of the currently logged in user within all API routes
 eventually, if a user is not logged in, the API routes will not be hit and everyone will be redirected to the login page
 
