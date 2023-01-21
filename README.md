@@ -19,11 +19,17 @@ Trippy is a travel-based social media application that creates an avenue for the
 
 # Authors
 Aaron Mikulka
+
 Ben Stemen
+
 Haillie Willoughby
+
 Julian Mclendon
+
 Luke Anger
+
 Ryan Anger
+
 Stephen Chong
 
 
